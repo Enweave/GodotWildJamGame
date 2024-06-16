@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bm6htanrbtrx0"]
 
-[ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_1kdax"]
+[ext_resource type="Script" path="res://scenes/ExampleGameScene/Levels/Level.gd" id="1_1kdax"]
 
 [node name="Level1" type="HBoxContainer"]
 anchors_preset = 15
