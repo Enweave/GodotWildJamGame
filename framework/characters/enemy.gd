@@ -1,7 +1,9 @@
 extends wjCharacterBase
 
 @onready var nav_agent = $NavigationAgent3D
-@onready var player : wjCharacterBase = %Player
+@onready var player = $"../Player"
+var isPlayerInSight = false
+
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity:Vector3):
 	velocity = safe_velocity
@@ -17,13 +19,26 @@ func update_heading(target: Vector3):
 
 
 func calc_movement(delta):
-	super.calc_movement(delta)
+	# super.calc_movement(delta)
 
-	update_target_location(player)
-	var current_location = self.global_transform.origin
-	var next_location = nav_agent.get_next_path_position()
-	var new_velocity = (next_location - current_location).normalized() * SPEED
+	if isPlayerInSight:
+		update_target_location(player)
+		var current_location = self.global_transform.origin
+		var next_location = nav_agent.get_next_path_position()
+		var new_velocity = (next_location - current_location).normalized() * SPEED
 
-	new_velocity = new_velocity.move_toward(velocity, SPEED * delta)
-	nav_agent.velocity = new_velocity
-	update_heading(next_location)
+		new_velocity = new_velocity.move_toward(velocity, SPEED * delta)
+		nav_agent.velocity = new_velocity
+		update_heading(next_location)
+		
+	else:
+		velocity.x = 0
+		velocity.z = 0
+
+func _on_vision_area_body_entered(body):
+	if body is wjPlayer:
+		isPlayerInSight = true
+
+func _on_vision_area_body_exited(body):
+	if body is wjPlayer:
+		isPlayerInSight = false

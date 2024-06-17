@@ -1,10 +1,16 @@
 extends wjCharacterBase
 
+
+class_name wjPlayer
+
+
+
 var cached_aim_direction : Quaternion = Quaternion()
 var wordlspace : PhysicsDirectSpaceState3D 
 
 
 func _ready():
+    SPEED = 10.0
     %CameraPivot.rotation_degrees.y = 0
 	
     wordlspace = get_world_3d().get_direct_space_state()
