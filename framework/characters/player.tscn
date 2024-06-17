@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4crl7k17l4o1"]
+
+[ext_resource type="Script" path="res://framework/characters/player.gd" id="1_st0lc"]
+[ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="2_hg0jc"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_st0lc")
+
+[node name="character_body" parent="." instance=ExtResource("2_hg0jc")]
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.62932, 0.777146, 0, -0.777146, 0.62932, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.097)
+fov = 90.0
