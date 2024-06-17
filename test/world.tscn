@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b28vj6t58mfb1"]
+[gd_scene load_steps=9 format=3 uid="uid://b28vj6t58mfb1"]
 
+[ext_resource type="Script" path="res://framework/wjLevel.gd" id="1_hmeae"]
 [ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="1_q5p4n"]
 [ext_resource type="Texture2D" uid="uid://bclfpnxa81pu2" path="res://assets/Textures/checker_black_512x512.png" id="1_q6xj8"]
 [ext_resource type="PackedScene" uid="uid://c8ufluy1fjuu6" path="res://framework/characters/enemy.tscn" id="3_4iivo"]
@@ -18,6 +19,7 @@ uv1_scale = Vector3(10.005, 10.005, 10.005)
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_acr72"]
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_hmeae")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_fdmbj")
@@ -42,4 +44,7 @@ transform = Transform3D(0.869995, -0.154948, 0.468082, -0.493061, -0.273402, 0.8
 shadow_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_4iivo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5054, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.0189997, 2)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_4iivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.0189997, 4.20007)
