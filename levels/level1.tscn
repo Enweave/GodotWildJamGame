@@ -12,30 +12,3 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nqtl2")
 level2scene = ExtResource("2_jw8mk")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 417.0
-offset_top = 279.0
-offset_right = 493.0
-offset_bottom = 302.0
-text = "I\"M LEVEL"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 517.0
-offset_top = 281.0
-offset_right = 558.0
-offset_bottom = 312.0
-text = "win!"
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 647.0
-offset_top = 232.0
-offset_right = 764.0
-offset_bottom = 263.0
-text = "GOTO LEVEL 2"
-
-[connection signal="pressed" from="Button" to="." method="_emit_wj_level_won"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

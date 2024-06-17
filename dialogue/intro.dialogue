@@ -1,0 +1,10 @@
+~ start
+
+do set_slide('res://assets/images/slide1.jpg')
+Narrator: [[Hi|Hello|Howdy]], this first line for first slide.
+Narrator: First slide - second line
+do set_slide('res://assets/images/slide2.jpg')
+Narrator: second slide, 1rst line. Now some options:
+  - start over => start
+  - begin game...    
+=> END
