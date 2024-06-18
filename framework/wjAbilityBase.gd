@@ -12,6 +12,8 @@ signal sens_ability_viable;
 @export var ability_damage: float = 0
 @export var ability_range_meters: float = 0.0
 @export var ability_resource: wjAbilityResource = null;
+
+var user: wjCharacterBase = null
 var valid_target_factions: Array = []
 
 var is_on_cooldown = false

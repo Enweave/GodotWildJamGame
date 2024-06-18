@@ -7,7 +7,7 @@ radius = 1.0
 
 [node name="SwordAttackAbility" type="Node3D"]
 script = ExtResource("1_wquu7")
-knockback_strength = 60.0
+knockback_strength = 40.0
 ability_name = "Sword Melee"
 ability_description = "Slashing!"
 ability_cooldown_sec = 0.2

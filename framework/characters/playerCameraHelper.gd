@@ -1,8 +1,8 @@
 extends Node3D
 
 var root
-var LERP_FACTOR = 3
-var OFFSET_FACTOR = 0.5
+var LERP_FACTOR = 10
+var OFFSET_FACTOR = 0.1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	root = get_parent()

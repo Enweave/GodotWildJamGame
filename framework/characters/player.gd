@@ -24,6 +24,7 @@ func _ready():
 		ability_attack_melee.valid_target_factions = can_attack_factions
 	if ability_extra_scene != null:
 		ability_extra = ability_extra_scene.instantiate()
+		ability_extra.user = self
 		character_body.attach_ability(ability_extra)
 
 	%CameraPivot.rotation_degrees.y = 0
@@ -38,6 +39,10 @@ func use_attack_melee():
 			await get_tree().create_timer(ability_attack_melee.ability_cooldown_sec).timeout
 			self.current_move_speed = self.move_speed
 	return false
+
+func use_ability_extra():
+	if ability_extra != null:
+		ability_extra.activate()
 
 func update_heading_from_mouse():
 	var aim_direction = self.global_transform.basis.get_rotation_quaternion()
@@ -67,14 +72,11 @@ func calc_movement(delta):
 	update_heading_from_mouse()
 	
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var direction = (Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = lerp(velocity.x, direction.x * self.current_move_speed, self.MOVE_LERP)
-		velocity.z = lerp(velocity.z, direction.z * self.current_move_speed, self.MOVE_LERP)
-
-		if self.is_attacking:
-			velocity.x = clamp(abs(velocity.x), 0, self.current_move_speed / 4) * sign(velocity.x)
-			velocity.z = clamp(abs(velocity.z), 0, self.current_move_speed / 4) * sign(velocity.z)
+	controller_direction = (Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	if controller_direction:
+		velocity.x = lerp(velocity.x, controller_direction.x * self.current_move_speed, self.MOVE_LERP)
+		velocity.z = lerp(velocity.z, controller_direction.z * self.current_move_speed, self.MOVE_LERP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, self.current_move_speed)
 		velocity.z = move_toward(velocity.z, 0, self.current_move_speed)
@@ -83,3 +85,7 @@ func calc_movement(delta):
 func _unhandled_input(event):
 	if event is InputEventMouseButton && event.is_pressed():
 		use_attack_melee.call_deferred()
+
+	if Input.is_action_pressed("dash"):
+		print('dash')
+		use_ability_extra()

@@ -1,6 +1,6 @@
 extends wjAbilityBase
 
-@export var knockback_strength: float = 10.0
+@export var knockback_strength: float = 3.0
 
 
 func apply_knockback(target: wjCharacterBase):

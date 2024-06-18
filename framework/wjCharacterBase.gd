@@ -23,8 +23,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var reaction_time_sec: float = 1.
 @onready var current_move_speed: float = move_speed
 
+var controller_direction : Vector3 = Vector3.ZERO
 var character_body : wjCharacterBody = null
-var is_attacking = false
 var is_dead = false
 
 
