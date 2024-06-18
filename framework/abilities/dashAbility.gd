@@ -1,7 +1,6 @@
 extends wjAbilityBase
 
 func activate():
-    print("dashAbility activate")
     var success = false
     if user != null:
         if user.controller_direction:

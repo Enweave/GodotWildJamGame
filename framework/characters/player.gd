@@ -87,5 +87,4 @@ func _unhandled_input(event):
 		use_attack_melee.call_deferred()
 
 	if Input.is_action_pressed("dash"):
-		print('dash')
 		use_ability_extra()
