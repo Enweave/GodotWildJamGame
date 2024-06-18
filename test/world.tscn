@@ -46,38 +46,20 @@ shadow_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8183, 1.9874, -9.34763)
-health = null
-move_speed = null
-reaction_time_sec = null
 
 [node name="Enemy5" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2493, 1.9874, -9.34763)
-health = null
-move_speed = null
-reaction_time_sec = null
 
 [node name="Enemy6" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74922, 1.9874, -13.962)
-health = null
-move_speed = null
-reaction_time_sec = null
 
 [node name="Enemy3" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3606, 1.9874, -9.8809)
-health = null
-move_speed = null
-reaction_time_sec = null
 
 [node name="Enemy4" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3606, 1.9874, 14.5575)
-health = null
-move_speed = null
-reaction_time_sec = null
 
 [node name="Enemy2" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5.9894, 4.20007)
-health = null
-move_speed = null
-reaction_time_sec = null
 
 [connection signal="character_died" from="Player" to="." method="_emit_wj_level_lost"]
