@@ -1,20 +1,96 @@
-[gd_scene load_steps=6 format=3 uid="uid://tp6j5tlonkh4"]
+[gd_scene load_steps=12 format=3 uid="uid://tp6j5tlonkh4"]
 
-[ext_resource type="Texture2D" uid="uid://bfks3mqxcd745" path="res://assets/player.png" id="1_6i1jd"]
-[ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="1_yy041"]
+[ext_resource type="Texture2D" uid="uid://tdp8isj8i6n3" path="res://assets/characters/General Sword Animations.png" id="1_j7whg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60bb8"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s72ww"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(0, 0, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr8qb"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(0, 664, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajp6x"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(730, 664, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhy4t"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(0, 1328, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvs0j"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(730, 1328, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aljjc"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(1460, 1328, 730, 664)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah3qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s72ww")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr8qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajp6x")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhy4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhy4t")
+}],
+"loop": false,
+"name": &"swing1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvs0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvs0j")
+}],
+"loop": false,
+"name": &"swing2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aljjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aljjc")
+}],
+"loop": false,
+"name": &"swing3",
+"speed": 5.0
+}]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_n0f7d"]
-radius = 1.5
+radius = 1.25
 
 [sub_resource type="PrismMesh" id="PrismMesh_nw3im"]
 
 [node name="character_body" type="CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_60bb8")
-script = ExtResource("1_yy041")
-sprite_texture = ExtResource("1_6i1jd")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
 remote_path = NodePath("../SpriteOrigin")
@@ -24,29 +100,36 @@ update_rotation = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 top_level = true
 
-[node name="sprite" type="Sprite3D" parent="SpriteOrigin"]
+[node name="Sprite" type="AnimatedSprite3D" parent="SpriteOrigin"]
 unique_name_in_owner = true
-transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, -0.0900939, 0)
-shaded = true
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0.1, 0)
+billboard = 2
+double_sided = false
 alpha_cut = 2
-texture = ExtResource("1_6i1jd")
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ah3qh")
+animation = &"swing3"
 
-[node name="meleeArea" type="Area3D" parent="."]
+[node name="MeleeArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -6.99382e-08, 0, 6.99382e-08, 1, 0, 0, 0)
 collision_layer = 12
 collision_mask = 12
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meleeArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, -0.7)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeleeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, -0.9)
 shape = SubResource("SphereShape3D_n0f7d")
 
-[node name="Marker3D" type="Marker3D" parent="meleeArea"]
+[node name="Marker3D" type="Marker3D" parent="MeleeArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.085, 0)
 gizmo_extents = 0.84
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="meleeArea/Marker3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeleeArea/Marker3D"]
 transform = Transform3D(0.32, 0, 0, 0, -3.03794e-08, 0.02, 0, -0.695, -8.74228e-10, 0, 0, -0.375)
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("PrismMesh_nw3im")
 skeleton = NodePath("../..")
+
+[node name="AttackComboTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

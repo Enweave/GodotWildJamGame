@@ -8,8 +8,10 @@ var wordlspace : PhysicsDirectSpaceState3D
 
 
 func _ready():
+	super._ready()
+
 	self.attack_damage = 25
-	self.knockback_strength = 40.0
+	self.knockback_strength = 20.0
 	self.move_speed = 10.0
 	%CameraPivot.rotation_degrees.y = 0
 
@@ -51,8 +53,9 @@ func calc_movement(delta):
 		velocity.z = lerp(velocity.z, direction.z * self.move_speed, self.MOVE_LERP)
 
 		if self.is_attacking:
-			velocity.x = clamp(abs(velocity.x), 0, self.move_speed / 4) * sign(velocity.x)
-			velocity.z = clamp(abs(velocity.z), 0, self.move_speed / 4) * sign(velocity.z)
+			var attack_move_speed_limit: float = self.move_speed / (2 + (self.current_combo_swing * 2))
+			velocity.x = clamp(abs(velocity.x), 0, attack_move_speed_limit) * sign(velocity.x)
+			velocity.z = clamp(abs(velocity.z), 0, attack_move_speed_limit) * sign(velocity.z)
 	else:
 		velocity.x = move_toward(velocity.x, 0, self.move_speed)
 		velocity.z = move_toward(velocity.z, 0, self.move_speed)

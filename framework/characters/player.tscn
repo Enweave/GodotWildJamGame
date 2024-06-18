@@ -7,6 +7,10 @@
 [node name="player" type="CharacterBody3D"]
 collision_layer = 4
 script = ExtResource("1_st0lc")
+attack_damage = null
+health = null
+knockback_strength = null
+move_speed = null
 
 [node name="character_body" parent="." instance=ExtResource("2_hg0jc")]
 
@@ -18,5 +22,7 @@ script = ExtResource("3_hwt8f")
 
 [node name="Camera" type="Camera3D" parent="CameraPivot"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.947)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
 fov = 31.8
+
+[editable path="character_body"]
