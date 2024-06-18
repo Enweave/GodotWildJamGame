@@ -28,6 +28,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func update_heading(target: Vector3):
+	# rotate self to face target
+	var _direction = (target - self.global_transform.origin).normalized()
+	_direction.y = 0
+	self.set_quaternion(Quaternion(Vector3.FORWARD, _direction))
 
 func attack():
 	if is_attacking:

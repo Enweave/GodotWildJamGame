@@ -15,7 +15,9 @@ func _ready():
 
 	wordlspace = get_world_3d().get_direct_space_state()
 
-func get_aim_direction() -> Quaternion:
+
+
+func update_heading_from_mouse():
 	var aim_direction = self.global_transform.basis.get_rotation_quaternion()
 
 	# mouse logic
@@ -35,13 +37,12 @@ func get_aim_direction() -> Quaternion:
 		var _direction = self.global_transform.origin.direction_to(_hit_position)
 		aim_direction = Quaternion(Vector3.FORWARD, _direction)
 		
-	return aim_direction
+		self.set_quaternion(aim_direction)
 
 
 func calc_movement(delta):
 	super.calc_movement(delta)
-	# Set player look direction.
-	$character_body/meleeArea.set_quaternion(get_aim_direction())
+	update_heading_from_mouse()
 	
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction = (Vector3(input_dir.x, 0, input_dir.y)).normalized()
