@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var root_pos = root.global_position + root.velocity * OFFSET_FACTOR
+	var root_pos = root.global_position #+ root.velocity * OFFSET_FACTOR
 	# interpolate position of camera
 	var new_pos = self.global_position.lerp(root_pos, delta * LERP_FACTOR)
 	# set position of self

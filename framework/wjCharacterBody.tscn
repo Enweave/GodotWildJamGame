@@ -1,10 +1,87 @@
 [gd_scene load_steps=5 format=3 uid="uid://tp6j5tlonkh4"]
 
-[ext_resource type="Texture2D" uid="uid://bfks3mqxcd745" path="res://assets/player.png" id="1_6i1jd"]
+[ext_resource type="Texture2D" uid="uid://tdp8isj8i6n3" path="res://assets/characters/General Sword Animations.png" id="1_j7whg"]
 [ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="1_yy041"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60bb8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s72ww"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(0, 0, 730, 664)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr8qb"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(0, 664, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajp6x"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(730, 664, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhy4t"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(0, 1328, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvs0j"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(730, 1328, 730, 664)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aljjc"]
+atlas = ExtResource("1_j7whg")
+region = Rect2(1460, 1328, 730, 664)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah3qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s72ww")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr8qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajp6x")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhy4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhy4t")
+}],
+"loop": false,
+"name": &"swing1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvs0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvs0j")
+}],
+"loop": false,
+"name": &"swing2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aljjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aljjc")
+}],
+"loop": false,
+"name": &"swing3",
+"speed": 5.0
+}]
 [sub_resource type="PrismMesh" id="PrismMesh_nw3im"]
 
 [node name="character_body" type="CollisionShape3D"]
@@ -32,12 +109,14 @@ update_rotation = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 top_level = true
 
-[node name="sprite" type="Sprite3D" parent="SpriteOrigin"]
+[node name="Sprite" type="AnimatedSprite3D" parent="SpriteOrigin"]
 unique_name_in_owner = true
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, -0.0900939, 0)
 shaded = true
 alpha_cut = 2
-texture = ExtResource("1_6i1jd")
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ah3qh")
+animation = &"swing3"
 
 [node name="WeaponHotspot" type="Marker3D" parent="."]
 unique_name_in_owner = true
