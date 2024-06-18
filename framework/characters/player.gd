@@ -2,20 +2,42 @@ extends wjCharacterBase
 
 class_name wjPlayer
 
+@export var ability_attack_melee_scene: PackedScene = null
+var ability_attack_melee: wjAbilityBase = null
+@export var ability_attack_ranged_scene: PackedScene = null
+var ability_attack_ranged: wjAbilityBase = null
+@export var ability_extra_scene: PackedScene = null
+var ability_extra: wjAbilityBase = null
 
-var cached_aim_direction : Quaternion = Quaternion()
 var wordlspace : PhysicsDirectSpaceState3D 
 
-
 func _ready():
-	self.attack_damage = 25
-	self.knockback_strength = 40.0
-	self.move_speed = 10.0
+	character_body = %character_body
+	character_body.update_health_display(str(health))
+	if ability_attack_melee_scene != null:
+		ability_attack_melee = ability_attack_melee_scene.instantiate()
+		character_body.attach_ability(ability_attack_melee)
+		ability_attack_melee.valid_target_factions = can_attack_factions
+	if ability_attack_ranged_scene != null:
+		ability_attack_ranged = ability_attack_ranged_scene.instantiate()
+		character_body.attach_ability(ability_attack_ranged)
+		ability_attack_melee.valid_target_factions = can_attack_factions
+	if ability_extra_scene != null:
+		ability_extra = ability_extra_scene.instantiate()
+		character_body.attach_ability(ability_extra)
+
 	%CameraPivot.rotation_degrees.y = 0
 
 	wordlspace = get_world_3d().get_direct_space_state()
 
-
+func use_attack_melee():
+	if ability_attack_melee != null:
+		var success = ability_attack_melee.activate()
+		if success:
+			self.current_move_speed = self.move_speed / 2
+			await get_tree().create_timer(ability_attack_melee.ability_cooldown_sec).timeout
+			self.current_move_speed = self.move_speed
+	return false
 
 func update_heading_from_mouse():
 	var aim_direction = self.global_transform.basis.get_rotation_quaternion()
@@ -47,17 +69,17 @@ func calc_movement(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction = (Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = lerp(velocity.x, direction.x * self.move_speed, self.MOVE_LERP)
-		velocity.z = lerp(velocity.z, direction.z * self.move_speed, self.MOVE_LERP)
+		velocity.x = lerp(velocity.x, direction.x * self.current_move_speed, self.MOVE_LERP)
+		velocity.z = lerp(velocity.z, direction.z * self.current_move_speed, self.MOVE_LERP)
 
 		if self.is_attacking:
-			velocity.x = clamp(abs(velocity.x), 0, self.move_speed / 4) * sign(velocity.x)
-			velocity.z = clamp(abs(velocity.z), 0, self.move_speed / 4) * sign(velocity.z)
+			velocity.x = clamp(abs(velocity.x), 0, self.current_move_speed / 4) * sign(velocity.x)
+			velocity.z = clamp(abs(velocity.z), 0, self.current_move_speed / 4) * sign(velocity.z)
 	else:
-		velocity.x = move_toward(velocity.x, 0, self.move_speed)
-		velocity.z = move_toward(velocity.z, 0, self.move_speed)
+		velocity.x = move_toward(velocity.x, 0, self.current_move_speed)
+		velocity.z = move_toward(velocity.z, 0, self.current_move_speed)
 
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton && event.is_pressed():
-		attack()
+		use_attack_melee.call_deferred()

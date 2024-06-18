@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://deopkjrqiig35"]
+
+[ext_resource type="Script" path="res://framework/abilities/swordAttackAbility.gd" id="1_wquu7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qqda6"]
+radius = 1.0
+
+[node name="SwordAttackAbility" type="Node3D"]
+script = ExtResource("1_wquu7")
+knockback_strength = 60.0
+ability_name = "Sword Melee"
+ability_description = "Slashing!"
+ability_cooldown_sec = 0.2
+ability_damage = 10.0
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_qqda6")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

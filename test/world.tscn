@@ -61,3 +61,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3606, 1.9874, 14.5575)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5.9894, 4.20007)
+
+[connection signal="character_died" from="Player" to="." method="_emit_wj_level_lost"]

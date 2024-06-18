@@ -1,17 +1,29 @@
 extends CharacterBody3D
 class_name wjCharacterBase
 
+signal character_died
+
+enum wjFactionEnum {
+	PLAYER,
+	ENEMY,
+	NEUTRAL,
+	DESTRUCTIBLE
+}
 
 const MOVE_LERP = 0.1
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@export var attack_damage: int = 10
-@export var health: int = 100
-@export var knockback_strength: float = 20.0
+@export var health: float = 100
+@export var faction: wjFactionEnum = wjFactionEnum.NEUTRAL
+@export var can_attack_factions: Array = [wjFactionEnum.ENEMY]
 @export var move_speed: float = 5.0
+@export var reaction_time_sec: float = 1.
+@onready var current_move_speed: float = move_speed
 
+var character_body : wjCharacterBody = null
 var is_attacking = false
 var is_dead = false
 
@@ -34,28 +46,14 @@ func update_heading(target: Vector3):
 	_direction.y = 0
 	self.set_quaternion(Quaternion(Vector3.FORWARD, _direction))
 
-func attack():
-	if is_attacking:
-		return
-
-	is_attacking = true
-
-	for enemy in $character_body/meleeArea.get_overlapping_bodies():
-		if !(enemy is wjEnemy):
-			continue
-		
-		enemy.velocity += Vector3(1, 0, 1) * ((enemy.global_position - global_position).normalized() * knockback_strength)
-		enemy.take_damage(attack_damage)
-	
-	await(get_tree().create_timer(0.15).timeout)
-	is_attacking = false
-
-
 func take_damage(damage_amount: int):
 	health -= damage_amount
+	
+	if character_body != null:
+		character_body.update_health_display(str(health))
 
 	if health <= 0:
 		is_dead = true
-
+		character_died.emit()
 		await(get_tree().create_timer(1.0).timeout)
 		queue_free()
