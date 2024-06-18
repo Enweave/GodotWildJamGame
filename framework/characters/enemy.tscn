@@ -1,16 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8ufluy1fjuu6"]
+[gd_scene load_steps=6 format=3 uid="uid://c8ufluy1fjuu6"]
 
 [ext_resource type="Script" path="res://framework/characters/enemy.gd" id="1_my15b"]
+[ext_resource type="PackedScene" uid="uid://deopkjrqiig35" path="res://framework/abilities/swordAttackAbility.tscn" id="2_h8qun"]
 [ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="2_m2dqo"]
 [ext_resource type="Texture2D" uid="uid://cig418wjlkhjg" path="res://assets/enemy.png" id="3_7gs0q"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xf5r5"]
-radius = 5.0
+radius = 10.0
 
 [node name="Enemy" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_my15b")
+ability_attack_melee_scene = ExtResource("2_h8qun")
+health = null
+faction = 1
+can_attack_factions = [0, 2, 3]
+move_speed = null
+reaction_time_sec = null
 
 [node name="character_body" parent="." instance=ExtResource("2_m2dqo")]
+unique_name_in_owner = true
 sprite_texture = ExtResource("3_7gs0q")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -18,6 +28,8 @@ avoidance_enabled = true
 
 [node name="VisionArea" type="Area3D" parent="."]
 unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
 shape = SubResource("SphereShape3D_xf5r5")
