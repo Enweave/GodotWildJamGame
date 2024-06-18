@@ -25,8 +25,8 @@ func update_heading_from_mouse():
 	var ray_origin = %Camera.project_ray_origin(mouse_position)
 	var ray = PhysicsRayQueryParameters3D.create(
 		ray_origin,
-		ray_origin + %Camera.project_ray_normal(mouse_position) * 2000,
-		0b1
+		ray_origin + %Camera.project_ray_normal(mouse_position) * 2000
+		,0b101
 	)
 	
 	var hit_result = wordlspace.intersect_ray(ray)

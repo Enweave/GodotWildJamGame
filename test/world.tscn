@@ -30,6 +30,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_00ots")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/floor"]
+collision_layer = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floor/StaticBody3D"]
 transform = Transform3D(44.69, 0, 0, 0, 44.69, 0, 0, 0, 44.69, 0, 0, 0)
@@ -37,7 +38,7 @@ shape = SubResource("HeightMapShape3D_acr72")
 
 [node name="Player" parent="." instance=ExtResource("1_q5p4n")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05382, 5.10408, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4697, 5.10408, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.709693, 0.609109, -0.354008, -0.614513, -0.289463, 0.733883, 0.344542, 0.738375, 0.579736, 0, 6.53708, 16.4479)

@@ -5,7 +5,8 @@
 [ext_resource type="Script" path="res://framework/characters/playerCameraHelper.gd" id="3_hwt8f"]
 
 [node name="player" type="CharacterBody3D"]
-collision_layer = 4
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_st0lc")
 
 [node name="character_body" parent="." instance=ExtResource("2_hg0jc")]
