@@ -34,7 +34,6 @@ func attack():
 		return
 
 	is_attacking = true
-	# velocity *= Vector3(0.2, 1, 0.2)
 
 	for enemy in $character_body/meleeArea.get_overlapping_bodies():
 		if !(enemy is wjEnemy):
@@ -53,6 +52,5 @@ func take_damage(damage_amount: int):
 	if health <= 0:
 		is_dead = true
 
-		# set_physics_process(false)
 		await(get_tree().create_timer(1.0).timeout)
 		queue_free()

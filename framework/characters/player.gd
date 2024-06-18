@@ -43,8 +43,6 @@ func calc_movement(delta):
 	# Set player look direction.
 	$character_body/meleeArea.set_quaternion(get_aim_direction())
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction = (Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
