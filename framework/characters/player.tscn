@@ -12,9 +12,11 @@ collision_mask = 3
 script = ExtResource("1_st0lc")
 ability_attack_melee_scene = ExtResource("2_vxcye")
 ability_extra_scene = ExtResource("3_tqnnt")
+health = null
 faction = 0
 can_attack_factions = [1, 3]
 move_speed = 8.0
+reaction_time_sec = null
 
 [node name="character_body" parent="." instance=ExtResource("2_hg0jc")]
 unique_name_in_owner = true

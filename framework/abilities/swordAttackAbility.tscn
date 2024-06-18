@@ -10,7 +10,7 @@ script = ExtResource("1_wquu7")
 knockback_strength = 40.0
 ability_name = "Sword Melee"
 ability_description = "Slashing!"
-ability_cooldown_sec = 0.2
+ability_cooldown_sec = 0.5
 ability_damage = 10.0
 
 [node name="Area3D" type="Area3D" parent="."]

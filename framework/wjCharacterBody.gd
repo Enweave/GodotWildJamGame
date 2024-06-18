@@ -10,7 +10,8 @@ func attach_ability(ability: wjAbilityBase):
 func _ready():
 	update_action_display('')
 	update_health_display('')
-	%sprite.texture = sprite_texture
+	# TODO: Add the ability to change the sprite texture
+	# %sprite.texture = sprite_texture
 
 func update_health_display(health: String):
 	%health.text = health

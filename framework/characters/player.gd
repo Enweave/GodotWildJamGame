@@ -31,14 +31,6 @@ func _ready():
 
 	wordlspace = get_world_3d().get_direct_space_state()
 
-func use_attack_melee():
-	if ability_attack_melee != null:
-		var success = ability_attack_melee.activate()
-		if success:
-			self.current_move_speed = self.move_speed / 2
-			await get_tree().create_timer(ability_attack_melee.ability_cooldown_sec).timeout
-			self.current_move_speed = self.move_speed
-	return false
 
 func use_ability_extra():
 	if ability_extra != null:
@@ -84,7 +76,7 @@ func calc_movement(delta):
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton && event.is_pressed():
-		use_attack_melee.call_deferred()
+		use_attack_melee.call_deferred(ability_attack_melee)
 
 	if Input.is_action_pressed("dash"):
 		use_ability_extra()
