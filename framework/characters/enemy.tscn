@@ -10,10 +10,6 @@ radius = 10.0
 [node name="Enemy" type="CharacterBody3D"]
 collision_layer = 8
 script = ExtResource("1_my15b")
-attack_damage = null
-health = null
-knockback_strength = null
-move_speed = null
 
 [node name="character_body" parent="." instance=ExtResource("2_m2dqo")]
 sprite_texture = ExtResource("3_7gs0q")
