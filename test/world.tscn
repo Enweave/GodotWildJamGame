@@ -40,7 +40,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05382, 5.10408, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.869995, -0.154948, 0.468082, -0.493061, -0.273402, 0.825919, 0, -0.949338, -0.314258, 0, 6.53708, 0)
+transform = Transform3D(-0.709693, 0.609109, -0.354008, -0.614513, -0.289463, 0.733883, 0.344542, 0.738375, 0.579736, 0, 6.53708, 16.4479)
 shadow_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_4iivo")]
