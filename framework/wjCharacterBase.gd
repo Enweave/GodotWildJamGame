@@ -95,9 +95,6 @@ func track_animation_state():
 			sprite.play("run")
 	elif sprite.animation != "idle":
 		sprite.play("idle")
-
-	if faction == wjFactionEnum.PLAYER:
-		print(looking_direction)
 	
 	if looking_direction.x > 0 && !sprite.flip_h:
 		sprite.flip_h = true
