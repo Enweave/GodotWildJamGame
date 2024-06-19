@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2f7uttjd5fc0"]
+
+[ext_resource type="PackedScene" uid="uid://dpxnh6xemy2dn" path="res://scenes/Test/level.tscn" id="1_ja55o"]
+[ext_resource type="Texture2D" uid="uid://bbemp73jnluun" path="res://scenes/Test/sky2.png" id="2_tb0s8"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sv3bf"]
+panorama = ExtResource("2_tb0s8")
+
+[sub_resource type="Sky" id="Sky_2pci7"]
+sky_material = SubResource("PanoramaSkyMaterial_sv3bf")
+
+[sub_resource type="Environment" id="Environment_4fd86"]
+background_mode = 1
+background_color = Color(0.112894, 4.89249e-05, 0.151439, 1)
+background_energy_multiplier = 0.4
+sky = SubResource("Sky_2pci7")
+sky_custom_fov = 127.2
+sky_rotation = Vector3(0, 1.82736, 0)
+ambient_light_source = 3
+ambient_light_color = Color(0.282911, 0.045696, 0.331479, 1)
+ambient_light_sky_contribution = 0.9
+reflected_light_source = 2
+tonemap_mode = 1
+tonemap_exposure = 1.1
+
+[node name="3DWorld" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943686, 0.330844, 0, -0.330844, 0.943686, 1.11431, 3.02525, 9.67426)
+
+[node name="Level" parent="." instance=ExtResource("1_ja55o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.688938, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.994524, 0.104511, 0, -0.104511, 0.994524, 0.890552, 1.48226, 0)
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 30.0
+omni_attenuation = 2.21914
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.994524, 0.104511, 0, -0.104511, 0.994524, 1.36633, 0.918181, 0)
+shadow_enabled = true
+shadow_opacity = 0.5
+shadow_blur = 2.0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 94.6
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4fd86")
