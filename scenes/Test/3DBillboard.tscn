@@ -32,11 +32,13 @@ sky_rotation = Vector3(0, 1.82736, 0)
 ambient_light_source = 3
 ambient_light_color = Color(0.282911, 0.045696, 0.331479, 1)
 ambient_light_sky_contribution = 0.9
+ambient_light_energy = 12.0
 reflected_light_source = 2
 tonemap_mode = 1
 fog_enabled = true
-fog_light_color = Color(0.364572, 0.395733, 0.444712, 1)
-fog_light_energy = 0.01
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.1
+fog_density = 0.02
 
 [node name="3DWorld" type="Node3D"]
 
@@ -57,32 +59,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0180912, -5.7762)
 
 [node name="Sprite3D" parent="Level/Trees/Background Trees" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3925, 11.0643, -1.31013)
+shaded = false
 
 [node name="Sprite3D2" type="Sprite3D" parent="Level/Trees/Background Trees" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 22.0137, 15.117, -15.9155)
 billboard = 2
-shaded = true
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_k0wg2")
 
 [node name="Sprite3D5" type="Sprite3D" parent="Level/Trees/Background Trees" index="2"]
 transform = Transform3D(0.7, 0, 0, 0, 2.5, 0, 0, 0, 1, 19.8194, 22.8718, -37.0449)
 billboard = 2
-shaded = true
 texture_filter = 0
 texture = ExtResource("2_k0wg2")
 
 [node name="Sprite3D8" type="Sprite3D" parent="Level/Trees/Background Trees" index="3"]
 transform = Transform3D(0.7, 0, 0, 0, 2.5, 0, 0, 0, 1, 12.3721, 22.8718, -37.0449)
 billboard = 2
-shaded = true
 texture_filter = 0
 texture = ExtResource("2_k0wg2")
 
 [node name="Sprite3D9" type="Sprite3D" parent="Level/Trees/Background Trees" index="4"]
 transform = Transform3D(0.8, 0, 0, 0, 2.5, 0, 0, 0, 1, 12.3721, 22.8718, -37.0449)
 billboard = 2
-shaded = true
 texture_filter = 0
 texture = ExtResource("2_k0wg2")
 
@@ -90,7 +90,6 @@ texture = ExtResource("2_k0wg2")
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -8.78167, 15.3367, -20.4037)
 flip_h = true
 billboard = 2
-shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_8qysm")
@@ -99,7 +98,6 @@ texture = ExtResource("2_8qysm")
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 20.1008, 15.3367, -20.4037)
 flip_h = true
 billboard = 2
-shaded = true
 texture_filter = 0
 texture = ExtResource("2_8qysm")
 
@@ -120,32 +118,26 @@ texture = ExtResource("2_8qysm")
 
 [node name="Sprite3D3" parent="Level/Trees/Background Trees" index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7442, 11.8982, 8.44915)
+shaded = false
 
-[node name="Sprite3D10" type="Sprite3D" parent="Level/Trees/Background Trees" index="10"]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -5.88983, 11.8982, 26.0239)
-visible = false
-billboard = 2
-shaded = true
-alpha_cut = 2
-texture_filter = 0
-texture = ExtResource("3_m2wpq")
-
-[node name="CenterThickTree" type="Sprite3D" parent="Level/Trees/Background Trees" index="11"]
+[node name="CenterThickTree" type="Sprite3D" parent="Level/Trees/Background Trees" index="10"]
 transform = Transform3D(6, 0, 0, 0, 2.5, 0, 0, 0, 1, 6.63822, 24.8966, -66.1276)
 billboard = 2
-shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_m2wpq")
 
-[node name="Sprite3D4" parent="Level/Trees/Background Trees" index="12"]
+[node name="Sprite3D4" parent="Level/Trees/Background Trees" index="11"]
 transform = Transform3D(0.7, 0, 0, 0, 1.4, 0, 0, 0, 1, -29.1089, 13.8332, -17.8456)
+shaded = false
 
-[node name="Sprite3D6" parent="Level/Trees/Background Trees" index="13"]
+[node name="Sprite3D6" parent="Level/Trees/Background Trees" index="12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5441, 4.02501, -6.51601)
+shaded = false
 
-[node name="Sprite3D7" parent="Level/Trees/Background Trees" index="14"]
+[node name="Sprite3D7" parent="Level/Trees/Background Trees" index="13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9781, 5.11721, -63.1878)
+shaded = false
 
 [node name="Midground Trees" parent="Level/Trees" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54673, 0, 0)
@@ -190,17 +182,24 @@ texture_filter = 0
 texture = ExtResource("5_d0nc6")
 
 [node name="Sprite3D12" type="Sprite3D" parent="Level/Trees/Bushes" index="7"]
-transform = Transform3D(0.999151, 0, 0.0411955, 0, 1, 0, -0.0411955, 0, 0.999151, 9.0982, 1.48397, 16.6546)
+transform = Transform3D(0.999151, 0, 0.0411955, 0, 1, 0, -0.0411955, 0, 0.999151, -22.4535, 1.48397, -7.6031)
 flip_h = true
 shaded = true
 texture_filter = 0
 texture = ExtResource("5_d0nc6")
 
-[node name="Sprite3D2" parent="Level/Trees/Bushes" index="8"]
+[node name="Sprite3D13" type="Sprite3D" parent="Level/Trees/Bushes" index="8"]
+transform = Transform3D(0.999151, 0, 0.0411955, 0, 1, 0, -0.0411955, 0, 0.999151, -22.4535, 1.48397, -7.6031)
+flip_h = true
+shaded = true
+texture_filter = 0
+texture = ExtResource("5_d0nc6")
+
+[node name="Sprite3D2" parent="Level/Trees/Bushes" index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2305, 1.48397, 13.6883)
 texture = ExtResource("7_7520r")
 
-[node name="Sprite3D3" type="Sprite3D" parent="Level/Trees/Bushes" index="9"]
+[node name="Sprite3D3" type="Sprite3D" parent="Level/Trees/Bushes" index="10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4725, 1.48397, 4.08082)
 billboard = 2
 shaded = true
@@ -209,6 +208,7 @@ texture = ExtResource("7_7520r")
 
 [node name="ForegroundTree" parent="Level/Trees/ForegroundTrees" index="0"]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -1.88055, 9.9995, 18.9336)
+shaded = false
 alpha_cut = 0
 
 [node name="Sprite3D2" type="Sprite3D" parent="Level/Trees/ForegroundTrees" index="1"]
@@ -336,7 +336,7 @@ texture = ExtResource("2_k0wg2")
 [node name="Fogs" type="Node3D" parent="Level"]
 
 [node name="Fog1" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.78232, 2.675, -28.2427)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.77612, 2.7249, -35.4922)
 flip_h = true
 modulate = Color(1, 1, 1, 0.137255)
 billboard = 1
@@ -346,67 +346,67 @@ texture = ExtResource("7_sgl3j")
 [node name="Fog16" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(10, 0, 0, 0, 13, 0, 0, 0, 10, 3.78232, 13.0904, -137.746)
 flip_h = true
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.411765)
 billboard = 1
 texture_filter = 0
 texture = ExtResource("7_sgl3j")
 
 [node name="Fog7" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(2.25194, -0.140774, 0.645922, 0.127007, 2.49603, 0.0364293, -1.07825, 0, 1.35331, -18.7234, 5.29529, -59.6618)
-modulate = Color(1, 1, 1, 0.137255)
+transform = Transform3D(2.25194, -0.140774, 0.645922, 0.127007, 2.49603, 0.0364293, -1.07825, 0, 1.35331, -28.6223, 5.29529, -38.1621)
+modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("7_sgl3j")
 
 [node name="Fog13" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(5.40467, -0.337857, 1.55021, 0.304817, 5.99048, 0.0874302, -2.58779, 1.11759e-08, 3.24795, -55.2272, 5.29529, -65.9255)
-modulate = Color(1, 1, 1, 0.137255)
+transform = Transform3D(5.40467, -0.563094, 1.55021, 0.304817, 9.98413, 0.0874302, -2.58779, 7.45058e-08, 3.24795, -55.2272, 10.2311, -65.9255)
+modulate = Color(1, 1, 1, 0.294118)
 texture_filter = 0
 texture = ExtResource("7_sgl3j")
 
 [node name="Fog14" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(5.40467, -0.337857, 1.55021, 0.304817, 5.99048, 0.0874302, -2.58779, 1.11759e-08, 3.24795, -31.1717, 5.29529, -92.1555)
+transform = Transform3D(5.40467, -0.394166, 1.55021, 0.304817, 6.98889, 0.0874302, -2.58779, 5.21541e-08, 3.24795, -31.1717, 5.29529, -92.1555)
 flip_h = true
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("7_sgl3j")
 
 [node name="Fog2" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0329, 5.60321, 4.70128)
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("8_nqgte")
 
 [node name="Fog8" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 13.5564, 5.60321, -76.6064)
-modulate = Color(1, 1, 1, 0.137255)
+transform = Transform3D(2.5, 0, 0, 0, 5, 0, 0, 0, 2, 11.4346, 4.94867, -83.8143)
+modulate = Color(1, 1, 1, 0.333333)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("8_nqgte")
 
 [node name="Fog9" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(1.5369, 0, -1.27982, 0, 2, 0, 1.27982, 0, 1.5369, 53.086, 5.60321, -71.3299)
+transform = Transform3D(1.5369, 0, -1.27982, 0, 3, 0, 1.27982, 0, 1.5369, 53.086, 13.0369, -68.6392)
 flip_h = true
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.333333)
 texture_filter = 0
 texture = ExtResource("8_nqgte")
 
 [node name="Fog15" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(1.79231, 0, -0.887488, 0, 2, 0, 0.887488, 0, 1.79231, 39.6958, 5.60321, -45.7408)
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("8_nqgte")
 
 [node name="Fog3" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9337, 2.61724, -14.6484)
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("9_6pwxk")
 
 [node name="Fog10" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.121, 5.60321, 1.97739)
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("9_6pwxk")
@@ -414,60 +414,67 @@ texture = ExtResource("9_6pwxk")
 [node name="Fog4" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(0.997016, 0, -0.0771889, 0, 1, 0, 0.0771889, 0, 0.997016, -16.0676, 5.60321, 6.89842)
 flip_h = true
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("10_2k0f4")
 
 [node name="Fog5" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.83948, 5.43629, 20.6911)
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("11_wvmy3")
 
 [node name="Fog11" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(0.99761, 0, 0.13819, 0, 1, 0, -0.0690948, 0, 1.99522, -9.7263, 5.43629, 13.605)
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("11_wvmy3")
 
 [node name="Fog6" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(0.923826, 0, 0.382812, 0, 1.5, 0, -0.382812, 0, 0.923826, -31.0901, 5.60321, -12.9572)
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("12_trq66")
 
 [node name="Fog12" type="Sprite3D" parent="Level/Fogs"]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 10.8172, 5.60321, 16.6356)
 flip_h = true
-modulate = Color(1, 1, 1, 0.137255)
+modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("12_trq66")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.994524, 0.104511, 0, -0.104511, 0.994524, 0.890552, 12.1845, 9.75632)
+visible = false
 light_energy = 16.0
 light_specular = 5.995
 shadow_enabled = true
+shadow_opacity = 0.4
+shadow_blur = 10.0
 distance_fade_enabled = true
+distance_fade_shadow = 15.0
 omni_range = 150.0
 omni_attenuation = 1.56917
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.994524, 0.104511, 0, -0.104511, 0.994524, 1.50535, 4.34369, 16.8866)
-light_energy = 2.0
+transform = Transform3D(1, 0, 0, 0, 0.994524, 0.104511, 0, -0.104511, 0.994524, 1.50535, 12.9565, 12.0434)
+light_energy = 16.0
 light_specular = 4.379
+shadow_enabled = true
 distance_fade_enabled = true
 omni_range = 27.582
-omni_attenuation = 3.86375
+omni_attenuation = 1.23115
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.994524, 0.104511, 0, -0.104511, 0.994524, 1.36633, 0.918181, 0)
-visible = false
-shadow_enabled = true
 shadow_opacity = 0.5
 shadow_blur = 2.0
-directional_shadow_fade_start = 1.0
+directional_shadow_split_1 = 0.01
+directional_shadow_split_2 = 0.1
+directional_shadow_split_3 = 1.0
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.081
 directional_shadow_max_distance = 94.6
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -476,7 +483,6 @@ environment = SubResource("Environment_4fd86")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.943686, 0.330844, 0, -0.330844, 0.943686, 2.90614, 3.11381, 12.3579)
 billboard = 2
-alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_7oilu")
 
