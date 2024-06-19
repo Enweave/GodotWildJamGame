@@ -21,7 +21,6 @@ animations = [{
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_ifbm5")
-health = 10.0
 can_attack_factions = [0, 1, 2, 3.0]
 apply_track_animation = false
 

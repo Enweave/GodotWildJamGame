@@ -15,7 +15,8 @@ const MOVE_LERP = 0.1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@export var health: float = 100
+@export var max_health : float = 100
+@onready var health: float = max_health
 @export var faction: wjFactionEnum = wjFactionEnum.NEUTRAL
 @export var can_attack_factions: Array = [wjFactionEnum.ENEMY]
 @export var move_speed: float = 5.0

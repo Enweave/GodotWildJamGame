@@ -37,8 +37,9 @@ func _process(delta):
 
 func _on_action_sensor_body_entered(body:Node3D):
     if body is wjPlayer:
-        action_available = true
-        display_action(true)
+        if not dialogue_in_process:
+            action_available = true
+            display_action(true)
 
 func _on_action_sensor_body_exited(body:Node3D):
     if body is wjPlayer:
