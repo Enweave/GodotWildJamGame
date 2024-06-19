@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpsdd4jaro6vc"]
+
+[ext_resource type="PackedScene" uid="uid://dd8kd153uqtyk" path="res://scenes/Test/snow_block.tscn" id="1_ccinr"]
+
+[node name="MeshLib" type="Node3D"]
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("1_ccinr")]
