@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://b28vj6t58mfb1"]
+
+[ext_resource type="Script" path="res://framework/wjLevel.gd" id="1_hmeae"]
+[ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="1_q5p4n"]
+[ext_resource type="Texture2D" uid="uid://bclfpnxa81pu2" path="res://assets/Textures/checker_black_512x512.png" id="1_q6xj8"]
+[ext_resource type="PackedScene" uid="uid://c8ufluy1fjuu6" path="res://framework/characters/enemy.tscn" id="3_4iivo"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_fdmbj"]
+vertices = PackedVector3Array(-21.455, 0.5, -20.8625, -21.455, 0.5, 20.8875, 21.545, 0.5, 20.8875, 21.545, 0.5, -20.8625)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xsdle"]
+size = Vector2(43.91, 42.725)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00ots"]
+albedo_texture = ExtResource("1_q6xj8")
+uv1_scale = Vector3(10.005, 10.005, 10.005)
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_acr72"]
+
+[node name="world" type="Node3D"]
+script = ExtResource("1_hmeae")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_fdmbj")
+
+[node name="floor" type="MeshInstance3D" parent="NavigationRegion3D"]
+mesh = SubResource("PlaneMesh_xsdle")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_00ots")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/floor"]
+collision_layer = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floor/StaticBody3D"]
+transform = Transform3D(44.69, 0, 0, 0, 44.69, 0, 0, 0, 44.69, 0, 0, 0)
+shape = SubResource("HeightMapShape3D_acr72")
+
+[node name="Player" parent="." instance=ExtResource("1_q5p4n")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4697, 5.10408, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.709693, 0.609109, -0.354008, -0.614513, -0.289463, 0.733883, 0.344542, 0.738375, 0.579736, 0, 6.53708, 16.4479)
+shadow_enabled = true
+
+[node name="Enemy" parent="." instance=ExtResource("3_4iivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8183, 1.9874, -9.34763)
+
+[node name="Enemy5" parent="." instance=ExtResource("3_4iivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2493, 1.9874, -9.34763)
+
+[node name="Enemy6" parent="." instance=ExtResource("3_4iivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74922, 1.9874, -13.962)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_4iivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3606, 1.9874, -9.8809)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_4iivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3606, 1.9874, 14.5575)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_4iivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5.9894, 4.20007)
+
+[connection signal="character_died" from="Player" to="." method="_emit_wj_level_lost"]

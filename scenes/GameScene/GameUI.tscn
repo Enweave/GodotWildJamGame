@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://t7dar6vei1qw"]
+[gd_scene load_steps=12 format=3 uid="uid://t7dar6vei1qw"]
 
-[ext_resource type="Script" path="res://scenes/GameScene/GameUI.gd" id="1_bbr52"]
+[ext_resource type="Script" path="res://scenes/GameScene/wjGameUI.gd" id="1_bbr52"]
 [ext_resource type="PackedScene" uid="uid://370aeeqr818m" path="res://scenes/WinScreen/WinScreen.tscn" id="2_glbio"]
 [ext_resource type="PackedScene" uid="uid://dc7g5tb8fwoi3" path="res://scenes/LoseScreen/LoseScreen.tscn" id="3_rr64c"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/PauseMenuController.gd" id="4_4sg42"]
 [ext_resource type="PackedScene" uid="uid://c6j1n6fc1godq" path="res://scenes/Menus/PauseMenu/PauseMenu.tscn" id="5_wd7r8"]
-[ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/LevelLoader.gd" id="6_xx2ge"]
+[ext_resource type="Script" path="res://scenes/GameScene/wjLevelLoader.gd" id="6_ct1tc"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/MusicPlayers/BackgroundMusicPlayer.tscn" id="7_1tpko"]
+[ext_resource type="PackedScene" uid="uid://sm05cere4rje" path="res://levels/level1.tscn" id="7_otc4d"]
 [ext_resource type="Script" path="res://scenes/GameScene/ConfigurableSubViewport.gd" id="7_vs16n"]
 [ext_resource type="Script" path="res://scenes/GameScene/InputDisplayLabel.gd" id="8_mik2y"]
 [ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_game_template/base/scenes/LoadingScreen/LoadingScreen.tscn" id="8_yr4ft"]
@@ -26,11 +27,10 @@ lose_scene = ExtResource("3_rr64c")
 script = ExtResource("4_4sg42")
 pause_menu_packed = ExtResource("5_wd7r8")
 
-[node name="LevelLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
-script = ExtResource("6_xx2ge")
+[node name="wjLevelLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
+script = ExtResource("6_ct1tc")
 level_container = NodePath("../ViewportContainer/ConfigurableSubViewport")
-files = Array[String](["res://scenes/ExampleGameScene/Levels/Level1.tscn", "res://scenes/ExampleGameScene/Levels/Level2.tscn", "res://scenes/ExampleGameScene/Levels/Level3.tscn"])
-directory = "res://scenes/ExampleGameScene/Levels"
+default_level = ExtResource("7_otc4d")
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("7_1tpko")]
 bus = &"Master"
@@ -56,6 +56,7 @@ render_target_update_mode = 4
 script = ExtResource("7_vs16n")
 
 [node name="InputDisplayLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -70,6 +71,5 @@ horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("8_mik2y")
 
-[connection signal="level_load_started" from="LevelLoader" to="." method="_on_level_loader_level_load_started"]
-[connection signal="level_loaded" from="LevelLoader" to="." method="_on_level_loader_level_loaded"]
-[connection signal="levels_finished" from="LevelLoader" to="." method="_on_level_loader_levels_finished"]
+[connection signal="wj_level_load_started" from="wjLevelLoader" to="." method="_on_level_loader_level_load_started"]
+[connection signal="wj_level_loaded" from="wjLevelLoader" to="." method="_on_level_loader_level_loaded"]

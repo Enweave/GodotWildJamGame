@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3g0f358fp0su"]
+
+[ext_resource type="Script" path="res://framework/abilities/dashAbility.gd" id="1_ud760"]
+
+[node name="dashAbility" type="Node3D"]
+script = ExtResource("1_ud760")
+ability_range_meters = 5.0

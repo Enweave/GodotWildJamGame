@@ -1,0 +1,13 @@
+~ start
+
+do set_slide('res://assets/slides/Slide 1.png')
+: In the days of the first Shapesettlers, they told of a beast called Snow Fox that is as white as the deepest nethers of the Withered lands, with a long snout and gangly limbs tinged red as if dipped in an inkwell of blood.
+do set_slide('res://assets/slides/Slide 2.png')
+: The tales would describe this ghostly beast stealing children whilst they played in the forest leaving no more than a trail of blood and tracks from its 6 fingered claws having carved deep into wet earth.
+do set_slide('res://assets/slides/Slide 3.png')
+: In the beginning, the tribe would search the Withered lands, knowing they were in a race against time but often the searchers would never return and little was found of them.
+do set_slide('res://assets/slides/Slide 4.png')
+: It was after the loss of countless search parties, the King made a decree. Shapesettlers would build walls with large, heavy gates and it would be forbidden to be outside them at night. Saving the many at the sacrifice of the few.
+do set_slide('res://assets/slides/Slide 5.png')
+: Never again was a Shapesettler lost to a Snow Fox…until today. When the general’s son, dared by his kin to prove himself with a feat of bravery, snuck beyond the wall at night. When morning broke, and the gates were opened, sentinels found a trail of blood and the same 6 fingered claw marks scarring the earth.
+=> END
