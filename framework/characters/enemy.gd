@@ -45,6 +45,8 @@ func calc_movement(delta):
 		var next_location = nav_agent.get_next_path_position()
 		var new_velocity = (next_location - current_location).normalized() * self.move_speed
 
+		self.looking_direction = new_velocity
+
 		new_velocity = new_velocity.move_toward(velocity, self.move_speed * delta)
 		nav_agent.velocity = new_velocity
 		update_heading(next_location)

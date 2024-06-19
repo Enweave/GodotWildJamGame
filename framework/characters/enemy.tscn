@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8ufluy1fjuu6"]
+[gd_scene load_steps=7 format=3 uid="uid://c8ufluy1fjuu6"]
 
 [ext_resource type="Script" path="res://framework/characters/enemy.gd" id="1_my15b"]
 [ext_resource type="PackedScene" uid="uid://deopkjrqiig35" path="res://framework/abilities/swordAttackAbility.tscn" id="2_h8qun"]
 [ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="2_m2dqo"]
 [ext_resource type="Texture2D" uid="uid://cig418wjlkhjg" path="res://assets/enemy.png" id="3_7gs0q"]
+[ext_resource type="SpriteFrames" uid="uid://ccngynn0hb3xs" path="res://framework/characters/EnemySpriteFrames.tres" id="5_chdrt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xf5r5"]
 radius = 10.0
@@ -13,15 +14,16 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_my15b")
 ability_attack_melee_scene = ExtResource("2_h8qun")
-health = null
 faction = 1
 can_attack_factions = [0, 2, 3]
-move_speed = null
-reaction_time_sec = null
 
 [node name="character_body" parent="." instance=ExtResource("2_m2dqo")]
 unique_name_in_owner = true
 sprite_texture = ExtResource("3_7gs0q")
+
+[node name="Sprite" parent="character_body/SpriteOrigin" index="0"]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.0594318, -0.583653, 0)
+sprite_frames = ExtResource("5_chdrt")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
@@ -37,3 +39,5 @@ shape = SubResource("SphereShape3D_xf5r5")
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="VisionArea" to="." method="_on_vision_area_body_exited"]
+
+[editable path="character_body"]

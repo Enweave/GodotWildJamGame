@@ -57,6 +57,8 @@ func update_heading_from_mouse():
 		aim_direction = Quaternion(Vector3.FORWARD, _direction)
 		
 		self.set_quaternion(aim_direction)
+	
+	self.looking_direction = Vector3(-aim_direction.y, 0, 0)
 
 
 func calc_movement(delta):

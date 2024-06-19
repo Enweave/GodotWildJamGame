@@ -29,6 +29,8 @@ var character_body : wjCharacterBody = null
 var is_dead = false
 var anim_is_attacking = false
 var attack_anim_name = "swing1"
+var looking_direction: Vector3
+
 
 func calc_movement(_delta):
 	pass
@@ -75,8 +77,13 @@ func use_attack_melee(ability: wjAbilityBase = null):
 			self.current_move_speed = self.move_speed
 	return false
 
+
 func change_attack_anim_name():
 	attack_anim_name = "swing" + str(randi_range(1, 3))
+
+	if faction == wjFactionEnum.ENEMY:
+		attack_anim_name = "attack"
+
 
 func track_animation_state():
 
@@ -89,7 +96,10 @@ func track_animation_state():
 	elif sprite.animation != "idle":
 		sprite.play("idle")
 
-	if velocity.x > 0 && !sprite.flip_h:
+	if faction == wjFactionEnum.PLAYER:
+		print(looking_direction)
+	
+	if looking_direction.x > 0 && !sprite.flip_h:
 		sprite.flip_h = true
-	elif velocity.x < 0 && sprite.flip_h:
+	elif looking_direction.x < 0 && sprite.flip_h:
 		sprite.flip_h = false

@@ -39,6 +39,8 @@ shape = SubResource("HeightMapShape3D_acr72")
 [node name="Player" parent="." instance=ExtResource("1_q5p4n")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4697, 5.10408, 0)
+health = 100.0
+reaction_time_sec = 1.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.709693, 0.609109, -0.354008, -0.614513, -0.289463, 0.733883, 0.344542, 0.738375, 0.579736, 0, 6.53708, 16.4479)
@@ -46,20 +48,38 @@ shadow_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8183, 1.9874, -9.34763)
+health = 100.0
+move_speed = 5.0
+reaction_time_sec = 1.0
 
 [node name="Enemy5" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2493, 1.9874, -9.34763)
+health = 100.0
+move_speed = 5.0
+reaction_time_sec = 1.0
 
 [node name="Enemy6" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74922, 1.9874, -13.962)
+health = 100.0
+move_speed = 5.0
+reaction_time_sec = 1.0
 
 [node name="Enemy3" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3606, 1.9874, -9.8809)
+health = 100.0
+move_speed = 5.0
+reaction_time_sec = 1.0
 
 [node name="Enemy4" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3606, 1.9874, 14.5575)
+health = 100.0
+move_speed = 5.0
+reaction_time_sec = 1.0
 
 [node name="Enemy2" parent="." instance=ExtResource("3_4iivo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5.9894, 4.20007)
+health = 100.0
+move_speed = 5.0
+reaction_time_sec = 1.0
 
 [connection signal="character_died" from="Player" to="." method="_emit_wj_level_lost"]
