@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cintxmmj3657y"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nmp5q"]
+radius = 0.2
+height = 0.4
+rings = 7
+
+[sub_resource type="PrismMesh" id="PrismMesh_sqfkw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cdcu3"]
+radius = 0.23
+
+[node name="Arrow" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_nmp5q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.348678, 0, 0, 0, -2.71848e-08, -0.0762201, 0, 0.621916, -3.33169e-09, 0, 0, 0.220187)
+mesh = SubResource("PrismMesh_sqfkw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("SphereShape3D_cdcu3")

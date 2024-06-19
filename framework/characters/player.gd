@@ -12,20 +12,18 @@ var ability_extra: wjAbilityBase = null
 var wordlspace : PhysicsDirectSpaceState3D 
 
 func _ready():
-	character_body = %character_body
 	character_body.update_health_display(str(health))
 	if ability_attack_melee_scene != null:
 		ability_attack_melee = ability_attack_melee_scene.instantiate()
-		character_body.attach_ability(ability_attack_melee)
+		character_body.attach_ability(ability_attack_melee, self)
 		ability_attack_melee.valid_target_factions = can_attack_factions
 	if ability_attack_ranged_scene != null:
 		ability_attack_ranged = ability_attack_ranged_scene.instantiate()
-		character_body.attach_ability(ability_attack_ranged)
+		character_body.attach_ability(ability_attack_ranged, self)
 		ability_attack_melee.valid_target_factions = can_attack_factions
 	if ability_extra_scene != null:
 		ability_extra = ability_extra_scene.instantiate()
-		ability_extra.user = self
-		character_body.attach_ability(ability_extra)
+		character_body.attach_ability(ability_extra, self)
 
 	%CameraPivot.rotation_degrees.y = 0
 

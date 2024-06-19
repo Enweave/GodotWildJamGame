@@ -23,6 +23,7 @@ unique_name_in_owner = true
 [node name="Sprite" parent="character_body/SpriteOrigin" index="0"]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.323784, -0.0472908, 0)
 sprite_frames = ExtResource("5_7lt04")
+animation = &"idle"
 
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true

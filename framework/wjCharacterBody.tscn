@@ -36,7 +36,7 @@ transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.0383735, 0)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
-animation = &"idle"
+animation = &""
 
 [node name="WeaponHotspot" type="Marker3D" parent="."]
 unique_name_in_owner = true
@@ -48,10 +48,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19, 0)
 [node name="health" type="Label3D" parent="StatsPivot"]
 unique_name_in_owner = true
 billboard = 1
+modulate = Color(0.866667, 0.0392157, 0, 1)
 text = "100"
 
 [node name="action" type="Label3D" parent="StatsPivot"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
 billboard = 1
+modulate = Color(0.996078, 0.45098, 0.223529, 1)
 text = "ATTACK!"

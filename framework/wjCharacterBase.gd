@@ -20,10 +20,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var can_attack_factions: Array = [wjFactionEnum.ENEMY]
 @export var move_speed: float = 5.0
 @export var reaction_time_sec: float = 1.
+@export var apply_track_animation: bool = true
 @onready var current_move_speed: float = move_speed
 
 var controller_direction : Vector3 = Vector3.ZERO
-var character_body : wjCharacterBody = null
+@onready var character_body : wjCharacterBody = %character_body
 @onready var sprite: AnimatedSprite3D = $character_body/SpriteOrigin/Sprite
 
 var is_dead = false
@@ -38,8 +39,9 @@ func calc_movement(_delta):
 func _physics_process(delta):
 	# Add the gravity.
 	calc_movement(delta)
-
+	
 	track_animation_state()
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -86,15 +88,15 @@ func change_attack_anim_name():
 
 
 func track_animation_state():
-
-	if anim_is_attacking:
-		if sprite.animation != attack_anim_name:
-			sprite.play(attack_anim_name)
-	elif velocity.length() > 0:
-		if sprite.animation != "run":
-			sprite.play("run")
-	elif sprite.animation != "idle":
-		sprite.play("idle")
+	if apply_track_animation:
+		if anim_is_attacking:
+			if sprite.animation != attack_anim_name:
+				sprite.play(attack_anim_name)
+		elif velocity.length() > 0:
+			if sprite.animation != "run":
+				sprite.play("run")
+		elif sprite.animation != "idle":
+			sprite.play("idle")
 	
 	if looking_direction.x > 0 && !sprite.flip_h:
 		sprite.flip_h = true

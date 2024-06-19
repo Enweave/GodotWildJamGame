@@ -21,11 +21,10 @@ func _on_sense_melee_attack_viable():
 
 
 func _ready():
-	character_body = %character_body
 	character_body.update_health_display(str(health))
 	if ability_attack_melee_scene != null:
 		ability_attack_melee = ability_attack_melee_scene.instantiate()
-		character_body.attach_ability(ability_attack_melee)
+		character_body.attach_ability(ability_attack_melee, self)
 		ability_attack_melee.valid_target_factions = can_attack_factions
 		ability_attack_melee.sens_ability_viable.connect(_on_sense_melee_attack_viable)
 

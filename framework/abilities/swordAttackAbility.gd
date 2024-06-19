@@ -10,7 +10,7 @@ func activate() -> bool:
     var success = super.activate()
     if success:
         for target in %Area3D.get_overlapping_bodies():
-            if target is wjCharacterBase:
+            if target is wjCharacterBase and target != user:
                 if target.faction in valid_target_factions:
                     apply_knockback(target)
                     target.take_damage(ability_damage)
