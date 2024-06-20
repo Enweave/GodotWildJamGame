@@ -1,6 +1,6 @@
 extends wjCharacterBase
 
-class_name wjEnemy
+class_name SnowFox
 
 @export var ability_attack_melee_scene: PackedScene = null
 var ability_attack_melee: wjAbilityBase = null

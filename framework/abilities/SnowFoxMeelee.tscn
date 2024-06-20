@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://deopkjrqiig35"]
+[gd_scene load_steps=3 format=3 uid="uid://btef2nvy0svge"]
 
-[ext_resource type="Script" path="res://framework/abilities/swordAttackAbility.gd" id="1_wquu7"]
+[ext_resource type="Script" path="res://framework/abilities/swordAttackAbility.gd" id="1_d718l"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qqda6"]
-radius = 1.0
+radius = 1.764
 
-[node name="SwordAttackMeelee" type="Node3D"]
-script = ExtResource("1_wquu7")
-knockback_strength = 30.0
-ability_name = "SwordAttack"
-ability_description = "Slashing!"
+[node name="SnowFoxMelee" type="Node3D"]
+script = ExtResource("1_d718l")
+knockback_strength = 60.0
+ability_name = "Snow Fox Melee!"
+ability_description = "Reaping!"
 ability_cooldown_sec = 0.5
-ability_damage = 10.0
+ability_damage = 33.0
 
 [node name="Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true
