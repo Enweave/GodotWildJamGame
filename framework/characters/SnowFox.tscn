@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq2t6woh0gjci"]
+
+[ext_resource type="Script" path="res://framework/wjCharacterBase.gd" id="1_ds3wd"]
+[ext_resource type="SpriteFrames" uid="uid://bypwlrqkxd21v" path="res://framework/characters/SnowFoxSprites.tres" id="2_5yych"]
+[ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="2_e5n14"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2732"]
+radius = 2.4891
+height = 5.39238
+
+[sub_resource type="PrismMesh" id="PrismMesh_bipoq"]
+
+[node name="SnowFox" type="CharacterBody3D"]
+collision_layer = 6
+collision_mask = 3
+script = ExtResource("1_ds3wd")
+max_health = 300.0
+faction = 1
+can_attack_factions = [0, 1, 2, 3]
+
+[node name="character_body" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77112, 0)
+shape = SubResource("CapsuleShape3D_l2732")
+script = ExtResource("2_e5n14")
+
+[node name="Marker3D" type="Marker3D" parent="character_body"]
+transform = Transform3D(1, 0, 0, 0, 1, -6.99382e-08, 0, 6.99382e-08, 1, 0, -2.74253, -6.71407e-08)
+gizmo_extents = 0.84
+
+[node name="HeadingIndicator" type="MeshInstance3D" parent="character_body/Marker3D"]
+transform = Transform3D(0.32, 0, 0, 0, -3.03794e-08, 0.02, 0, -0.695, -8.74228e-10, 0, 0, -0.945)
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("PrismMesh_bipoq")
+skeleton = NodePath("")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="character_body"]
+remote_path = NodePath("../SpriteOrigin")
+update_rotation = false
+
+[node name="SpriteOrigin" type="Node3D" parent="character_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77112, 0)
+top_level = true
+
+[node name="Sprite" type="AnimatedSprite3D" parent="character_body/SpriteOrigin"]
+unique_name_in_owner = true
+transform = Transform3D(0.439397, 0, 0, 0, 0.439397, 0, 0, 0, 0.439397, -3.09191, -3.17534, 0)
+centered = false
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = ExtResource("2_5yych")
+animation = &"walk"
+autoplay = "walk"
+frame = 1
+frame_progress = 0.0174291
+
+[node name="WeaponHotspot" type="Marker3D" parent="character_body"]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.665182)
+
+[node name="StatsPivot" type="Node3D" parent="character_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19, 0)
+
+[node name="health" type="Label3D" parent="character_body/StatsPivot"]
+unique_name_in_owner = true
+billboard = 1
+modulate = Color(0.866667, 0.0392157, 0, 1)
+text = "100"
+
+[node name="action" type="Label3D" parent="character_body/StatsPivot"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+billboard = 1
+modulate = Color(0.996078, 0.45098, 0.223529, 1)
+text = "ATTACK!"
