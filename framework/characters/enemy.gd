@@ -8,12 +8,6 @@ var ability_attack_melee: wjAbilityBase = null
 
 var isPlayerInSight = false
 
-func telegraph_and_use_ability(ability: wjAbilityBase):
-	character_body.update_action_display(ability.ability_description)
-	await get_tree().create_timer(reaction_time_sec).timeout
-	character_body.update_action_display('')
-	if !is_dead:	
-		use_attack_melee.call_deferred(ability_attack_melee)
 
 func _on_sense_melee_attack_viable():
 	if ability_attack_melee != null and !is_dead:

@@ -106,3 +106,10 @@ func track_animation_state():
 		sprite.flip_h = true
 	elif looking_direction.x < 0 && sprite.flip_h:
 		sprite.flip_h = false
+
+func telegraph_and_use_ability(ability: wjAbilityBase):
+	character_body.update_action_display(ability.ability_description)
+	await get_tree().create_timer(reaction_time_sec).timeout
+	character_body.update_action_display('')
+	if !is_dead:	
+		use_attack_melee.call_deferred(ability)
