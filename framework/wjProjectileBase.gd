@@ -21,5 +21,5 @@ func fire():
 func _on_body_entered(body:Node):
     if body is wjCharacterBase and body != spawner_ability.user:
         if body.faction in spawner_ability.valid_target_factions:
-            body.take_damage(spawner_ability.ability_damage)
+            body.take_damage(spawner_ability.ability_damage, spawner_ability.user)
             queue_free()

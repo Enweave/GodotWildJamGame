@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name wjCharacterBase
 
 signal character_died
+signal being_attacked_by(damage_amount: float, attacker: wjCharacterBase)
 
 enum wjFactionEnum {
 	PLAYER,
@@ -55,9 +56,12 @@ func update_heading(target: Vector3):
 	self.set_quaternion(Quaternion(Vector3.FORWARD, _direction))
 
 
-func take_damage(damage_amount: int):
+func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
 	health -= damage_amount
 	
+	print("Health: " + str(health) + 'by: ' + str(attacker))
+	being_attacked_by.emit(damage_amount, attacker)
+
 	if character_body != null:
 		character_body.update_health_display(str(health))
 

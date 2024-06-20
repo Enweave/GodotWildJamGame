@@ -13,7 +13,7 @@ func activate() -> bool:
             if target is wjCharacterBase and target != user:
                 if target.faction in valid_target_factions:
                     apply_knockback(target)
-                    target.take_damage(ability_damage)
+                    target.take_damage(ability_damage, user)
     
     return success
 

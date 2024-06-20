@@ -5,7 +5,6 @@ class_name wjEnemy
 @export var ability_attack_melee_scene: PackedScene = null
 var ability_attack_melee: wjAbilityBase = null
 @onready var nav_agent = $NavigationAgent3D
-var player = null
 
 var isPlayerInSight = false
 
@@ -39,8 +38,8 @@ func nav_update_target_location(target: Node3D):
 func calc_movement(delta):
 	# super.calc_movement(delta)
 
-	if isPlayerInSight && !is_dead && player != null:
-		nav_update_target_location(player)
+	if isPlayerInSight && !is_dead && current_target != null:
+		nav_update_target_location(current_target)
 		var current_location = self.global_transform.origin
 		var next_location = nav_agent.get_next_path_position()
 		var new_velocity = (next_location - current_location).normalized() * self.move_speed
@@ -57,10 +56,15 @@ func calc_movement(delta):
 
 func _on_vision_area_body_entered(body):
 	if body is wjPlayer:
-		player = body
+		current_target = body
 		isPlayerInSight = true
 
 func _on_vision_area_body_exited(body):
 	if body is wjPlayer:
 		isPlayerInSight = false
 	
+
+func _on_being_attacked_by(damage_amount:float, attacker:wjCharacterBase = null):
+	if attacker != null:
+		current_target = attacker
+		isPlayerInSight = true
