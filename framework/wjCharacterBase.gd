@@ -32,7 +32,7 @@ var is_dead = false
 var anim_is_attacking = false
 var attack_anim_name = "swing1"
 var looking_direction: Vector3
-
+var current_target: wjCharacterBase = null
 
 func calc_movement(_delta):
 	pass
@@ -79,7 +79,6 @@ func use_attack_melee(ability: wjAbilityBase = null):
 			anim_is_attacking = false
 			self.current_move_speed = self.move_speed
 	return false
-
 
 func change_attack_anim_name():
 	attack_anim_name = "swing" + str(randi_range(1, 3))

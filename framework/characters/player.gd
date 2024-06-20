@@ -16,11 +16,9 @@ func _ready():
 	if ability_attack_melee_scene != null:
 		ability_attack_melee = ability_attack_melee_scene.instantiate()
 		character_body.attach_ability(ability_attack_melee, self)
-		ability_attack_melee.valid_target_factions = can_attack_factions
 	if ability_attack_ranged_scene != null:
 		ability_attack_ranged = ability_attack_ranged_scene.instantiate()
 		character_body.attach_ability(ability_attack_ranged, self)
-		ability_attack_melee.valid_target_factions = can_attack_factions
 	if ability_extra_scene != null:
 		ability_extra = ability_extra_scene.instantiate()
 		character_body.attach_ability(ability_extra, self)
@@ -49,6 +47,10 @@ func update_heading_from_mouse():
 	var hit_result = wordlspace.intersect_ray(ray)
 	
 	if hit_result:
+		if hit_result.collider is wjCharacterBase:
+			current_target = hit_result.collider as wjCharacterBase
+		else:
+			current_target = null
 		var _hit_position = hit_result.position
 		_hit_position.y = self.global_position.y
 		var _direction = self.global_transform.origin.direction_to(_hit_position)
@@ -75,8 +77,11 @@ func calc_movement(delta):
 
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton && event.is_pressed():
+	if Input.is_action_pressed("attack"):
 		use_attack_melee.call_deferred(ability_attack_melee)
+
+	if Input.is_action_pressed("attack_ranged"):
+		use_attack_melee.call_deferred(ability_attack_ranged)
 
 	if Input.is_action_pressed("dash"):
 		use_ability_extra()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4crl7k17l4o1"]
+[gd_scene load_steps=8 format=3 uid="uid://c4crl7k17l4o1"]
 
 [ext_resource type="Script" path="res://framework/characters/player.gd" id="1_st0lc"]
 [ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="2_hg0jc"]
 [ext_resource type="PackedScene" uid="uid://deopkjrqiig35" path="res://framework/abilities/swordAttackAbility.tscn" id="2_vxcye"]
+[ext_resource type="PackedScene" uid="uid://cr8mvxlkh7dvo" path="res://framework/abilities/bowAttackAbility.tscn" id="3_3rapk"]
 [ext_resource type="Script" path="res://framework/characters/playerCameraHelper.gd" id="3_hwt8f"]
 [ext_resource type="PackedScene" uid="uid://3g0f358fp0su" path="res://framework/abilities/dashAbility.tscn" id="3_tqnnt"]
 [ext_resource type="SpriteFrames" uid="uid://cq8lrqsdcjvtu" path="res://framework/characters/PlayerSpriteFrames.tres" id="5_7lt04"]
@@ -12,6 +13,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_st0lc")
 ability_attack_melee_scene = ExtResource("2_vxcye")
+ability_attack_ranged_scene = ExtResource("3_3rapk")
 ability_extra_scene = ExtResource("3_tqnnt")
 faction = 0
 can_attack_factions = [1, 3]

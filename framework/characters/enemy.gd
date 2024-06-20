@@ -12,11 +12,13 @@ var isPlayerInSight = false
 func telegraph_and_use_ability(ability: wjAbilityBase):
 	character_body.update_action_display(ability.ability_description)
 	await get_tree().create_timer(reaction_time_sec).timeout
+	if !is_dead:
+		ability.activate()
 	character_body.update_action_display('')
 	use_attack_melee.call_deferred(ability_attack_melee)
 
 func _on_sense_melee_attack_viable():
-	if ability_attack_melee != null:
+	if ability_attack_melee != null and !is_dead:
 		telegraph_and_use_ability(ability_attack_melee)
 
 
@@ -25,7 +27,6 @@ func _ready():
 	if ability_attack_melee_scene != null:
 		ability_attack_melee = ability_attack_melee_scene.instantiate()
 		character_body.attach_ability(ability_attack_melee, self)
-		ability_attack_melee.valid_target_factions = can_attack_factions
 		ability_attack_melee.sens_ability_viable.connect(_on_sense_melee_attack_viable)
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity:Vector3):

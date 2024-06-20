@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uumkbudhpwho"
-path.s3tc="res://.godot/imported/Loaf.png-057feaec0f2e928fb824346e382cc733.s3tc.ctex"
+uid="uid://debxhwb7ybyt1"
+path.s3tc="res://.godot/imported/Arrow_General.png-b835801edeb663de7a9621ff2d3690ea.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/Loaf.png"
-dest_files=["res://.godot/imported/Loaf.png-057feaec0f2e928fb824346e382cc733.s3tc.ctex"]
+source_file="res://assets/Arrow_General.png"
+dest_files=["res://.godot/imported/Arrow_General.png-b835801edeb663de7a9621ff2d3690ea.s3tc.ctex"]
 
 [params]
 
