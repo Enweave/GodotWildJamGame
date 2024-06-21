@@ -24,6 +24,7 @@ ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoload
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 WjAutoloadGameState="*res://framework/wjAutoloadGameState.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+State="*res://state.gd"
 
 [editor_plugins]
 
@@ -100,7 +101,7 @@ attack_ranged={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/intro.dialogue", "res://dialogue/loaf.dialogue", "res://dialogue/epilogue1.dialogue", "res://dialogue/epilogue2.dialogue", "res://dialogue/rune.journal.dialogue", "res://dialogue/rune.legend.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/intro.dialogue", "res://dialogue/epilogue1.dialogue", "res://dialogue/epilogue2.dialogue", "res://dialogue/rune.journal.dialogue", "res://dialogue/rune.legend.dialogue", "res://dialogue/loaf_start.dialogue", "res://dialogue/loaf_return.dialogue")
 
 [layer_names]
 

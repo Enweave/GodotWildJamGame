@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dbcbi3k0aowen"
+path="res://.godot/imported/loaf_return.dialogue-cc0f94776bab28f6d88932b3bf756daf.tres"
+
+[deps]
+
+source_file="res://dialogue/loaf_return.dialogue"
+dest_files=["res://.godot/imported/loaf_return.dialogue-cc0f94776bab28f6d88932b3bf756daf.tres"]
+
+[params]
+
+defaults=true
