@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dc1pkci7163j2"]
+[gd_scene load_steps=40 format=3 uid="uid://dc1pkci7163j2"]
 
 [ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="1_gd2bh"]
 [ext_resource type="PackedScene" uid="uid://d0uimuel1ij5o" path="res://scenes/Test/world_environment.tscn" id="2_8ckbu"]
@@ -50,6 +50,16 @@ top_radius = 7.0
 bottom_radius = 7.0
 height = 0.05
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dqthw"]
+size = Vector3(15, 7, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gkkj5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u4tml"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5j0oy"]
+size = Vector3(15, 3, 0.5)
+
 [node name="Base" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_gd2bh")]
@@ -84,12 +94,18 @@ layers = 5
 mesh = SubResource("CylinderMesh_l3dha")
 skeleton = NodePath("../Loaf/Campfire")
 
+[node name="Tent" type="Sprite3D" parent="Level/BaseCamp"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -3.65658, 3.7195, -7.71627)
+texture = ExtResource("10_1s2ir")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/BaseCamp/Tent"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/BaseCamp/Tent/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105774, -0.377699)
+shape = SubResource("BoxShape3D_dqthw")
+
 [node name="Loaf" type="Node3D" parent="Level/BaseCamp"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55305, 4.24923, 0)
-
-[node name="Tent" type="Sprite3D" parent="Level/BaseCamp/Loaf"]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.896468, -0.52973, -7.71627)
-texture = ExtResource("10_1s2ir")
 
 [node name="Campfire" type="Sprite3D" parent="Level/BaseCamp/Loaf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34115, -2.41423, -3.7644)
@@ -134,6 +150,24 @@ light_color = Color(0.998926, 0.526998, 0.000118979, 1)
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 7.0
+
+[node name="WorldBounds" type="StaticBody3D" parent="Level/BaseCamp"]
+
+[node name="LeftBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(-0.0173303, 0.99985, 0, -0.99985, -0.0173303, 0, 0, 0, 1, -24.6402, 9.4379, -3.38271)
+shape = SubResource("WorldBoundaryShape3D_gkkj5")
+
+[node name="FrontBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.86755, 6.32198, 2.92883)
+shape = SubResource("WorldBoundaryShape3D_gkkj5")
+
+[node name="BackBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 9.12392, -13.4723)
+shape = SubResource("WorldBoundaryShape3D_u4tml")
+
+[node name="RightBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 26.049, 9.12392, -7.37377)
+shape = SubResource("WorldBoundaryShape3D_u4tml")
 
 [node name="Flora" type="Node3D" parent="Level"]
 
@@ -360,8 +394,14 @@ modulate = Color(1, 1, 1, 0.392157)
 texture = ExtResource("26_swnpn")
 
 [node name="FallenLog" type="Sprite3D" parent="Level/Flora"]
-transform = Transform3D(0.946089, 0, 0.685831, 0, 1, 0, -0.89158, 0, 0.727761, -16.7141, 2.58969, -4.65562)
+transform = Transform3D(1.17863, 0, 0.755808, 0, 1, 0, -1.36045, 0, 0.654794, -17.5951, 2.58969, -6.90832)
 texture = ExtResource("26_qgq12")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Flora/FallenLog"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Flora/FallenLog/StaticBody3D"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0.10577, 0)
+shape = SubResource("BoxShape3D_5j0oy")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.961262, 0.275637, 0, -0.275637, 0.961262, 0, 6, 5)
