@@ -1,13 +1,8 @@
 ~ this_is_a_node_title
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+do set_slide('res://assets/slides/Slide 1.png')
+: With that final blow the General had avenged his son's death and killed the Snow Fox. Though his blood hunger was quenched, his heart was still heavy with sorrow. He would be forced to return to the settlement alone with a bittersweet victory. So many lives lost to the evils that live in the withered lands. There is truly no victory to be won, he thought, when his people are forced to hide behind walls to be safe.
+do set_slide('res://assets/slides/Slide 2.png')
+: As the General turned to retrace his steps home, a penetrating, bloodcurdling howl came from beyond the barren wasteland. Immediately he knew its source, a beast from tales older than he, said to be both vile and cruel. He shivered knowing his fate. The day of reckoning neared.
 
 => END
