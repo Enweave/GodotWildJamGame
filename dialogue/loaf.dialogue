@@ -1,0 +1,15 @@
+~ start
+
+Loaf: [[Hi|Hello|Howdy]], General. Having skill issues?
+- Huh? => skill_issue
+- Pretty much! => in_code_we_trust
+
+~ skill_issue
+Loaf: Then how's that gamejam going?
+- Pretty good, actually!
+
+~ in_code_we_trust
+Loaf: [[Then stop talking, start coding!| Less talk, more code...]]
+
+
+=> END

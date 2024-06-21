@@ -1,0 +1,52 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://ccngynn0hb3xs"]
+
+[ext_resource type="Texture2D" uid="uid://dbiigripchmgf" path="res://assets/characters/Enemy sprites Jam.png" id="1_258d8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do577"]
+atlas = ExtResource("1_258d8")
+region = Rect2(0, 260, 450, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25itg"]
+atlas = ExtResource("1_258d8")
+region = Rect2(0, 0, 450, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw2tn"]
+atlas = ExtResource("1_258d8")
+region = Rect2(0, 0, 450, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qehnm"]
+atlas = ExtResource("1_258d8")
+region = Rect2(450, 0, 450, 260)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do577")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do577")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25itg")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw2tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qehnm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

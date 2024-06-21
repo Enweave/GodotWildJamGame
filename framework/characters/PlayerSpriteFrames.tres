@@ -1,0 +1,82 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cq8lrqsdcjvtu"]
+
+[ext_resource type="Texture2D" uid="uid://tdp8isj8i6n3" path="res://assets/characters/General Sword Animations.png" id="1_rrmoa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56guf"]
+atlas = ExtResource("1_rrmoa")
+region = Rect2(0, 0, 700, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08kbu"]
+atlas = ExtResource("1_rrmoa")
+region = Rect2(0, 600, 700, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhq44"]
+atlas = ExtResource("1_rrmoa")
+region = Rect2(700, 600, 700, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3eju"]
+atlas = ExtResource("1_rrmoa")
+region = Rect2(0, 1200, 700, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l0p1"]
+atlas = ExtResource("1_rrmoa")
+region = Rect2(700, 1200, 700, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12qth"]
+atlas = ExtResource("1_rrmoa")
+region = Rect2(1400, 1200, 700, 600)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56guf")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08kbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhq44")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3eju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3eju")
+}],
+"loop": false,
+"name": &"swing1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l0p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l0p1")
+}],
+"loop": false,
+"name": &"swing2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12qth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12qth")
+}],
+"loop": false,
+"name": &"swing3",
+"speed": 5.0
+}]
