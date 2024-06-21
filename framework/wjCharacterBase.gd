@@ -46,6 +46,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	calc_movement(delta)
 	
+	update_sptite_heading()
 	update_animation_state()
 	
 	if not is_on_floor():
@@ -63,7 +64,6 @@ func update_heading(target: Vector3):
 func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
 	health -= damage_amount
 	
-	print("Health: " + str(health) + 'by: ' + str(attacker))
 	being_attacked_by.emit(damage_amount, attacker)
 
 	if character_body != null:
@@ -96,6 +96,13 @@ func try_switch_animation(anim_name: String):
 			sprite.play(anim_name)
 
 
+func update_sptite_heading():
+	if looking_direction.x > 0 && !sprite.flip_h:
+		sprite.flip_h = true
+	elif looking_direction.x < 0 && sprite.flip_h:
+		sprite.flip_h = false
+
+
 func update_animation_state():
 	if apply_track_animation:
 		if is_dead:
@@ -107,10 +114,7 @@ func update_animation_state():
 		else:
 			try_switch_animation("idle")
 	
-	if looking_direction.x > 0 && !sprite.flip_h:
-		sprite.flip_h = true
-	elif looking_direction.x < 0 && sprite.flip_h:
-		sprite.flip_h = false
+
 
 func telegraph_and_use_ability(ability: wjAbilityBase):
 	if not is_telegraphing:
