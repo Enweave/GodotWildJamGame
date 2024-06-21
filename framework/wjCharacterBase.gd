@@ -62,6 +62,8 @@ func update_heading(target: Vector3):
 
 
 func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
+	if is_dead:
+		return
 	health -= damage_amount
 	
 	being_attacked_by.emit(damage_amount, attacker)
@@ -72,8 +74,14 @@ func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
 	if health <= 0:
 		is_dead = true
 		character_died.emit()
-		await get_tree().create_timer(1.0).timeout
-		queue_free()
+		character_body.update_health_display('dead')
+		# await get_tree().create_timer(1.0).timeout
+		# queue_free()
+
+func reset_health():
+	health = max_health
+	is_dead = false
+	character_body.update_health_display(str(health))
 
 
 func use_ability_with_slowdown(ability: wjAbilityBase = null):

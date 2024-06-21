@@ -24,7 +24,17 @@ can_attack_factions = [1, 3]
 [node name="character_body" parent="." instance=ExtResource("2_hg0jc")]
 unique_name_in_owner = true
 
-[node name="Sprite" parent="character_body/SpriteOrigin" index="0"]
+[node name="SpotLight3D" type="SpotLight3D" parent="character_body/SpriteOrigin" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.463915, 0.88588, 0, -0.88588, 0.463915, 0, 7.31636, 4.32468)
+light_color = Color(1, 0.984314, 0.972549, 1)
+light_energy = 11.998
+shadow_enabled = true
+shadow_opacity = 0.18
+spot_range = 47.278
+spot_attenuation = 1.86607
+spot_angle = 65.85
+
+[node name="Sprite" parent="character_body/SpriteOrigin" index="1"]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, -0.0837815, 0)
 sprite_frames = ExtResource("5_7lt04")
 animation = &"run"
