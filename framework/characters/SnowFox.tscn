@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://framework/characters/SnowFox.gd" id="1_c3k3d"]
 [ext_resource type="SpriteFrames" uid="uid://bypwlrqkxd21v" path="res://framework/characters/SnowFoxSprites.tres" id="2_5yych"]
 [ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="2_e5n14"]
-[ext_resource type="PackedScene" uid="uid://btef2nvy0svge" path="res://framework/abilities/SnowFoxMeelee.tscn" id="2_o78j3"]
+[ext_resource type="PackedScene" uid="uid://btef2nvy0svge" path="res://framework/abilities/SnowFoxMeeleeAbility.tscn" id="2_o78j3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2732"]
 radius = 2.4891

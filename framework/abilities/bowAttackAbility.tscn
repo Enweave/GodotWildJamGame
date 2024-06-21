@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2x43uqwvxtip"]
 
-[ext_resource type="Script" path="res://framework/abilities/bowAttackAbility.gd" id="1_2ikso"]
+[ext_resource type="Script" path="res://framework/abilities/rangedAttackAbility.gd" id="1_dt3ha"]
 [ext_resource type="PackedScene" uid="uid://cintxmmj3657y" path="res://framework/abilities/projectiles/arrow.tscn" id="2_6c2ob"]
 
 [node name="BowAttackAbility" type="Node3D"]
-script = ExtResource("1_2ikso")
+script = ExtResource("1_dt3ha")
 projectile = ExtResource("2_6c2ob")
 ability_name = "Bow Attack"
 ability_description = "Firing!"
-ability_cooldown_sec = 0.1
+ability_cooldown_sec = 0.3
 ability_damage = 25.0
 ability_range_meters = 60.0

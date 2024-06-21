@@ -5,14 +5,11 @@ class_name wjEnemy
 @export var ability_attack_melee_scene: PackedScene = null
 var ability_attack_melee: wjAbilityBase = null
 @onready var nav_agent = $NavigationAgent3D
-var player = null
 
 var isPlayerInSight = false
-var is_using_ability = false
-
 
 func _on_sense_melee_attack_viable():
-	if ability_attack_melee != null and !is_dead and !is_using_ability:
+	if ability_attack_melee != null and !is_dead:
 		telegraph_and_use_ability(ability_attack_melee)
 
 
@@ -58,8 +55,10 @@ func _on_vision_area_body_exited(body):
 	if body is wjPlayer:
 		isPlayerInSight = false
 	
-
 func _on_being_attacked_by(damage_amount:float, attacker:wjCharacterBase = null):
 	if attacker != null:
 		current_target = attacker
 		isPlayerInSight = true
+
+func update_animation_state():
+	super.update_animation_state()

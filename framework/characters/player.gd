@@ -87,11 +87,11 @@ func _unhandled_input(event):
 		if current_weapon != "sword":
 			current_weapon = "sword"
 			sprite.sprite_frames = general_sword_frames
-		use_attack_melee.call_deferred(ability_attack_melee)
+		use_ability_with_slowdown.call_deferred(ability_attack_melee)
 	elif event.is_action_pressed("attack_ranged"):
 		if current_weapon != "bow":
 			current_weapon = "bow"
 			sprite.sprite_frames = general_bow_frames
-		use_attack_melee.call_deferred(ability_attack_ranged)
+		use_ability_with_slowdown.call_deferred(ability_attack_ranged)
 	elif event.is_action_pressed("dash"):
 		use_ability_extra()

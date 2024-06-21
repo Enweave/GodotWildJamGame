@@ -21,7 +21,7 @@ func activate() -> bool:
                 forward = user.global_transform.origin.direction_to(target_position).normalized()
             else:
                 forward = self.global_transform.basis.z.normalized()
-            var impulse_vector = self.ability_range_meters * forward / 4
+            var impulse_vector = self.ability_range_meters * forward
             
             _projectile.setup(self, self.global_transform, impulse_vector)
 

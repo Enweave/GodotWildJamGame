@@ -8,7 +8,6 @@ var ability_attack_melee: wjAbilityBase = null
 
 var isPlayerInSight = false
 
-
 func _on_sense_melee_attack_viable():
 	if ability_attack_melee != null and !is_dead:
 		telegraph_and_use_ability(ability_attack_melee)
@@ -61,3 +60,7 @@ func _on_being_attacked_by(damage_amount:float, attacker:wjCharacterBase = null)
 	if attacker != null:
 		current_target = attacker
 		isPlayerInSight = true
+
+
+func update_animation_state():
+	super.update_animation_state()

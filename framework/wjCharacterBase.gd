@@ -21,8 +21,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var faction: wjFactionEnum = wjFactionEnum.NEUTRAL
 @export var can_attack_factions: Array = [wjFactionEnum.ENEMY]
 @export var move_speed: float = 5.0
+@export var move_speed_slowdown_multiplier: float = 0.3
 @export var reaction_time_sec: float = 0.2
-@export var apply_track_animation: bool = true
 
 @onready var current_move_speed: float = move_speed
 @onready var character_body : wjCharacterBody = %character_body
@@ -30,10 +30,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var controller_direction : Vector3 = Vector3.ZERO
 var is_dead = false
-var anim_is_attacking = false
-var attack_anim_name = "swing1"
 var looking_direction: Vector3
 var current_target: wjCharacterBase = null
+var is_telegraphing = false
+
+@export var apply_track_animation: bool = true
+var anim_is_attacking = false
+var attack_anim_name = "swing1"
+
 
 func calc_movement(_delta):
 	pass
@@ -42,7 +46,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	calc_movement(delta)
 	
-	track_animation_state()
+	update_animation_state()
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -72,17 +76,17 @@ func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
 		queue_free()
 
 
-func use_attack_melee(ability: wjAbilityBase = null):
+func use_ability_with_slowdown(ability: wjAbilityBase = null):
 	if ability != null:
 		var success = ability.activate()
 		if success:
 			anim_is_attacking = true
 			change_attack_anim_name()
-			self.current_move_speed = 0
+			self.current_move_speed = self.move_speed * move_speed_slowdown_multiplier
 			await sprite.animation_changed
 			await sprite.animation_finished
-			if self is wjPlayer and self.current_weapon == "bow":
-				ability.activate()
+			# if self is wjPlayer and self.current_weapon == "bow":
+			# 	ability.activate()
 			anim_is_attacking = false
 			self.current_move_speed = self.move_speed
 	return false
@@ -94,7 +98,7 @@ func change_attack_anim_name():
 		attack_anim_name = "attack"
 
 
-func track_animation_state():
+func update_animation_state():
 	if apply_track_animation:
 		if is_dead:
 			if sprite.sprite_frames.has_animation("dead"):
@@ -116,8 +120,11 @@ func track_animation_state():
 		sprite.flip_h = false
 
 func telegraph_and_use_ability(ability: wjAbilityBase):
-	character_body.update_action_display(ability.ability_description)
-	await get_tree().create_timer(reaction_time_sec).timeout
-	character_body.update_action_display('')
-	if !is_dead:	
-		use_attack_melee.call_deferred(ability)
+	if not is_telegraphing:
+		is_telegraphing = true
+		character_body.update_action_display(ability.ability_description)
+		await get_tree().create_timer(reaction_time_sec).timeout
+		character_body.update_action_display('')
+		is_telegraphing = false
+		if !is_dead:	
+			use_ability_with_slowdown.call_deferred(ability)

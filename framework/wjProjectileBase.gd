@@ -19,7 +19,7 @@ func fire():
     self.apply_impulse(impulse, Vector3(0,0,0))
 
 func _on_body_entered(body:Node):
-    if !body or !body.get_parent() or body.is_queued_for_deletion():
+    if body.is_queued_for_deletion():
         return
     
     if body is wjCharacterBase and body != spawner_ability.user:
