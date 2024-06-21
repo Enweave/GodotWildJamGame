@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://sm05cere4rje"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_nqtl2"]
-[ext_resource type="PackedScene" uid="uid://b28vj6t58mfb1" path="res://test/world.tscn" id="2_dv5ge"]
+[ext_resource type="PackedScene" uid="uid://y6j63cjxftto" path="res://levels/level2.tscn" id="2_nh3f1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,4 +11,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nqtl2")
-level2scene = ExtResource("2_dv5ge")
+level2scene = ExtResource("2_nh3f1")
