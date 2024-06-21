@@ -8,17 +8,23 @@ var ability_attack_melee: wjAbilityBase = null
 var player = null
 
 var isPlayerInSight = false
+var is_using_ability = false
 
 func telegraph_and_use_ability(ability: wjAbilityBase):
+	var old_health = health
+	is_using_ability = true
+
 	character_body.update_action_display(ability.ability_description)
 	await get_tree().create_timer(reaction_time_sec).timeout
-	if !is_dead:
-		ability.activate()
+
+	if !is_dead && old_health == health:
+		use_attack_melee.call_deferred(ability_attack_melee)
 	character_body.update_action_display('')
-	use_attack_melee.call_deferred(ability_attack_melee)
+
+	is_using_ability = false
 
 func _on_sense_melee_attack_viable():
-	if ability_attack_melee != null and !is_dead:
+	if ability_attack_melee != null and !is_dead and !is_using_ability:
 		telegraph_and_use_ability(ability_attack_melee)
 
 
@@ -28,6 +34,12 @@ func _ready():
 		ability_attack_melee = ability_attack_melee_scene.instantiate()
 		character_body.attach_ability(ability_attack_melee, self)
 		ability_attack_melee.sens_ability_viable.connect(_on_sense_melee_attack_viable)
+
+		ability_attack_melee.ability_damage = 10
+		ability_attack_melee.knockback_strength /= 2
+		var new_coll_shape = SphereShape3D.new()
+		new_coll_shape.radius = 0.5
+		ability_attack_melee.get_node("Area3D/CollisionShape3D").shape = new_coll_shape
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity:Vector3):
 	velocity.x = lerp(velocity.x, safe_velocity.x, 0.1)

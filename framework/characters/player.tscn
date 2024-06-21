@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4crl7k17l4o1"]
+[gd_scene load_steps=9 format=3 uid="uid://c4crl7k17l4o1"]
 
 [ext_resource type="Script" path="res://framework/characters/player.gd" id="1_st0lc"]
 [ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="2_hg0jc"]
 [ext_resource type="PackedScene" uid="uid://deopkjrqiig35" path="res://framework/abilities/swordAttackAbility.tscn" id="2_vxcye"]
-[ext_resource type="PackedScene" uid="uid://cr8mvxlkh7dvo" path="res://framework/abilities/bowAttackAbility.tscn" id="3_3rapk"]
+[ext_resource type="PackedScene" uid="uid://c2x43uqwvxtip" path="res://framework/abilities/bowAttackAbility.tscn" id="3_3rapk"]
 [ext_resource type="Script" path="res://framework/characters/playerCameraHelper.gd" id="3_hwt8f"]
 [ext_resource type="PackedScene" uid="uid://3g0f358fp0su" path="res://framework/abilities/dashAbility.tscn" id="3_tqnnt"]
-[ext_resource type="SpriteFrames" uid="uid://cq8lrqsdcjvtu" path="res://framework/characters/PlayerSpriteFrames.tres" id="5_7lt04"]
+[ext_resource type="SpriteFrames" uid="uid://cq8lrqsdcjvtu" path="res://framework/characters/PlayerSwordSpriteFrames.tres" id="5_7lt04"]
+[ext_resource type="SpriteFrames" uid="uid://nqwpqlhdqke0" path="res://framework/characters/PlayerBowSpriteFrames.tres" id="5_055v7"]
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 2
@@ -15,17 +16,18 @@ script = ExtResource("1_st0lc")
 ability_attack_melee_scene = ExtResource("2_vxcye")
 ability_attack_ranged_scene = ExtResource("3_3rapk")
 ability_extra_scene = ExtResource("3_tqnnt")
+general_bow_frames = ExtResource("5_055v7")
+general_sword_frames = ExtResource("5_7lt04")
 faction = 0
 can_attack_factions = [1, 3]
-move_speed = 8.0
 
 [node name="character_body" parent="." instance=ExtResource("2_hg0jc")]
 unique_name_in_owner = true
 
 [node name="Sprite" parent="character_body/SpriteOrigin" index="0"]
-transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.323784, -0.0472908, 0)
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, -0.0837815, 0)
 sprite_frames = ExtResource("5_7lt04")
-animation = &"idle"
+animation = &"run"
 
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true

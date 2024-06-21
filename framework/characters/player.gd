@@ -11,6 +11,12 @@ var ability_extra: wjAbilityBase = null
 
 var wordlspace : PhysicsDirectSpaceState3D 
 
+@export_category("SpriteFrames")
+@export var general_bow_frames: SpriteFrames
+@export var general_sword_frames: SpriteFrames
+var current_weapon: String = "sword"
+
+
 func _ready():
 	character_body.update_health_display(str(health))
 	if ability_attack_melee_scene != null:
@@ -72,16 +78,20 @@ func calc_movement(delta):
 		velocity.x = lerp(velocity.x, controller_direction.x * self.current_move_speed, self.MOVE_LERP)
 		velocity.z = lerp(velocity.z, controller_direction.z * self.current_move_speed, self.MOVE_LERP)
 	else:
-		velocity.x = move_toward(velocity.x, 0, self.current_move_speed)
-		velocity.z = move_toward(velocity.z, 0, self.current_move_speed)
+		velocity.x = move_toward(velocity.x, 0, self.MOVE_LERP * 2)
+		velocity.z = move_toward(velocity.z, 0, self.MOVE_LERP * 2)
 
 
 func _unhandled_input(event):
-	if Input.is_action_pressed("attack"):
+	if event.is_action_pressed("attack"):
+		if current_weapon != "sword":
+			current_weapon = "sword"
+			sprite.sprite_frames = general_sword_frames
 		use_attack_melee.call_deferred(ability_attack_melee)
-
-	if Input.is_action_pressed("attack_ranged"):
+	elif event.is_action_pressed("attack_ranged"):
+		if current_weapon != "bow":
+			current_weapon = "bow"
+			sprite.sprite_frames = general_bow_frames
 		use_attack_melee.call_deferred(ability_attack_ranged)
-
-	if Input.is_action_pressed("dash"):
+	elif event.is_action_pressed("dash"):
 		use_ability_extra()
