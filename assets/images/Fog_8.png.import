@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1exnjo10uan8"
-path="res://.godot/imported/StickBush_Big.png-dc2a57f190e4f7f8c7a1be5f0d6e5dc5.ctex"
+uid="uid://cwthy78uojvei"
+path.s3tc="res://.godot/imported/Fog_8.png-86154ca1b972544dd2e54299414b61d7.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/images/StickBush_Big.png"
-dest_files=["res://.godot/imported/StickBush_Big.png-dc2a57f190e4f7f8c7a1be5f0d6e5dc5.ctex"]
+source_file="res://assets/images/Fog_8.png"
+dest_files=["res://.godot/imported/Fog_8.png-86154ca1b972544dd2e54299414b61d7.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

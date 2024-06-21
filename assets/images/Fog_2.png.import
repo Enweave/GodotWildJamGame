@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt14ctdtovfwy"
-path.s3tc="res://.godot/imported/Fog_2.png-b86a3a6e9be408a11c2f649d8afc75cd.s3tc.ctex"
+path="res://.godot/imported/Fog_2.png-b86a3a6e9be408a11c2f649d8afc75cd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/images/Fog_2.png"
-dest_files=["res://.godot/imported/Fog_2.png-b86a3a6e9be408a11c2f649d8afc75cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/Fog_2.png-b86a3a6e9be408a11c2f649d8afc75cd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
