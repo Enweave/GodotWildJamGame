@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bgo5et40v7huh"
+path="res://.godot/imported/epilogue1.dialogue-6e3f94de24ce59909cd0b140f2a73f16.tres"
+
+[deps]
+
+source_file="res://dialogue/epilogue1.dialogue"
+dest_files=["res://.godot/imported/epilogue1.dialogue-6e3f94de24ce59909cd0b140f2a73f16.tres"]
+
+[params]
+
+defaults=true

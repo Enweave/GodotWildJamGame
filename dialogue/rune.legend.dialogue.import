@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bb405vdmqmsrt"
+path="res://.godot/imported/rune.legend.dialogue-986b1bd8b8b4b762e7daa0a9a1e59113.tres"
+
+[deps]
+
+source_file="res://dialogue/rune.legend.dialogue"
+dest_files=["res://.godot/imported/rune.legend.dialogue-986b1bd8b8b4b762e7daa0a9a1e59113.tres"]
+
+[params]
+
+defaults=true

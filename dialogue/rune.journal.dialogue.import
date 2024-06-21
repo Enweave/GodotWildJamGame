@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://6qmfeggxhiln"
+path="res://.godot/imported/rune.journal.dialogue-9b0c9e4bfdd544b4806a2c185fa54a7b.tres"
+
+[deps]
+
+source_file="res://dialogue/rune.journal.dialogue"
+dest_files=["res://.godot/imported/rune.journal.dialogue-9b0c9e4bfdd544b4806a2c185fa54a7b.tres"]
+
+[params]
+
+defaults=true
