@@ -81,38 +81,31 @@ func use_ability_with_slowdown(ability: wjAbilityBase = null):
 		var success = ability.activate()
 		if success:
 			anim_is_attacking = true
-			change_attack_anim_name()
 			self.current_move_speed = self.move_speed * move_speed_slowdown_multiplier
-			await sprite.animation_changed
-			await sprite.animation_finished
-			# if self is wjPlayer and self.current_weapon == "bow":
-			# 	ability.activate()
+			await get_tree().create_timer(ability.ability_cooldown_sec).timeout
 			anim_is_attacking = false
 			self.current_move_speed = self.move_speed
 	return false
 
-func change_attack_anim_name():
-	attack_anim_name = "swing" + str(randi_range(1, 3))
+func get_attack_anim_name() -> String:
+	return 'attack'
 
-	if faction == wjFactionEnum.ENEMY or (faction == wjFactionEnum.PLAYER and self.current_weapon == "bow"):
-		attack_anim_name = "attack"
+func try_switch_animation(anim_name: String):
+	if sprite.sprite_frames.has_animation(anim_name):
+		if sprite.animation != anim_name: 
+			sprite.play(anim_name)
 
 
 func update_animation_state():
 	if apply_track_animation:
 		if is_dead:
-			if sprite.sprite_frames.has_animation("dead"):
-				sprite.play("dead")
+			try_switch_animation("dead")
 		elif anim_is_attacking:
-			if !sprite.sprite_frames.has_animation(attack_anim_name):
-				change_attack_anim_name()
-			if sprite.animation != attack_anim_name:
-				sprite.play(attack_anim_name)
+			try_switch_animation(get_attack_anim_name())
 		elif velocity.length() > 0:
-			if sprite.animation != "run":
-				sprite.play("run")
-		elif sprite.animation != "idle":
-			sprite.play("idle")
+			try_switch_animation("run")
+		else:
+			try_switch_animation("idle")
 	
 	if looking_direction.x > 0 && !sprite.flip_h:
 		sprite.flip_h = true

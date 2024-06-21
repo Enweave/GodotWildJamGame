@@ -4,9 +4,12 @@ extends wjAbilityBase
 
 
 func apply_knockback(target: wjCharacterBase):
-    target.velocity += Vector3(1, 0, 1) * ((target.global_position - global_position).normalized() * knockback_strength)
+    var new_velocity = Vector3(1, 0, 1) * ((target.global_position - global_position).normalized() * knockback_strength)
+    
+    # TODO CLAMP VELOCITY
+    target.velocity += new_velocity
 
-func activate() -> bool:
+func activate(callback: Callable = Callable(), args: Array = []) -> bool:
     var success = super.activate()
     if success:
         for target in %Area3D.get_overlapping_bodies():

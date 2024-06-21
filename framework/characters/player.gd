@@ -15,7 +15,7 @@ var wordlspace : PhysicsDirectSpaceState3D
 @export var general_bow_frames: SpriteFrames
 @export var general_sword_frames: SpriteFrames
 var current_weapon: String = "sword"
-
+var swing_anim_variant: int = 1
 
 func _ready():
 	character_body.update_health_display(str(health))
@@ -82,8 +82,14 @@ func calc_movement(delta):
 		velocity.z = move_toward(velocity.z, 0, self.MOVE_LERP * 2)
 
 
+func get_attack_anim_name() -> String:
+	if current_weapon == "bow":
+		return "attack"
+	return "swing" + str(swing_anim_variant)
+
 func _unhandled_input(event):
 	if event.is_action_pressed("attack"):
+		swing_anim_variant = randi_range(1, 3)
 		if current_weapon != "sword":
 			current_weapon = "sword"
 			sprite.sprite_frames = general_sword_frames

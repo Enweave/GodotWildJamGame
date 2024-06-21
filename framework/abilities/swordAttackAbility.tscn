@@ -10,7 +10,7 @@ script = ExtResource("1_ambvy")
 knockback_strength = 30.0
 ability_name = "SwordAttack"
 ability_description = "Slashing!"
-ability_cooldown_sec = 0.2
+ability_cooldown_sec = 0.3
 ability_damage = 15.0
 
 [node name="Area3D" type="Area3D" parent="."]

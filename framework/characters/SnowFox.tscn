@@ -22,6 +22,8 @@ ability_attack_melee_scene = ExtResource("2_o78j3")
 max_health = 300.0
 faction = 1
 can_attack_factions = [0, 1, 2, 3]
+move_speed_slowdown_multiplier = 0.8
+reaction_time_sec = 0.4
 
 [node name="character_body" type="CollisionShape3D" parent="."]
 unique_name_in_owner = true

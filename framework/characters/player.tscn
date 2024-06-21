@@ -29,6 +29,9 @@ transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, -0.0837815, 0)
 sprite_frames = ExtResource("5_7lt04")
 animation = &"run"
 
+[node name="WeaponHotspot" parent="character_body" index="3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.809829)
+
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.913545, 0.406737, 0, -0.406737, 0.913545, 0, 0, 0)

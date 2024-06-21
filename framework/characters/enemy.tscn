@@ -16,6 +16,7 @@ ability_attack_melee_scene = ExtResource("2_h8qun")
 faction = 1
 can_attack_factions = [0, 2, 3]
 move_speed = 3.0
+reaction_time_sec = 0.5
 
 [node name="character_body" parent="." instance=ExtResource("2_m2dqo")]
 unique_name_in_owner = true
