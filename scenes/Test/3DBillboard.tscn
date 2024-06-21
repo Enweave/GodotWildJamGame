@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2f7uttjd5fc0"]
+[gd_scene load_steps=17 format=3 uid="uid://d2f7uttjd5fc0"]
 
 [ext_resource type="PackedScene" uid="uid://dpxnh6xemy2dn" path="res://scenes/Test/level.tscn" id="1_ja55o"]
 [ext_resource type="Texture2D" uid="uid://bd1bas2yyyasr" path="res://assets/images/Tree_2.png" id="2_8qysm"]
 [ext_resource type="Texture2D" uid="uid://bkui1i2ack2ig" path="res://assets/images/Tree_1.png" id="2_k0wg2"]
-[ext_resource type="Texture2D" uid="uid://bbemp73jnluun" path="res://scenes/Test/sky2.png" id="2_tb0s8"]
 [ext_resource type="Texture2D" uid="uid://bfks3mqxcd745" path="res://assets/player.png" id="3_7oilu"]
 [ext_resource type="Texture2D" uid="uid://djvl622cv83y1" path="res://assets/images/Tree_3.png" id="3_m2wpq"]
 [ext_resource type="Texture2D" uid="uid://1exnjo10uan8" path="res://assets/images/StickBush_Big.png" id="5_d0nc6"]
@@ -15,30 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://o4r0cexe55im" path="res://assets/images/Fog_4.png" id="10_2k0f4"]
 [ext_resource type="Texture2D" uid="uid://bciohfqkhlj0s" path="res://assets/images/Fog_5.png" id="11_wvmy3"]
 [ext_resource type="Texture2D" uid="uid://do2olk2a3lk1r" path="res://assets/images/Fog_6.png" id="12_trq66"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sv3bf"]
-panorama = ExtResource("2_tb0s8")
-
-[sub_resource type="Sky" id="Sky_2pci7"]
-sky_material = SubResource("PanoramaSkyMaterial_sv3bf")
-
-[sub_resource type="Environment" id="Environment_4fd86"]
-background_mode = 1
-background_color = Color(0.112894, 4.89249e-05, 0.151439, 1)
-background_energy_multiplier = 0.4
-sky = SubResource("Sky_2pci7")
-sky_custom_fov = 127.2
-sky_rotation = Vector3(0, 1.82736, 0)
-ambient_light_source = 3
-ambient_light_color = Color(0.282911, 0.045696, 0.331479, 1)
-ambient_light_sky_contribution = 0.9
-ambient_light_energy = 12.0
-reflected_light_source = 2
-tonemap_mode = 1
-fog_enabled = true
-fog_light_color = Color(0, 0, 0, 1)
-fog_light_energy = 0.1
-fog_density = 0.02
+[ext_resource type="PackedScene" uid="uid://d0uimuel1ij5o" path="res://scenes/Test/world_environment.tscn" id="14_mcoaa"]
+[ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="16_c6bpe"]
 
 [node name="3DWorld" type="Node3D"]
 
@@ -477,13 +454,16 @@ directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.081
 directional_shadow_max_distance = 94.6
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4fd86")
+[node name="WorldEnvironment" parent="." instance=ExtResource("14_mcoaa")]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.943686, 0.330844, 0, -0.330844, 0.943686, 2.90614, 3.11381, 12.3579)
+visible = false
 billboard = 2
 texture_filter = 0
 texture = ExtResource("3_7oilu")
+
+[node name="player" parent="." instance=ExtResource("16_c6bpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19487, 0.368078, 8.46837)
 
 [editable path="Level"]
