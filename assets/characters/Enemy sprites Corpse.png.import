@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbiigripchmgf"
-path.s3tc="res://.godot/imported/Enemy sprites Jam.png-703afb712f3b48e999fd85fc7a4191fe.s3tc.ctex"
+uid="uid://4xt3aooqyo2a"
+path.s3tc="res://.godot/imported/Enemy sprites Corpse.png-82b4f77006165eec1b6767a9fd1c0124.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/characters/Enemy sprites Jam.png"
-dest_files=["res://.godot/imported/Enemy sprites Jam.png-703afb712f3b48e999fd85fc7a4191fe.s3tc.ctex"]
+source_file="res://assets/characters/Enemy sprites Corpse.png"
+dest_files=["res://.godot/imported/Enemy sprites Corpse.png-82b4f77006165eec1b6767a9fd1c0124.s3tc.ctex"]
 
 [params]
 

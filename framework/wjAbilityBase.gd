@@ -2,7 +2,7 @@ extends Node3D
 
 class_name wjAbilityBase
 
-signal sens_ability_viable;
+signal sens_ability_viable
 
 @export var ability_name: String = "Ability"
 @export var ability_description: String = "This is an ability."
@@ -11,7 +11,7 @@ signal sens_ability_viable;
 @export var ability_cost: float = 0
 @export var ability_damage: float = 0
 @export var ability_range_meters: float = 0.0
-@export var ability_resource: wjAbilityResource = null;
+@export var ability_resource: wjAbilityResource = null
 
 var user: wjCharacterBase = null
 var valid_target_factions: Array = []

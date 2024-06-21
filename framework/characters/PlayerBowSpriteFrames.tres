@@ -1,0 +1,77 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://nqwpqlhdqke0"]
+
+[ext_resource type="Texture2D" uid="uid://cgmkkhmgsnfao" path="res://assets/characters/GeneralBow.png" id="1_l02pw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwgcy"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(0, 1166, 900, 583)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k5ir"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(900, 1166, 900, 583)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6hvp"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(1800, 1166, 900, 583)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkqlf"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(0, 0, 900, 583)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnl6x"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(0, 583, 900, 583)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8wsm"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(900, 583, 900, 583)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvo45"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(1800, 583, 900, 583)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bfwx"]
+atlas = ExtResource("1_l02pw")
+region = Rect2(2700, 583, 900, 583)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwgcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k5ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6hvp")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkqlf")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnl6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8wsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvo45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bfwx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

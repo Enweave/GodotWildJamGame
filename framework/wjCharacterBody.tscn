@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://tp6j5tlonkh4"]
+[gd_scene load_steps=5 format=3 uid="uid://tp6j5tlonkh4"]
 
 [ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="1_yy041"]
+[ext_resource type="SpriteFrames" uid="uid://ccngynn0hb3xs" path="res://framework/characters/EnemySpriteFrames.tres" id="2_qqpx5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60bb8"]
 
@@ -36,7 +37,8 @@ transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.0383735, 0)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
-animation = &""
+sprite_frames = ExtResource("2_qqpx5")
+animation = &"idle"
 
 [node name="WeaponHotspot" type="Marker3D" parent="."]
 unique_name_in_owner = true

@@ -11,7 +11,7 @@ knockback_strength = 30.0
 ability_name = "SwordAttack"
 ability_description = "Slashing!"
 ability_cooldown_sec = 0.5
-ability_damage = 10.0
+ability_damage = 34.0
 
 [node name="Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true

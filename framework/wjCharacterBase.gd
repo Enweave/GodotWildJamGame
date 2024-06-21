@@ -11,7 +11,7 @@ enum wjFactionEnum {
 	DESTRUCTIBLE
 }
 
-const MOVE_LERP = 0.1
+const MOVE_LERP = 0.25
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -21,14 +21,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var faction: wjFactionEnum = wjFactionEnum.NEUTRAL
 @export var can_attack_factions: Array = [wjFactionEnum.ENEMY]
 @export var move_speed: float = 5.0
-@export var reaction_time_sec: float = 1.
+@export var reaction_time_sec: float = 0.2
 @export var apply_track_animation: bool = true
-@onready var current_move_speed: float = move_speed
 
-var controller_direction : Vector3 = Vector3.ZERO
+@onready var current_move_speed: float = move_speed
 @onready var character_body : wjCharacterBody = %character_body
 @onready var sprite: AnimatedSprite3D = $character_body/SpriteOrigin/Sprite
 
+var controller_direction : Vector3 = Vector3.ZERO
 var is_dead = false
 var anim_is_attacking = false
 var attack_anim_name = "swing1"
@@ -68,7 +68,7 @@ func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
 	if health <= 0:
 		is_dead = true
 		character_died.emit()
-		await(get_tree().create_timer(1.0).timeout)
+		await get_tree().create_timer(1.0).timeout
 		queue_free()
 
 
@@ -78,8 +78,11 @@ func use_attack_melee(ability: wjAbilityBase = null):
 		if success:
 			anim_is_attacking = true
 			change_attack_anim_name()
-			self.current_move_speed = self.move_speed / 2
-			await get_tree().create_timer(ability.ability_cooldown_sec).timeout
+			self.current_move_speed = 0
+			await sprite.animation_changed
+			await sprite.animation_finished
+			if self is wjPlayer and self.current_weapon == "bow":
+				ability.activate()
 			anim_is_attacking = false
 			self.current_move_speed = self.move_speed
 	return false
@@ -87,13 +90,18 @@ func use_attack_melee(ability: wjAbilityBase = null):
 func change_attack_anim_name():
 	attack_anim_name = "swing" + str(randi_range(1, 3))
 
-	if faction == wjFactionEnum.ENEMY:
+	if faction == wjFactionEnum.ENEMY or (faction == wjFactionEnum.PLAYER and self.current_weapon == "bow"):
 		attack_anim_name = "attack"
 
 
 func track_animation_state():
 	if apply_track_animation:
-		if anim_is_attacking:
+		if is_dead:
+			if sprite.sprite_frames.has_animation("dead"):
+				sprite.play("dead")
+		elif anim_is_attacking:
+			if !sprite.sprite_frames.has_animation(attack_anim_name):
+				change_attack_anim_name()
 			if sprite.animation != attack_anim_name:
 				sprite.play(attack_anim_name)
 		elif velocity.length() > 0:
