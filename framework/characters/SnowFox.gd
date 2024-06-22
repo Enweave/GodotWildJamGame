@@ -134,6 +134,7 @@ func check_bonk():
 
 func bonk():
 	is_bonked = true
+	is_attacking = false
 	apply_track_animation = false
 	set_physics_process(false)
 
@@ -141,9 +142,11 @@ func bonk():
 	await sprite.animation_finished
 	await get_tree().create_timer(bonk_vulnerable_time).timeout
 
-	is_bonked = false
 	apply_track_animation = true
+	velocity = Vector3.ZERO
 	set_physics_process(true)
+	await get_tree().create_timer(0.5).timeout
+	is_bonked = false
 
 
 func _on_vision_area_body_entered(body):
