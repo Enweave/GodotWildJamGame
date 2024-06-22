@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctisu3diaaqlm"
-path.s3tc="res://.godot/imported/grid_black_512x512.png-f1de2df2a5f1c60d9fb43f8688bc2eec.s3tc.ctex"
+path="res://.godot/imported/grid_black_512x512.png-f1de2df2a5f1c60d9fb43f8688bc2eec.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/Textures/grid_black_512x512.png"
-dest_files=["res://.godot/imported/grid_black_512x512.png-f1de2df2a5f1c60d9fb43f8688bc2eec.s3tc.ctex"]
+dest_files=["res://.godot/imported/grid_black_512x512.png-f1de2df2a5f1c60d9fb43f8688bc2eec.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -7,7 +7,7 @@ radius = 1.0
 
 [node name="EnemyMeleeAttackAbility" type="Node3D"]
 script = ExtResource("1_6a2fy")
-knockback_strength = 30.0
+knockback_strength = 10.0
 ability_name = "EnemyMeleeAttack"
 ability_description = "Claws!"
 ability_cooldown_sec = 0.3
@@ -20,5 +20,9 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_qqda6")
+
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

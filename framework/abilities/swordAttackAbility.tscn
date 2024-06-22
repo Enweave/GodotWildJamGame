@@ -7,11 +7,11 @@ radius = 1.0
 
 [node name="SwordAttackAbility" type="Node3D"]
 script = ExtResource("1_vbrng")
-knockback_strength = 30.0
+knockback_strength = 20.0
 ability_name = "SwordAttack"
 ability_description = "Slashing"
 ability_cooldown_sec = 0.3
-ability_damage = 15.0
+ability_damage = 25.0
 
 [node name="Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true

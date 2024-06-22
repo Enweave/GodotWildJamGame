@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xt3aooqyo2a"
-path.s3tc="res://.godot/imported/Enemy sprites Corpse.png-82b4f77006165eec1b6767a9fd1c0124.s3tc.ctex"
+uid="uid://p02lr5wtksbv"
+path="res://.godot/imported/Fox.png-a1dcac7b28c52a2ab8214546b3b153a0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Enemy sprites Corpse.png"
-dest_files=["res://.godot/imported/Enemy sprites Corpse.png-82b4f77006165eec1b6767a9fd1c0124.s3tc.ctex"]
+source_file="res://assets/characters/fox/Fox.png"
+dest_files=["res://.godot/imported/Fox.png-a1dcac7b28c52a2ab8214546b3b153a0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

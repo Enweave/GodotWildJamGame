@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkuqcoexv8mmc"
-path.s3tc="res://.godot/imported/Fox_Sprites.png-c741c765e1896235ee64258a8b2020dd.s3tc.ctex"
+uid="uid://ukwn0a4ol1eo"
+path="res://.godot/imported/Enemy.png-a28ae096e2ad06d4517ac4f019ca012b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/fox/Fox_Sprites.png"
-dest_files=["res://.godot/imported/Fox_Sprites.png-c741c765e1896235ee64258a8b2020dd.s3tc.ctex"]
+source_file="res://assets/characters/enemy/Enemy.png"
+dest_files=["res://.godot/imported/Enemy.png-a28ae096e2ad06d4517ac4f019ca012b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,36 +3,37 @@
 [ext_resource type="Script" path="res://framework/characters/SnowFox.gd" id="1_c3k3d"]
 [ext_resource type="SpriteFrames" uid="uid://bypwlrqkxd21v" path="res://framework/characters/SnowFoxSprites.tres" id="2_5yych"]
 [ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="2_e5n14"]
-[ext_resource type="PackedScene" uid="uid://btef2nvy0svge" path="res://framework/abilities/SnowFoxMeeleeAttackAbility.tscn" id="2_o78j3"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2732"]
-radius = 2.4891
-height = 5.39238
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1sms"]
+size = Vector3(7, 3, 2)
 
 [sub_resource type="PrismMesh" id="PrismMesh_bipoq"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f860b"]
+size = Vector3(7.5, 3.5, 2.5)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_oauj3"]
-radius = 10.0
+radius = 15.0
 
 [node name="SnowFox" type="CharacterBody3D"]
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_c3k3d")
-ability_attack_melee_scene = ExtResource("2_o78j3")
 max_health = 300.0
 faction = 1
 can_attack_factions = [0, 1, 2, 3]
+move_speed = 4.0
 move_speed_slowdown_multiplier = 0.8
-reaction_time_sec = 0.4
+reaction_time_sec = 0.9
 
 [node name="character_body" type="CollisionShape3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77112, 0)
-shape = SubResource("CapsuleShape3D_l2732")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_x1sms")
 script = ExtResource("2_e5n14")
 
 [node name="Marker3D" type="Marker3D" parent="character_body"]
-transform = Transform3D(1, 0, 0, 0, 1, -6.99382e-08, 0, 6.99382e-08, 1, 0, -2.74253, -6.71407e-08)
+transform = Transform3D(1, 0, 0, 0, 1, -6.99382e-08, 0, 6.99382e-08, 1, 0, -1.44253, -6.71407e-08)
 gizmo_extents = 0.84
 
 [node name="HeadingIndicator" type="MeshInstance3D" parent="character_body/Marker3D"]
@@ -47,25 +48,24 @@ remote_path = NodePath("../SpriteOrigin")
 update_rotation = false
 
 [node name="SpriteOrigin" type="Node3D" parent="character_body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77112, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 top_level = true
 
 [node name="Sprite" type="AnimatedSprite3D" parent="character_body/SpriteOrigin"]
 unique_name_in_owner = true
-transform = Transform3D(-0.439397, 0, -3.84133e-08, 0, 0.439397, 0, 3.84133e-08, 0, -0.439397, 2.93955, -3.17534, 0)
-centered = false
+transform = Transform3D(-0.439397, 0, -3.84133e-08, 0, 0.439397, 0, 3.84133e-08, 0, -0.439397, 0, 0.138139, 0)
 alpha_cut = 2
 texture_filter = 0
 sprite_frames = ExtResource("2_5yych")
-animation = &"run"
-autoplay = "run"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="WeaponHotspot" type="Marker3D" parent="character_body"]
 unique_name_in_owner = true
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.59616, -1.83642)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.30384, -1.83642)
 
 [node name="StatsPivot" type="Node3D" parent="character_body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29, 0)
 
 [node name="health" type="Label3D" parent="character_body/StatsPivot"]
 unique_name_in_owner = true
@@ -80,6 +80,11 @@ billboard = 1
 modulate = Color(0.996078, 0.45098, 0.223529, 1)
 text = "ATTACK!"
 
+[node name="BonkCast" type="ShapeCast3D" parent="character_body"]
+shape = SubResource("BoxShape3D_f860b")
+target_position = Vector3(0, 0, 0)
+collision_mask = 3
+
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
 
@@ -90,6 +95,10 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
 shape = SubResource("SphereShape3D_oauj3")
+
+[node name="TunnelingTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
