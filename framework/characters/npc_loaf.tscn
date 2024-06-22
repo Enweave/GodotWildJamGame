@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://framework/characters/npc_loaf.gd" id="1_ifbm5"]
 [ext_resource type="PackedScene" uid="uid://cp6essdma6t72" path="res://framework/wjNPCBase.tscn" id="2_65cm3"]
 [ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="3_b2wyp"]
-[ext_resource type="Resource" uid="uid://dbcbi3k0aowen" path="res://dialogue/loaf_return.dialogue" id="3_kjx82"]
+[ext_resource type="Resource" uid="uid://dbcbi3k0aowen" path="res://dialogue/loaf.dialogue" id="3_kjx82"]
 [ext_resource type="Texture2D" uid="uid://uumkbudhpwho" path="res://assets/characters/Loaf.png" id="5_0trv3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hugss"]
@@ -38,7 +38,6 @@ unique_name_in_owner = true
 [node name="Sprite" parent="character_body/SpriteOrigin" index="0"]
 transform = Transform3D(0.609895, 0, 0, 0, 0.609895, 0, 0, 0, 0.609895, 0.212142, -0.16528, 0)
 sprite_frames = SubResource("SpriteFrames_hugss")
-animation = &"idle"
 
 [editable path="wjNPCBase"]
 [editable path="character_body"]

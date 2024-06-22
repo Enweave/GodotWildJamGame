@@ -1,0 +1,35 @@
+~ start
+
+Loaf: [[Food for the trip? Yeah, just make sure to keep the bag closed tight aight?|This food ain't for feeding the hounds, though they seem busy with something else lately.|So much blood around here lately, they're going crazy-|Ah, yeah that might be from...yeah. Sorry.]], 
+=> END
+
+~ revive
+
+Loaf: [[Looking good!|I didn't bring that many bandages old man]], 
+=> END
+
+~ return
+if State.has_full_arrows == "Y" or State.has_full_health == "Y":
+	Loaf: Hi General, you look weary. How can I help?
+- I need more arrows. => arrows
+- I need to see the healer. => health
+- Just need a moment before I return to the Withered Lands. => bye
+else: 
+	Loaf: Well Met.
+
+~ arrows 
+Loaf:  Gladly, anything else I can help you with?
+set State.has_full_arrows = "Y"
+- I need to see the healer. => health
+- Just need a moment before I return to the Withered Lands. => bye
+
+~ health 
+Loaf: Gladly, I will fetch them right away! Anything else I can help you with?
+set State.has_full_health = "Y"
+- I need more arrows. => arrows
+- Just need a moment before I return to the Withered Lands. => bye
+
+~ bye 
+Loaf: All healed up and restocked old man!
+
+=> END

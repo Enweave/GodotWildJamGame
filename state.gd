@@ -1,4 +1,4 @@
 extends Node
 
-var arrow_status: String = ""
-var health_status: String = ""
+var has_full_arrows: String = ""
+var has_full_health: String = ""
