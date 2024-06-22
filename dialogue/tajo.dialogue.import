@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://csep3js3q1lum"
+path="res://.godot/imported/tajo.dialogue-cb44c7ef98fe4e79063bab2ba819b08c.tres"
+
+[deps]
+
+source_file="res://dialogue/tajo.dialogue"
+dest_files=["res://.godot/imported/tajo.dialogue-cb44c7ef98fe4e79063bab2ba819b08c.tres"]
+
+[params]
+
+defaults=true

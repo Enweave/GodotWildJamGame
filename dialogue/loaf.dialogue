@@ -5,7 +5,7 @@ Loaf: [[Food for the trip? Yeah, just make sure to keep the bag closed tight aig
 
 ~ revive
 
-Loaf: [[Looking good!|I didn't bring that many bandages old man]], 
+Loaf: [Looking good!|I didn't bring that many bandages old man] 
 => END
 
 ~ return
