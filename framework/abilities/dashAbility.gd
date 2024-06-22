@@ -1,6 +1,6 @@
 extends wjAbilityBase
 
-func activate():
+func activate(callback: Callable = Callable(), args: Array = []):
     var success = false
     if user != null:
         if user.controller_direction:

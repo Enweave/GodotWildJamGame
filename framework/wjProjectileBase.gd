@@ -19,7 +19,19 @@ func fire():
     self.apply_impulse(impulse, Vector3(0,0,0))
 
 func _on_body_entered(body:Node):
-    if body is wjCharacterBase and body != spawner_ability.user:
+    if body.is_queued_for_deletion() or is_queued_for_deletion() or !get_parent() or body == spawner_ability.user:
+        return
+
+    if body is wjCharacterBase:
         if body.faction in spawner_ability.valid_target_factions:
-            body.take_damage(spawner_ability.ability_damage)
+            body.take_damage(spawner_ability.ability_damage, spawner_ability.user)
             queue_free()
+    elif !sleeping:
+        disable_and_attach.call_deferred(body)
+
+
+func disable_and_attach(body: Node):
+    freeze = true
+    sleeping = true
+    $CollisionShape3D.disabled = true
+    # reparent(body)

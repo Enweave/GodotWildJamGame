@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://debxhwb7ybyt1"
-path="res://.godot/imported/Arrow_General.png-b835801edeb663de7a9621ff2d3690ea.ctex"
+uid="uid://4xt3aooqyo2a"
+path="res://.godot/imported/Enemy sprites Corpse.png-76271cb6b01c0cdf8439b0ddd79c12f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Arrow_General.png"
-dest_files=["res://.godot/imported/Arrow_General.png-b835801edeb663de7a9621ff2d3690ea.ctex"]
+source_file="res://assets/characters/enemy/Enemy sprites Corpse.png"
+dest_files=["res://.godot/imported/Enemy sprites Corpse.png-76271cb6b01c0cdf8439b0ddd79c12f6.ctex"]
 
 [params]
 

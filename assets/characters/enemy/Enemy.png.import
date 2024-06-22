@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tdp8isj8i6n3"
-path.s3tc="res://.godot/imported/General Sword Animations.png-5a79832e0452c0816f181d7ab296cfb7.s3tc.ctex"
+uid="uid://ukwn0a4ol1eo"
+path="res://.godot/imported/Enemy.png-a28ae096e2ad06d4517ac4f019ca012b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/General Sword Animations.png"
-dest_files=["res://.godot/imported/General Sword Animations.png-5a79832e0452c0816f181d7ab296cfb7.s3tc.ctex"]
+source_file="res://assets/characters/enemy/Enemy.png"
+dest_files=["res://.godot/imported/Enemy.png-a28ae096e2ad06d4517ac4f019ca012b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

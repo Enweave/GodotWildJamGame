@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://btef2nvy0svge"]
+
+[ext_resource type="Script" path="res://framework/abilities/meeleeAttackAbility.gd" id="1_xqivs"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qqda6"]
+radius = 1.764
+
+[node name="SnowFoxMelee" type="Node3D"]
+script = ExtResource("1_xqivs")
+knockback_strength = 60.0
+ability_name = "Snow Fox Melee!"
+ability_description = "Reaping!"
+ability_cooldown_sec = 0.5
+ability_damage = 33.0
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_qqda6")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
