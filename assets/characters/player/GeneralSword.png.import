@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dntyq40hllgsg"
-path="res://.godot/imported/GeneralSword.png-4cf6c03f128c5b5cc5af8c4d9b56fe97.ctex"
+path="res://.godot/imported/GeneralSword.png-1f5b441c7bc9aee40f015a61d063ff9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/GeneralSword.png"
-dest_files=["res://.godot/imported/GeneralSword.png-4cf6c03f128c5b5cc5af8c4d9b56fe97.ctex"]
+source_file="res://assets/characters/player/GeneralSword.png"
+dest_files=["res://.godot/imported/GeneralSword.png-1f5b441c7bc9aee40f015a61d063ff9f.ctex"]
 
 [params]
 

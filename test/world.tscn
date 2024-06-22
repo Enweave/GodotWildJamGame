@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b28vj6t58mfb1"]
+[gd_scene load_steps=15 format=3 uid="uid://b28vj6t58mfb1"]
 
 [ext_resource type="Script" path="res://framework/wjLevel.gd" id="1_hmeae"]
 [ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="1_q5p4n"]
@@ -6,19 +6,47 @@
 [ext_resource type="PackedScene" uid="uid://c8ufluy1fjuu6" path="res://framework/characters/enemy.tscn" id="3_4iivo"]
 [ext_resource type="PackedScene" uid="uid://c3sniijh88unj" path="res://framework/characters/npc_loaf.tscn" id="5_bof5d"]
 [ext_resource type="PackedScene" uid="uid://bq2t6woh0gjci" path="res://framework/characters/SnowFox.tscn" id="6_0eb82"]
+[ext_resource type="Texture2D" uid="uid://bkui1i2ack2ig" path="res://assets/images/Tree_1.png" id="7_1csyd"]
+[ext_resource type="Texture2D" uid="uid://yvojtdm3i5jx" path="res://assets/images/Tree_Bonked2.png" id="7_fep0o"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fdmbj"]
-vertices = PackedVector3Array(-21.455, 0.5, -20.8625, -21.455, 0.5, 20.8875, 21.545, 0.5, 20.8875, 21.545, 0.5, -20.8625)
+vertices = PackedVector3Array(-199.5, 0.5, -199.5, -199.5, 0.5, 199.5, 199.5, 0.5, 199.5, 199.5, 0.5, -199.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xsdle"]
-size = Vector2(43.91, 42.725)
+size = Vector2(400, 400)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00ots"]
 albedo_texture = ExtResource("1_q6xj8")
-uv1_scale = Vector3(10.005, 10.005, 10.005)
+uv1_scale = Vector3(200, 200, 200)
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_acr72"]
+map_width = 10
+map_depth = 10
+map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b0lic"]
+height = 9.61505
+radius = 1.25916
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcs0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fep0o")
+}],
+"loop": false,
+"name": &"bonked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1csyd")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_hmeae")
@@ -47,21 +75,88 @@ transform = Transform3D(-0.709693, 0.609109, -0.354008, -0.614513, -0.289463, 0.
 shadow_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_4iivo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8183, 1.9874, -9.34763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7438, 1.9874, -20.1805)
 
 [node name="Enemy5" parent="." instance=ExtResource("3_4iivo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2493, 1.9874, -9.34763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31281, 1.9874, -20.1805)
 
 [node name="Enemy6" parent="." instance=ExtResource("3_4iivo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74922, 1.9874, -13.962)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.81289, 1.9874, -24.7948)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_4iivo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9588, 2.9323, -5.4198)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5209, 2.9323, -16.2526)
 
 [node name="NPCLoaf" parent="." instance=ExtResource("5_bof5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3196, 0, -4.37864)
 
 [node name="SnowFox" parent="." instance=ExtResource("6_0eb82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141315, -0.0749288, 10.2242)
+
+[node name="Tree" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3368, 0, 8.16347)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163937, 4.4626, 0)
+shape = SubResource("CylinderShape3D_b0lic")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Tree"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.2765, 0)
+shaded = true
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jcs0s")
+animation = &"idle"
+
+[node name="Tree2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1294, 0, 8.16347)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163937, 4.4626, 0)
+shape = SubResource("CylinderShape3D_b0lic")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Tree2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.2765, 0)
+shaded = true
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jcs0s")
+animation = &"idle"
+
+[node name="Tree3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2239, 0, 0.781114)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163937, 4.4626, 0)
+shape = SubResource("CylinderShape3D_b0lic")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Tree3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.2765, 0)
+shaded = true
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jcs0s")
+animation = &"bonked"
+autoplay = "idle"
+
+[node name="Tree4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.22946, 0, 0.781114)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163937, 4.4626, 0)
+shape = SubResource("CylinderShape3D_b0lic")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Tree4"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.2765, 0)
+shaded = true
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jcs0s")
+animation = &"idle"
+
+[node name="FoxChargeTarget" type="Node3D" parent="."]
 
 [connection signal="character_died" from="Player" to="." method="_emit_wj_level_lost"]

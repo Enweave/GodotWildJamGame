@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cthetd4ynvien"
-path.s3tc="res://.godot/imported/Fox_SpritesBonk.png-6881e069872d9eed4fb2ecba13a64e68.s3tc.ctex"
+uid="uid://4xt3aooqyo2a"
+path.s3tc="res://.godot/imported/Enemy sprites Corpse.png-76271cb6b01c0cdf8439b0ddd79c12f6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/characters/fox/Fox_SpritesBonk.png"
-dest_files=["res://.godot/imported/Fox_SpritesBonk.png-6881e069872d9eed4fb2ecba13a64e68.s3tc.ctex"]
+source_file="res://assets/characters/enemy/Enemy sprites Corpse.png"
+dest_files=["res://.godot/imported/Enemy sprites Corpse.png-76271cb6b01c0cdf8439b0ddd79c12f6.s3tc.ctex"]
 
 [params]
 

@@ -113,15 +113,15 @@ func update_animation_state():
 			try_switch_animation("run")
 		else:
 			try_switch_animation("idle")
-	
 
 
 func telegraph_and_use_ability(ability: wjAbilityBase):
 	if not is_telegraphing:
 		is_telegraphing = true
 		character_body.update_action_display(ability.ability_description)
+		var old_health = health
 		await get_tree().create_timer(reaction_time_sec).timeout
 		character_body.update_action_display('')
 		is_telegraphing = false
-		if !is_dead:	
+		if !is_dead and health == old_health:
 			use_ability_with_slowdown.call_deferred(ability)
