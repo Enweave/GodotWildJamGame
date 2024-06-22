@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bnodokf07e7hy"]
+[gd_scene load_steps=30 format=3 uid="uid://bnodokf07e7hy"]
 
 [ext_resource type="MeshLibrary" uid="uid://dbf55v68lpqyu" path="res://scenes/Test/mesh_lib.tres" id="1_4etvx"]
 [ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="2_nlj4m"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dnxh6m6djm3e1" path="res://assets/images/Tree_Fallen.png" id="22_01xik"]
 [ext_resource type="Texture2D" uid="uid://ro83xtf6uurm" path="res://assets/images/Cloth_1.png" id="23_ubt6h"]
 [ext_resource type="Texture2D" uid="uid://dy6tu84gqtwag" path="res://assets/images/Cloth_2.png" id="24_ywo0h"]
+[ext_resource type="Texture2D" uid="uid://p02lr5wtksbv" path="res://assets/characters/fox/Fox.png" id="25_vammf"]
 
 [sub_resource type="Environment" id="Environment_6j54p"]
 
@@ -33,6 +34,9 @@ size = Vector3(14, 5, 1)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_m31pf"]
 height = 4.0
 radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_marjq"]
+size = Vector3(11, 2.5, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -54,66 +58,66 @@ transform = Transform3D(1, 0, 0, 0, 0.961262, 0.275637, 0, -0.275637, 0.961262, 
 fov = 35.0
 
 [node name="player" parent="." instance=ExtResource("2_nlj4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 41.4724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83401, 41.4724)
 
 [node name="Level" type="Node3D" parent="."]
 
 [node name="Trees" type="Node3D" parent="Level"]
 
 [node name="TreeBonk2" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5579, 11.3003, -57.7007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2796, 11.3003, -57.7007)
 texture = ExtResource("3_46bin")
 
 [node name="TreeBonk4" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 21.8155, 11.3003, -31.6963)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 19.7866, 11.3003, -31.6963)
 texture = ExtResource("3_46bin")
 
 [node name="Tree" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, -19.9787, 11.3003, -43.8427)
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, -17.8857, 11.3003, -43.8427)
 texture = ExtResource("4_pn2o8")
 
 [node name="Tree4" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 18.8855, 11.3003, -49.0224)
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 17.1951, 11.3003, -49.0224)
 texture = ExtResource("4_pn2o8")
 
 [node name="Tree5" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.6632, 11.3003, -43.8427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4374, 11.3003, -43.8427)
 texture = ExtResource("4_pn2o8")
 
 [node name="Tree6" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.3729, 11.3003, -43.8427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4391, 11.3003, -43.8427)
 texture = ExtResource("4_pn2o8")
 
 [node name="Tree2" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.976, 11.3003, -54.925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.487, 11.3003, -54.925)
 texture = ExtResource("5_qqnsu")
 
 [node name="Tree3" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1513, 11.3003, -43.0281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6364, 11.3003, -43.0281)
 texture = ExtResource("6_stp61")
 
 [node name="Tree7" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1556, 11.3003, -50.5543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.333, 11.3003, -50.5543)
 texture = ExtResource("6_stp61")
 
 [node name="TreeBonk3" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -50.7392, 10.9531, -55.378)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -45.1105, 10.9531, -55.378)
 texture = ExtResource("7_ppe33")
 
 [node name="TreeBonk5" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 46.3375, 10.9531, -59.0176)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 40.6599, 10.9531, -59.0176)
 flip_h = true
 texture = ExtResource("7_ppe33")
 
 [node name="TreeBonk6" type="Sprite3D" parent="Level/Trees"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -25.2391, 10.9531, -31.2743)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -21.9371, 10.9531, -31.2743)
 flip_h = true
 texture = ExtResource("7_ppe33")
 
 [node name="FleshAndBlood" type="Node3D" parent="Level"]
 
 [node name="Flesh" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 6.04994, -48.2401)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 5.00237, -48.2401)
 texture = ExtResource("3_p2sct")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/FleshAndBlood/Flesh"]
@@ -123,35 +127,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0421698, 0, -0.219204)
 shape = SubResource("BoxShape3D_6mnla")
 
 [node name="Blood" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(5, 0, 0, 0, -1.31134e-07, 1, 0, -3, -4.37114e-08, 0, 1.55, -37.324)
-texture = ExtResource("4_sqgg4")
-
-[node name="Blood6" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(2.82452, -1.01099, -1.47306e-08, 0, -1.31134e-07, 1, -1.01099, -2.82452, -4.11545e-08, -1.55253, 1.6, -37.3239)
-visible = false
-texture = ExtResource("4_sqgg4")
-
-[node name="Blood5" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(2.89092, 0.801614, 1.16799e-08, 0, -1.31134e-07, 1, 0.801614, -2.89092, -4.2122e-08, 2.37699, 1.6, -37.3239)
-visible = false
+transform = Transform3D(4, 0, 0, 0, -1.31134e-07, 1, 0, -3, -4.37114e-08, 0, 1.55, -37.324)
 texture = ExtResource("4_sqgg4")
 
 [node name="Blood2" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(4, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0.285, 1.55, -24.902)
-texture = ExtResource("5_5cmod")
-
-[node name="Blood9" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(4, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0.284544, 1.6, -24.9019)
-texture = ExtResource("5_5cmod")
-
-[node name="Blood7" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(1.67016, 1.10026, 4.8094e-08, 0, -8.74228e-08, 2, 1.10026, -1.67016, -7.30049e-08, 2.01709, 1.6, -29.7401)
-visible = false
-texture = ExtResource("5_5cmod")
-
-[node name="Blood8" type="Sprite3D" parent="Level/FleshAndBlood"]
-transform = Transform3D(-1.64902, 1.13169, 4.94678e-08, 2.96679e-15, -8.74228e-08, 2, 1.13169, 1.64902, 7.20811e-08, -3.97654, 1.6, -29.6463)
-visible = false
+transform = Transform3D(3, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0.285, 1.55, -24.902)
 texture = ExtResource("5_5cmod")
 
 [node name="Blood3" type="Sprite3D" parent="Level/FleshAndBlood"]
@@ -165,79 +145,79 @@ texture = ExtResource("7_xd0ic")
 [node name="Bushes" type="Node3D" parent="Level"]
 
 [node name="BushBig" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3016, 3.03, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.3016, 2.265, 0)
 texture = ExtResource("13_bwtfo")
 
 [node name="BushBig2" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3641, 3.03, -13.9871)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.3641, 2.265, -13.9871)
 texture = ExtResource("13_bwtfo")
 
 [node name="BushMed" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7998, 2.85, 4.76622)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.7998, 2.175, 4.76622)
 texture = ExtResource("14_vetwb")
 
 [node name="BushMed2" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.823, 2.85, -5.45409)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.823, 2.175, -5.45409)
 texture = ExtResource("14_vetwb")
 
 [node name="BushMed3" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4019, 2.85, -11.6273)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.4019, 2.175, -11.6273)
 texture = ExtResource("14_vetwb")
 
 [node name="BushSmal" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.84615, 2.425, -2.44807)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.84615, 1.9625, -2.44807)
 texture = ExtResource("15_ql7dg")
 
 [node name="BushSmal2" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0074, 2.425, -7.9761)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.0074, 1.9625, -7.9761)
 texture = ExtResource("15_ql7dg")
 
 [node name="BushSmal3" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24915, 2.425, 1.0876)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.24915, 1.9625, 1.0876)
 texture = ExtResource("15_ql7dg")
 
 [node name="BushBig3" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40788, 3.03, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.40788, 2.265, 0)
 texture = ExtResource("13_bwtfo")
 
 [node name="BushBig4" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1492, 3.03, -13.9871)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 21.1492, 2.265, -13.9871)
 texture = ExtResource("13_bwtfo")
 
 [node name="BushBig5" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0003, 3.03, 3.70807)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.0003, 2.265, 3.70807)
 texture = ExtResource("13_bwtfo")
 
 [node name="BushBig6" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2546, 3.03, -1.1462)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.2546, 2.265, -1.1462)
 texture = ExtResource("13_bwtfo")
 
 [node name="BushMed4" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93803, 2.85, 4.76622)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.93803, 2.175, 4.76622)
 texture = ExtResource("14_vetwb")
 
 [node name="BushMed5" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7774, 2.85, -5.45409)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.7774, 2.175, -5.45409)
 texture = ExtResource("14_vetwb")
 
 [node name="BushMed6" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8351, 2.85, -11.6273)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.8351, 2.175, -11.6273)
 texture = ExtResource("14_vetwb")
 
 [node name="BushSmal4" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9055, 2.425, -2.44807)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.9055, 1.9625, -2.44807)
 texture = ExtResource("15_ql7dg")
 
 [node name="BushSmal7" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4358, 2.425, -9.66401)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.4358, 1.9625, -9.66401)
 texture = ExtResource("15_ql7dg")
 
 [node name="BushSmal5" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1659, 2.425, -7.9761)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.1659, 1.9625, -7.9761)
 texture = ExtResource("15_ql7dg")
 
 [node name="BushSmal6" type="Sprite3D" parent="Level/Bushes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13451, 2.425, 1.82937)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.13451, 1.9625, 1.82937)
 texture = ExtResource("15_ql7dg")
 
 [node name="Fog" type="Node3D" parent="Level"]
@@ -312,7 +292,7 @@ modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("17_gqhww")
 
 [node name="Fog14" type="Sprite3D" parent="Level/Fog/RightFog"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 23.6439, 5.6591, 23.0156)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 39.2703, 5.6591, 23.0156)
 modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("18_hb58v")
 
@@ -366,7 +346,7 @@ modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("18_hb58v")
 
 [node name="Fog11" type="Sprite3D" parent="Level/Fog/LeftFog"]
-transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, -32.9098, 10.1863, 24.7495)
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, -46.2173, 10.1863, 24.7495)
 flip_h = true
 modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("16_x3xi4")
@@ -401,7 +381,7 @@ modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("20_24lqx")
 
 [node name="Fog19" type="Sprite3D" parent="Level/Fog/LeftFog"]
-transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 2, -18.6807, 5.54196, 22.5211)
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 2, -30.4566, 5.54196, 22.5211)
 flip_h = true
 modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("20_24lqx")
@@ -438,13 +418,13 @@ modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("20_24lqx")
 
 [node name="Fog25" type="Sprite3D" parent="Level/Fog/FrontFog"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 2, 10.0113, 5.54196, 42.3749)
+transform = Transform3D(2.857, 0, 0, 0, 1, 0, 0, 0, 1.429, 16.2029, 2.98446, 45.9912)
 flip_h = true
 modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("20_24lqx")
 
 [node name="Fog26" type="Sprite3D" parent="Level/Fog/FrontFog"]
-transform = Transform3D(2, 0, 0, 0, 4, 0, 0, 0, 2, -11.4382, 5.44589, 43.4817)
+transform = Transform3D(2.857, 0, 0, 0, 1, 0, 0, 0, 1.429, -15.4764, 3.4193, 47.098)
 flip_h = true
 modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("18_hb58v")
@@ -456,12 +436,12 @@ modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("16_x3xi4")
 
 [node name="Fog28" type="Sprite3D" parent="Level/Fog/FrontFog"]
-transform = Transform3D(3.75, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.24288, 8.34268, 49.1799)
+transform = Transform3D(3.75, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.24288, 6.44651, 52.4715)
 modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("18_76qu8")
 
 [node name="Fog29" type="Sprite3D" parent="Level/Fog/FrontFog"]
-transform = Transform3D(3.75, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 14.9624, 8.34268, 46.8052)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2.5, 9.26319, 3.53411, 51.3025)
 flip_h = true
 modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("18_76qu8")
@@ -479,38 +459,38 @@ modulate = Color(1, 1, 1, 0.411765)
 texture = ExtResource("20_24lqx")
 
 [node name="Fog32" type="Sprite3D" parent="Level/Fog/FrontFog"]
-transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 2, 10.0113, 5.54196, 62.4841)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 2, 10.0113, 5.54196, 62.4841)
 flip_h = true
-modulate = Color(1, 1, 1, 0.411765)
+modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("20_24lqx")
 
 [node name="Fog33" type="Sprite3D" parent="Level/Fog/FrontFog"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11.4382, 5.44589, 63.5909)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 2, -11.4382, 5.44589, 63.5909)
 flip_h = true
-modulate = Color(1, 1, 1, 0.411765)
+modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("18_hb58v")
 
 [node name="Fog34" type="Sprite3D" parent="Level/Fog/FrontFog"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, -26.6067, 10.1863, 86.5698)
 flip_h = true
-modulate = Color(1, 1, 1, 0.411765)
+modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("16_x3xi4")
 
 [node name="Fog35" type="Sprite3D" parent="Level/Fog/FrontFog"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, -1.24288, 8.34268, 69.2892)
-modulate = Color(1, 1, 1, 0.411765)
+modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("18_76qu8")
 
 [node name="Fog36" type="Sprite3D" parent="Level/Fog/FrontFog"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 14.9624, 8.34268, 66.9145)
 flip_h = true
-modulate = Color(1, 1, 1, 0.411765)
+modulate = Color(1, 1, 1, 0.529412)
 texture = ExtResource("18_76qu8")
 
 [node name="Collidables" type="Node3D" parent="Level"]
 
 [node name="Stump" type="Sprite3D" parent="Level/Collidables"]
-transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, -7.0854, 3.32166, -6.80113)
+transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 1, -5.28557, 2.25155, -6.80113)
 flip_h = true
 texture = ExtResource("21_o5smn")
 
@@ -521,7 +501,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.493726, 0, -0.323587)
 shape = SubResource("CylinderShape3D_m31pf")
 
 [node name="Stump2" type="Sprite3D" parent="Level/Collidables"]
-transform = Transform3D(1.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 12.1233, 4.12902, -14.7526)
+transform = Transform3D(0.8, 0, 0, 0, 0.2, 0, 0, 0, 1, 9.58298, 2.06789, -14.7526)
 texture = ExtResource("21_o5smn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Collidables/Stump2"]
@@ -531,7 +511,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.454848, 0, -0.323587)
 shape = SubResource("CylinderShape3D_m31pf")
 
 [node name="Stump3" type="Sprite3D" parent="Level/Collidables"]
-transform = Transform3D(1.5, 0, 0, 0, 0.8, 0, 0, 0, 1, -12.1242, 4.12902, -30.3641)
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, -10.9391, 3.11951, -30.3641)
 texture = ExtResource("21_o5smn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Collidables/Stump3"]
@@ -541,33 +521,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.454848, 0, -0.323587)
 shape = SubResource("CylinderShape3D_m31pf")
 
 [node name="FallenLog" type="Sprite3D" parent="Level/Collidables"]
-transform = Transform3D(0.89038, 0, 0.455219, 0, 1, 0, -0.455219, 0, 0.89038, -12.7441, 2.42872, -10.9101)
+transform = Transform3D(0.89038, 0, 0.455219, 0, 0.7, 0, -0.455219, 0, 0.89038, -12.7441, 2.11718, -10.9101)
 texture = ExtResource("22_01xik")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Collidables/FallenLog"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Collidables/FallenLog/StaticBody3D"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0.176356, 0, 0.0901632)
+shape = SubResource("BoxShape3D_marjq")
 
 [node name="FallenLog2" type="Sprite3D" parent="Level/Collidables"]
-transform = Transform3D(0.174645, 0, -0.984631, 0, 1, 0, 0.984631, 0, 0.174645, 23.3865, 2.60084, -14.2074)
+transform = Transform3D(0.631989, 0, -0.774977, 0, 0.7, 0, 0.774977, 0, 0.631989, 19.2516, 2.11718, -13.2817)
 texture = ExtResource("22_01xik")
 
-[node name="Cloth" type="Node3D" parent="Level"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Collidables/FallenLog2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Collidables/FallenLog2/StaticBody3D"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0.176356, 0, 0.0901632)
+shape = SubResource("BoxShape3D_marjq")
+
+[node name="FallenLog3" type="Sprite3D" parent="Level/Collidables"]
+transform = Transform3D(0.847641, 0, -0.53057, 0, 0.7, 0, 0.53057, 0, 0.847641, 15.539, 2.11718, -39.278)
+texture = ExtResource("22_01xik")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Collidables/FallenLog3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Collidables/FallenLog3/StaticBody3D"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0.176356, 0, 0.0901632)
+shape = SubResource("BoxShape3D_marjq")
+
+[node name="Trail" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.5096)
 
-[node name="Cloth" type="Sprite3D" parent="Level/Cloth"]
+[node name="Cloth" type="Sprite3D" parent="Level/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.6, 7.24033)
 texture = ExtResource("23_ubt6h")
 
-[node name="Cloth3" type="Sprite3D" parent="Level/Cloth"]
+[node name="Cloth4" type="Sprite3D" parent="Level/Trail"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 1, 0, -2, -4.37114e-08, 11.35, 1.6, -74.8818)
+texture = ExtResource("23_ubt6h")
+
+[node name="Cloth3" type="Sprite3D" parent="Level/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.6, -2.14744)
 texture = ExtResource("23_ubt6h")
 
-[node name="Cloth2" type="Sprite3D" parent="Level/Cloth"]
+[node name="Cloth2" type="Sprite3D" parent="Level/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.6, 14.4678)
 texture = ExtResource("24_ywo0h")
 
-[node name="Blood" type="Sprite3D" parent="Level/Cloth"]
+[node name="Blood" type="Sprite3D" parent="Level/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0204496, 1.6, -18.0451)
 texture = ExtResource("6_5g5st")
 
-[node name="Blood2" type="Sprite3D" parent="Level/Cloth"]
+[node name="Blood2" type="Sprite3D" parent="Level/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0139227, 1.6, -8.20244)
 texture = ExtResource("7_xd0ic")
 
@@ -579,4 +585,7 @@ spot_range = 80.0
 spot_attenuation = 0.170755
 
 [node name="Boss" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.32922, -33.915)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 2.86728, -37.7268)
+texture = ExtResource("25_vammf")
+region_enabled = true
+region_rect = Rect2(252.883, 3.26743, 1264.57, 903.814)
