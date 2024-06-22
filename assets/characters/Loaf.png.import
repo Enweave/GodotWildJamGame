@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uumkbudhpwho"
-path.s3tc="res://.godot/imported/Loaf.png-86371eb7c5ad5a1f551d9802e97956fd.s3tc.ctex"
+path="res://.godot/imported/Loaf.png-86371eb7c5ad5a1f551d9802e97956fd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/characters/Loaf.png"
-dest_files=["res://.godot/imported/Loaf.png-86371eb7c5ad5a1f551d9802e97956fd.s3tc.ctex"]
+dest_files=["res://.godot/imported/Loaf.png-86371eb7c5ad5a1f551d9802e97956fd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
