@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://y6j63cjxftto"]
+[gd_scene load_steps=46 format=3 uid="uid://y6j63cjxftto"]
 
 [ext_resource type="Script" path="res://levels/level2.gd" id="1_b8526"]
 [ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="2_o0d61"]
 [ext_resource type="PackedScene" uid="uid://nyn1d4nmk0xb" path="res://framework/utility/player_respawn.tscn" id="2_u63ra"]
+[ext_resource type="PackedScene" uid="uid://bfp3oc0d74kt7" path="res://levels/levelEnd.tscn" id="2_wp8ap"]
 [ext_resource type="PackedScene" uid="uid://xhbh0qojmwcv" path="res://assets/blender_meshes/terrain.blend" id="3_8p6dg"]
 [ext_resource type="Texture2D" uid="uid://b8e86charkedg" path="res://assets/images/Tent.png" id="3_x1ghh"]
 [ext_resource type="PackedScene" uid="uid://d0uimuel1ij5o" path="res://scenes/Test/world_environment.tscn" id="4_nn6yh"]
@@ -82,12 +83,40 @@ fog_density = 0.02
 
 [node name="Level2" type="Node3D" node_paths=PackedStringArray("player_respawn", "player")]
 script = ExtResource("1_b8526")
+levelEndScene = ExtResource("2_wp8ap")
 player_respawn = NodePath("characters/PlayerRespawn")
 player = NodePath("characters/player")
 metadata/_edit_lock_ = true
 
 [node name="characters" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
+
+[node name="Enemy" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.9012, 0, 5.29926)
+
+[node name="Enemy2" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.148, -2.28882e-05, 3.02725)
+
+[node name="Enemy3" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.278, -7.62939e-06, -43.5878)
+
+[node name="Enemy4" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.523, 0, -49.7697)
+
+[node name="Enemy5" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.071, 0, -29.8252)
+
+[node name="Enemy6" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.55, 7.62939e-06, 75.7971)
+
+[node name="Enemy7" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.008, 7.62939e-06, 91.9393)
+
+[node name="Enemy8" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.07, -4.57764e-05, 77.534)
+
+[node name="Enemy9" parent="characters" instance=ExtResource("36_mrpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.433, 1.52588e-05, 61.7894)
 
 [node name="PlayerRespawn" parent="characters" instance=ExtResource("2_u63ra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73739, 0.755317, -4.37494)
@@ -97,7 +126,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28402, -1.19209e-07, -4.86344)
 
 [node name="SnowFox" parent="characters" instance=ExtResource("4_t5md8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300.917, 0.437073, -3.78275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 289.114, 0.437073, 0.575057)
 
 [node name="floor" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
@@ -419,31 +448,5 @@ directional_shadow_blend_splits = true
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.961262, 0.275637, 0, -0.275637, 0.961262, 0, 6, 5)
 
-[node name="Enemy" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.9012, 0, 5.29926)
-
-[node name="Enemy2" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.148, -2.28882e-05, 3.02725)
-
-[node name="Enemy3" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.278, -7.62939e-06, -43.5878)
-
-[node name="Enemy4" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.523, 0, -49.7697)
-
-[node name="Enemy5" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.071, 0, -29.8252)
-
-[node name="Enemy6" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.55, 7.62939e-06, 75.7971)
-
-[node name="Enemy7" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.008, 7.62939e-06, 91.9393)
-
-[node name="Enemy8" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.07, -4.57764e-05, 77.534)
-
-[node name="Enemy9" parent="." instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.433, 1.52588e-05, 61.7894)
-
 [connection signal="character_died" from="characters/player" to="." method="_on_player_character_died"]
+[connection signal="character_died" from="characters/SnowFox" to="." method="_on_snow_fox_character_died"]
