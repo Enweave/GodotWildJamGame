@@ -139,37 +139,37 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.0614, 2.76566e-05, -61.455)
 
 [node name="Enemy" parent="characters/Group1" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7082, -2.76566e-05, 8.38779)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7082, 1.72703, 8.38779)
 
 [node name="Enemy2" parent="characters/Group1" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538582, -5.05448e-05, 6.11578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538582, 1.727, 6.11578)
 
 [node name="Group2" type="Node3D" parent="characters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5987, 2.76566e-05, -164.691)
 
 [node name="Enemy3" parent="characters/Group2" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.87782, -3.52859e-05, 17.7735)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.87782, 0.859246, 17.7735)
 
 [node name="Enemy4" parent="characters/Group2" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87719, -2.76566e-05, 11.5916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87719, 0.859253, 11.5916)
 
 [node name="Enemy5" parent="characters/Group2" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32919, -2.76566e-05, 31.5361)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32919, 0.859253, 31.5361)
 
 [node name="Group3" type="Node3D" parent="characters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.279, 2.76566e-05, -158.547)
 
 [node name="Enemy6" parent="characters/Group3" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2025, -2.00272e-05, 7.48512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2025, 0.961809, 7.48512)
 
 [node name="Enemy7" parent="characters/Group3" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33948, -2.00272e-05, 23.6273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33948, 0.961809, 23.6273)
 
 [node name="Enemy8" parent="characters/Group3" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27747, -7.3433e-05, 9.22203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27747, 0.961756, 9.22203)
 
 [node name="Enemy9" parent="characters/Group3" instance=ExtResource("36_mrpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914474, -1.23978e-05, -6.52257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914474, 0.961817, -6.52257)
 
 [node name="PlayerRespawn" parent="characters" instance=ExtResource("2_u63ra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73739, 0.755317, -4.37494)
