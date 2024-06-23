@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://framework/characters/player.gd" id="1_st0lc"]
 [ext_resource type="PackedScene" uid="uid://deopkjrqiig35" path="res://framework/abilities/swordAttackAbility.tscn" id="2_bfch2"]
 [ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="2_hg0jc"]
-[ext_resource type="PackedScene" uid="uid://c2x43uqwvxtip" path="res://framework/abilities/BowAttackAbility.tscn" id="3_1rd2d"]
+[ext_resource type="PackedScene" uid="uid://c2x43uqwvxtip" path="res://framework/abilities/bowAttackAbility.tscn" id="3_1rd2d"]
 [ext_resource type="Script" path="res://framework/characters/playerCameraHelper.gd" id="3_hwt8f"]
 [ext_resource type="PackedScene" uid="uid://3g0f358fp0su" path="res://framework/abilities/dashAbility.tscn" id="3_tqnnt"]
 [ext_resource type="SpriteFrames" uid="uid://cq8lrqsdcjvtu" path="res://framework/characters/PlayerSwordSpriteFrames.tres" id="5_7lt04"]

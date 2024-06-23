@@ -6,7 +6,6 @@ class_name SnowFox
 var ability_attack_melee: wjAbilityBase = null
 @onready var nav_agent = $NavigationAgent3D
 @onready var bonk_cast: ShapeCast3D = $character_body/BonkCast
-@onready var charge_target: Node3D = $"../FoxChargeTarget"
 @onready var tunneling_timer: Timer = $TunnelingTimer
 @onready var collision_shape: BoxShape3D = $character_body.shape
 
@@ -22,6 +21,7 @@ var bonk_vulnerable_time: float = 2.0
 @export var attack_time: float = 1.0
 @export var attack_move_speed_multiplier: float = 2.0
 
+var charge_target: Node3D
 var player: wjPlayer
 var was_player_hit := false
 
@@ -37,6 +37,10 @@ func _ready():
 		ability_attack_melee = ability_attack_melee_scene.instantiate()
 		character_body.attach_ability(ability_attack_melee, self)
 		ability_attack_melee.sens_ability_viable.connect(_on_sense_melee_attack_viable)
+	
+	charge_target = Node3D.new()
+	charge_target.name = "FoxChargeTarget"
+	get_parent().add_child.call_deferred(charge_target)
 
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity:Vector3):
