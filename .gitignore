@@ -4,3 +4,6 @@
 addons/dialogue_manager
 addons/Asset_Drawer
 *.tmp
+build/
+*.py
+*.pem
