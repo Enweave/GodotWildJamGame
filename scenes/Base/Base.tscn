@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dc1pkci7163j2"]
+[gd_scene load_steps=43 format=3 uid="uid://dc1pkci7163j2"]
 
 [ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="1_gd2bh"]
 [ext_resource type="PackedScene" uid="uid://d0uimuel1ij5o" path="res://scenes/Test/world_environment.tscn" id="2_8ckbu"]
@@ -58,6 +58,9 @@ size = Vector3(15, 7, 1)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gkkj5"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u4tml"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ceigk"]
+size = Vector3(3, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5j0oy"]
 size = Vector3(15, 3, 0.5)
@@ -171,15 +174,21 @@ shape = SubResource("WorldBoundaryShape3D_u4tml")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 26.049, 9.12392, -7.37377)
 shape = SubResource("WorldBoundaryShape3D_u4tml")
 
-[node name="Node3D" type="Node3D" parent="Level/BaseCamp"]
+[node name="Void" type="Node3D" parent="Level/BaseCamp"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9647, 0)
 
-[node name="Void" type="Sprite3D" parent="Level/BaseCamp/Node3D"]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -2.96449, 0, 2.98673)
+[node name="Void" type="Sprite3D" parent="Level/BaseCamp/Void"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.46691, -2.16724, 0.165552)
 texture = ExtResource("10_24qho")
 
-[node name="VoidShop" type="Sprite3D" parent="Level/BaseCamp/Node3D"]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -2.97036, 0, 2.68753)
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/BaseCamp/Void/Void"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/BaseCamp/Void/Void/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.329562, 0)
+shape = SubResource("BoxShape3D_ceigk")
+
+[node name="VoidShop" type="Sprite3D" parent="Level/BaseCamp/Void"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.47278, -2.09374, -0.133648)
 texture = ExtResource("11_q3f22")
 
 [node name="Flora" type="Node3D" parent="Level"]
