@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq2t6woh0gjci"]
+[gd_scene load_steps=11 format=3 uid="uid://bq2t6woh0gjci"]
 
 [ext_resource type="Script" path="res://framework/characters/SnowFox.gd" id="1_c3k3d"]
 [ext_resource type="SpriteFrames" uid="uid://bypwlrqkxd21v" path="res://framework/characters/SnowFoxSprites.tres" id="2_5yych"]
 [ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="2_e5n14"]
+[ext_resource type="AudioStream" uid="uid://cao5siansalr2" path="res://assets/sound/cycles/foxRun.mp3" id="4_cgb4v"]
+[ext_resource type="Script" path="res://framework/wJWalkSoundEmitter.gd" id="5_w8gte"]
+[ext_resource type="AudioStream" uid="uid://8ah4caiewcya" path="res://assets/sound/oneshots/fox Master-bounce-1.mp3" id="6_w5t01"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1sms"]
 size = Vector3(7, 3, 2)
@@ -15,7 +18,7 @@ size = Vector3(7.5, 3.5, 2.5)
 [sub_resource type="SphereShape3D" id="SphereShape3D_oauj3"]
 radius = 15.0
 
-[node name="SnowFox" type="CharacterBody3D"]
+[node name="SnowFox" type="CharacterBody3D" node_paths=PackedStringArray("walkSoundEmitter")]
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_c3k3d")
@@ -25,6 +28,7 @@ can_attack_factions = [0, 1, 2, 3]
 move_speed = 4.0
 move_speed_slowdown_multiplier = 0.8
 reaction_time_sec = 0.9
+walkSoundEmitter = NodePath("wjWalkSoundEmitter")
 
 [node name="character_body" type="CollisionShape3D" parent="."]
 unique_name_in_owner = true
@@ -99,6 +103,14 @@ shape = SubResource("SphereShape3D_oauj3")
 [node name="TunnelingTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="wjWalkSoundEmitter" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_cgb4v")
+script = ExtResource("5_w8gte")
+
+[node name="AttackSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_w5t01")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
