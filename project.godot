@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="WildJamGame"
+config/name="The General and the Snow Fox"
+config/version="0.0.1"
 run/main_scene="res://scenes/Opening/OpeningWithLogo.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60
@@ -24,6 +25,10 @@ ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoload
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 WjAutoloadGameState="*res://framework/wjAutoloadGameState.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -100,7 +105,7 @@ attack_ranged={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/intro.dialogue", "res://dialogue/loaf.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/intro.dialogue", "res://dialogue/loaf.dialogue", "res://dialogue/epilogue.dialogue", "res://dialogue/respawn.dialogue")
 
 [layer_names]
 

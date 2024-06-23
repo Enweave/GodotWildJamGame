@@ -36,9 +36,9 @@ transform = Transform3D(1.72289, 0, 0, 0, 1.72289, 0, 0, 0, 1.72289, 0, 0, 0)
 unique_name_in_owner = true
 
 [node name="Sprite" parent="character_body/SpriteOrigin" index="0"]
-transform = Transform3D(0.609895, 0, 0, 0, 0.609895, 0, 0, 0, 0.609895, 0.212142, -0.16528, 0)
+transform = Transform3D(0.492415, 0, 0, 0, 0.492415, 0, 0, 0, 0.492415, -0.00214289, -0.308137, 0)
+shaded = false
 sprite_frames = SubResource("SpriteFrames_hugss")
-animation = &"idle"
 
 [editable path="wjNPCBase"]
 [editable path="character_body"]
