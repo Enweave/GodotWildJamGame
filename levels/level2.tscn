@@ -565,6 +565,76 @@ texture = ExtResource("12_63b4w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
 shape = SubResource("CylinderShape3D_7ii5g")
 
+[node name="TreeBonk5" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5121, 11.3003, 31.6938)
+texture = ExtResource("38_qpr55")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
+[node name="TreeBonk8" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8161, 11.3003, 43.2136)
+texture = ExtResource("38_qpr55")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
+[node name="TreeBonk9" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6748, 11.3003, 48.945)
+texture = ExtResource("38_qpr55")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
+[node name="TreeBonk10" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72789, 11.3003, 60.7028)
+texture = ExtResource("38_qpr55")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
+[node name="TreeBonk7" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.546, 11.3003, 35.4129)
+texture = ExtResource("38_qpr55")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
+[node name="Tree3" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, 13.7686, 11.3003, 45.5518)
+texture = ExtResource("12_63b4w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/Tree3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/Tree3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
+[node name="Tree4" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, 3.80892, 11.3003, 55.3912)
+texture = ExtResource("12_63b4w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/Tree4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/Tree4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30028, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
 [node name="TreeBonk6" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 25.0561, 10.9531, 18.7298)
 flip_h = true
@@ -583,6 +653,16 @@ texture = ExtResource("39_y80kk")
 [node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980618, -7.95309, 0)
+shape = SubResource("CylinderShape3D_7ii5g")
+
+[node name="TreeBonk11" type="Sprite3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -13.2837, 10.9531, 67.0763)
+texture = ExtResource("39_y80kk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/NavigationRegion3D/SnowForestPt1/ClusterOfTrees1/TreeBonk11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980618, -7.95309, 0)
 shape = SubResource("CylinderShape3D_7ii5g")
 
