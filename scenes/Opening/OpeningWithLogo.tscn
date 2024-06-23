@@ -1,13 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcre7wee2vtjj"]
+[gd_scene load_steps=5 format=3 uid="uid://bcre7wee2vtjj"]
 
 [ext_resource type="PackedScene" uid="uid://dq6m30wrrv1id" path="res://scenes/Opening/Opening.tscn" id="1_aaai4"]
-[ext_resource type="Texture2D" uid="uid://8f6tndr2bauo" path="res://assets/splash/logo_vertical_color_dark.png" id="2_mso1n"]
 [ext_resource type="Texture2D" uid="uid://cu6dekppabumb" path="res://assets/splash/GWJ-Full-Logo-noBG-4k.png" id="3_rmr84"]
 [ext_resource type="Texture2D" uid="uid://plsswee1wniw" path="res://assets/splash/ThemeBanner.png" id="4_qvxvl"]
 [ext_resource type="Texture2D" uid="uid://cepsietbs53gy" path="res://assets/splash/consequences.png" id="5_o0d6j"]
 
 [node name="Opening" instance=ExtResource("1_aaai4")]
-images = Array[Texture2D]([ExtResource("2_mso1n"), ExtResource("3_rmr84"), ExtResource("4_qvxvl"), ExtResource("5_o0d6j")])
+images = Array[Texture2D]([ExtResource("3_rmr84"), ExtResource("4_qvxvl"), ExtResource("5_o0d6j")])
 
 [node name="BackgroundMusicPlayer" parent="." index="0"]
 bus = &"Master"

@@ -17,3 +17,7 @@ func update_health_display(health: String):
 
 func update_action_display(action: String):
 	%action.text = action
+
+
+func play_damage_snd():
+	%SoundTakeDamage.play()

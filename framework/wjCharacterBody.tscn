@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://tp6j5tlonkh4"]
+[gd_scene load_steps=6 format=3 uid="uid://tp6j5tlonkh4"]
 
 [ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="1_yy041"]
 [ext_resource type="SpriteFrames" uid="uid://ccngynn0hb3xs" path="res://framework/characters/EnemySpriteFrames.tres" id="2_qqpx5"]
+[ext_resource type="AudioStream" uid="uid://ciphmthj3ftw2" path="res://assets/sound/oneshots/fleshHit.mp3" id="3_ljjje"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60bb8"]
 
@@ -59,3 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
 billboard = 1
 modulate = Color(0.996078, 0.45098, 0.223529, 1)
 text = "ATTACK!"
+
+[node name="SoundTakeDamage" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_ljjje")

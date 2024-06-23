@@ -37,7 +37,24 @@ var is_telegraphing = false
 @export var apply_track_animation: bool = true
 var anim_is_attacking = false
 var attack_anim_name = "swing1"
+@onready var SoundTakeDamage = %SoundTakeDamage
 
+@export var walkSoundEmitter : wjWalkSoundEmitter
+@export var walk_sound_movement_speed_threshohld = 1
+
+var sound_is_walking = false
+
+
+func update_sound():
+	if walkSoundEmitter != null:
+		if (velocity.length() > walk_sound_movement_speed_threshohld) and is_on_floor():
+			if !sound_is_walking:
+				walkSoundEmitter.fade_in_play()
+				sound_is_walking = true
+		else:
+			if sound_is_walking:
+				walkSoundEmitter.fade_out_stop()
+				sound_is_walking = false
 
 func calc_movement(_delta):
 	pass
@@ -48,7 +65,8 @@ func _physics_process(delta):
 	
 	update_sptite_heading()
 	update_animation_state()
-	
+	update_sound()
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -64,6 +82,7 @@ func update_heading(target: Vector3):
 func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
 	if is_dead:
 		return
+	character_body.play_damage_snd()
 	health -= damage_amount
 	
 	being_attacked_by.emit(damage_amount, attacker)

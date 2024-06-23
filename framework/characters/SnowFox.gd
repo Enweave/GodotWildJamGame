@@ -98,7 +98,9 @@ func attack():
 	current_move_speed *= attack_move_speed_multiplier
 
 	try_switch_animation("attack")
+	%AttackSound.play()
 	await get_tree().create_timer(attack_time).timeout
+	
 
 	current_target = player
 	velocity = Vector3.ZERO
