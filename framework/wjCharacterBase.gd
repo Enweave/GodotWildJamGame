@@ -37,7 +37,6 @@ var is_telegraphing = false
 @export var apply_track_animation: bool = true
 var anim_is_attacking = false
 var attack_anim_name = "swing1"
-@onready var SoundTakeDamage = %SoundTakeDamage
 
 @export var walkSoundEmitter : wjWalkSoundEmitter
 @export var walk_sound_movement_speed_threshohld = 1
