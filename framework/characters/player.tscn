@@ -1,15 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4crl7k17l4o1"]
+[gd_scene load_steps=11 format=3 uid="uid://c4crl7k17l4o1"]
 
 [ext_resource type="Script" path="res://framework/characters/player.gd" id="1_st0lc"]
 [ext_resource type="PackedScene" uid="uid://deopkjrqiig35" path="res://framework/abilities/swordAttackAbility.tscn" id="2_bfch2"]
 [ext_resource type="PackedScene" uid="uid://tp6j5tlonkh4" path="res://framework/wjCharacterBody.tscn" id="2_hg0jc"]
-[ext_resource type="PackedScene" uid="uid://c2x43uqwvxtip" path="res://framework/abilities/bowAttackAbility.tscn" id="3_1rd2d"]
+[ext_resource type="PackedScene" uid="uid://c2x43uqwvxtip" path="res://framework/abilities/BowAttackAbility.tscn" id="3_1rd2d"]
 [ext_resource type="Script" path="res://framework/characters/playerCameraHelper.gd" id="3_hwt8f"]
 [ext_resource type="PackedScene" uid="uid://3g0f358fp0su" path="res://framework/abilities/dashAbility.tscn" id="3_tqnnt"]
 [ext_resource type="SpriteFrames" uid="uid://cq8lrqsdcjvtu" path="res://framework/characters/PlayerSwordSpriteFrames.tres" id="5_7lt04"]
 [ext_resource type="SpriteFrames" uid="uid://nqwpqlhdqke0" path="res://framework/characters/PlayerBowSpriteFrames.tres" id="5_055v7"]
+[ext_resource type="AudioStream" uid="uid://svjiau881pxg" path="res://assets/sound/cycles/generalRun.mp3" id="9_oatyx"]
+[ext_resource type="Script" path="res://framework/wJWalkSoundEmitter.gd" id="10_3ceq4"]
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("walkSoundEmitter")]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_st0lc")
@@ -20,6 +22,7 @@ general_bow_frames = ExtResource("5_055v7")
 general_sword_frames = ExtResource("5_7lt04")
 faction = 0
 can_attack_factions = [1, 3]
+walkSoundEmitter = NodePath("wjWalkSoundEmitter")
 
 [node name="character_body" parent="." instance=ExtResource("2_hg0jc")]
 unique_name_in_owner = true
@@ -53,5 +56,9 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
 current = true
 fov = 31.8
+
+[node name="wjWalkSoundEmitter" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_oatyx")
+script = ExtResource("10_3ceq4")
 
 [editable path="character_body"]

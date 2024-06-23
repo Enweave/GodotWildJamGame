@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxsajviwoxcxm"]
+
+[ext_resource type="AudioStream" uid="uid://ch03ddv5c5fw" path="res://assets/sound/cycles/test110bpm.mp3" id="1_xro8a"]
+[ext_resource type="Script" path="res://framework/wJWalkSoundEmitter.gd" id="2_jmwc4"]
+
+[node name="WalkSoundEmitter" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_xro8a")
+script = ExtResource("2_jmwc4")

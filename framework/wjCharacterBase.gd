@@ -39,6 +39,23 @@ var anim_is_attacking = false
 var attack_anim_name = "swing1"
 
 
+@export var walkSoundEmitter : wjWalkSoundEmitter
+@export var walk_sound_movement_speed_threshohld = 1
+
+var sound_is_walking = false
+
+
+func update_sound():
+	if walkSoundEmitter != null:
+		if (velocity.length() > walk_sound_movement_speed_threshohld) and is_on_floor():
+			if !sound_is_walking:
+				walkSoundEmitter.fade_in_play()
+				sound_is_walking = true
+		else:
+			if sound_is_walking:
+				walkSoundEmitter.fade_out_stop()
+				sound_is_walking = false
+
 func calc_movement(_delta):
 	pass
 
@@ -48,7 +65,8 @@ func _physics_process(delta):
 	
 	update_sptite_heading()
 	update_animation_state()
-	
+	update_sound()
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
