@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp5jahhds1gov"
-path.s3tc="res://.godot/imported/Blood_4.png-796e40230eafae8af91983ee621cca96.s3tc.ctex"
+uid="uid://b12xy3m0auwbm"
+path.s3tc="res://.godot/imported/terrain_vertical3_terrain_snow01.png-435afaed783620ff3e16402ccb6e1c25.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "46ee6e696e149ce68a0e6a994cbbc6bc"
+}
 
 [deps]
 
-source_file="res://assets/images/Blood_4.png"
-dest_files=["res://.godot/imported/Blood_4.png-796e40230eafae8af91983ee621cca96.s3tc.ctex"]
+source_file="res://assets/blender_meshes/terrain_vertical3_terrain_snow01.png"
+dest_files=["res://.godot/imported/terrain_vertical3_terrain_snow01.png-435afaed783620ff3e16402ccb6e1c25.s3tc.ctex"]
 
 [params]
 
