@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8ah4caiewcya"
+path="res://.godot/imported/fox Master-bounce-1.mp3-0295dfdcc5e9be45bd8affacc621503a.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/oneshots/fox Master-bounce-1.mp3"
+dest_files=["res://.godot/imported/fox Master-bounce-1.mp3-0295dfdcc5e9be45bd8affacc621503a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
