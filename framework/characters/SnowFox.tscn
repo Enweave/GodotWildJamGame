@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq2t6woh0gjci"]
+[gd_scene load_steps=12 format=3 uid="uid://bq2t6woh0gjci"]
 
 [ext_resource type="Script" path="res://framework/characters/SnowFox.gd" id="1_c3k3d"]
 [ext_resource type="SpriteFrames" uid="uid://bypwlrqkxd21v" path="res://framework/characters/SnowFoxSprites.tres" id="2_5yych"]
 [ext_resource type="Script" path="res://framework/wjCharacterBody.gd" id="2_e5n14"]
+[ext_resource type="AudioStream" uid="uid://ciphmthj3ftw2" path="res://assets/sound/oneshots/fleshHit.mp3" id="4_1bky0"]
 [ext_resource type="AudioStream" uid="uid://cao5siansalr2" path="res://assets/sound/cycles/foxRun.mp3" id="4_cgb4v"]
 [ext_resource type="Script" path="res://framework/wJWalkSoundEmitter.gd" id="5_w8gte"]
 [ext_resource type="AudioStream" uid="uid://8ah4caiewcya" path="res://assets/sound/oneshots/fox Master-bounce-1.mp3" id="6_w5t01"]
@@ -88,6 +89,10 @@ text = "ATTACK!"
 shape = SubResource("BoxShape3D_f860b")
 target_position = Vector3(0, 0, 0)
 collision_mask = 3
+
+[node name="SoundTakeDamage" type="AudioStreamPlayer3D" parent="character_body"]
+unique_name_in_owner = true
+stream = ExtResource("4_1bky0")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
