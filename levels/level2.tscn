@@ -453,9 +453,5 @@ transform = Transform3D(1, 0, 0, 0, 0.961262, 0.275637, 0, -0.275637, 0.961262, 
 stream = ExtResource("38_a187q")
 autoplay = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("38_a187q")
-autoplay = true
-
 [connection signal="character_died" from="characters/player" to="." method="_on_player_character_died"]
 [connection signal="character_died" from="characters/SnowFox" to="." method="_on_snow_fox_character_died"]
