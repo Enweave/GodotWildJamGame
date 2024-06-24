@@ -1996,18 +1996,22 @@ shape = SubResource("BoxShape3D_sheco")
 
 [node name="Blood" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/FleshAndBlood"]
 transform = Transform3D(4, 0, 0, 0, -1.31134e-07, 1, 0, -3, -4.37114e-08, 0, 1.55, -37.324)
+alpha_cut = 1
 texture = ExtResource("42_g7etq")
 
 [node name="Blood2" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/FleshAndBlood"]
 transform = Transform3D(3, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0.285, 1.55, -24.902)
+alpha_cut = 1
 texture = ExtResource("43_e88u4")
 
 [node name="Blood3" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/FleshAndBlood"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.52445, 1.6, -24.6676)
+alpha_cut = 1
 texture = ExtResource("44_73rii")
 
 [node name="Blood4" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/FleshAndBlood"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.51108, 1.6, -25.2652)
+alpha_cut = 1
 texture = ExtResource("45_ll1pj")
 
 [node name="Bushes" type="Node3D" parent="floor/NavigationRegion3D/Boss"]
@@ -2425,26 +2429,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214.321, 0, -220.834)
 
 [node name="Cloth" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.6, 7.24033)
+alpha_cut = 1
 texture = ExtResource("38_civvt")
 
 [node name="Cloth4" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/Trail"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 1, 0, -2, -4.37114e-08, 11.35, 1.6, -74.8818)
+alpha_cut = 1
 texture = ExtResource("38_civvt")
 
 [node name="Cloth3" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.6, -2.14744)
+alpha_cut = 1
 texture = ExtResource("38_civvt")
 
 [node name="Cloth2" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.6, 14.4678)
+alpha_cut = 1
 texture = ExtResource("49_usw5a")
 
 [node name="Blood" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0204496, 1.6, -18.0451)
+alpha_cut = 1
 texture = ExtResource("44_73rii")
 
 [node name="Blood2" type="Sprite3D" parent="floor/NavigationRegion3D/Boss/Trail"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0139227, 1.6, -8.20244)
+alpha_cut = 1
 texture = ExtResource("45_ll1pj")
 
 [node name="lighting" type="Node3D" parent="."]

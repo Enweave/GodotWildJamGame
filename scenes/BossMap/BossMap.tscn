@@ -128,18 +128,22 @@ shape = SubResource("BoxShape3D_6mnla")
 
 [node name="Blood" type="Sprite3D" parent="Level/FleshAndBlood"]
 transform = Transform3D(4, 0, 0, 0, -1.31134e-07, 1, 0, -3, -4.37114e-08, 0, 1.55, -37.324)
+alpha_cut = 1
 texture = ExtResource("4_sqgg4")
 
 [node name="Blood2" type="Sprite3D" parent="Level/FleshAndBlood"]
 transform = Transform3D(3, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0.285, 1.55, -24.902)
+alpha_cut = 1
 texture = ExtResource("5_5cmod")
 
 [node name="Blood3" type="Sprite3D" parent="Level/FleshAndBlood"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.52445, 1.6, -24.6676)
+alpha_cut = 1
 texture = ExtResource("6_5g5st")
 
 [node name="Blood4" type="Sprite3D" parent="Level/FleshAndBlood"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.51108, 1.6, -25.2652)
+alpha_cut = 1
 texture = ExtResource("7_xd0ic")
 
 [node name="Bushes" type="Node3D" parent="Level"]
