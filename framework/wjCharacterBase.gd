@@ -38,6 +38,22 @@ var is_telegraphing = false
 var anim_is_attacking = false
 var attack_anim_name = "swing1"
 
+@export var walkSoundEmitter : wjWalkSoundEmitter
+@export var walk_sound_movement_speed_threshohld = 1
+
+var sound_is_walking = false
+
+
+func update_sound():
+	if walkSoundEmitter != null:
+		if (velocity.length() > walk_sound_movement_speed_threshohld) and is_on_floor():
+			if !sound_is_walking:
+				walkSoundEmitter.fade_in_play()
+				sound_is_walking = true
+		else:
+			if sound_is_walking:
+				walkSoundEmitter.fade_out_stop()
+				sound_is_walking = false
 
 func calc_movement(_delta):
 	pass
@@ -48,7 +64,8 @@ func _physics_process(delta):
 	
 	update_sptite_heading()
 	update_animation_state()
-	
+	update_sound()
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -62,6 +79,9 @@ func update_heading(target: Vector3):
 
 
 func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
+	if is_dead:
+		return
+	character_body.play_damage_snd()
 	health -= damage_amount
 	
 	being_attacked_by.emit(damage_amount, attacker)
@@ -72,8 +92,14 @@ func take_damage(damage_amount: float, attacker: wjCharacterBase = null):
 	if health <= 0:
 		is_dead = true
 		character_died.emit()
-		await get_tree().create_timer(1.0).timeout
-		queue_free()
+		character_body.update_health_display('dead')
+		# await get_tree().create_timer(1.0).timeout
+		# queue_free()
+
+func reset_health():
+	health = max_health
+	is_dead = false
+	character_body.update_health_display(str(health))
 
 
 func use_ability_with_slowdown(ability: wjAbilityBase = null):

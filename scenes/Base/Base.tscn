@@ -1,0 +1,473 @@
+[gd_scene load_steps=43 format=3 uid="uid://dc1pkci7163j2"]
+
+[ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="1_gd2bh"]
+[ext_resource type="PackedScene" uid="uid://d0uimuel1ij5o" path="res://scenes/Test/world_environment.tscn" id="2_8ckbu"]
+[ext_resource type="Texture2D" uid="uid://4gaoj0e5co2i" path="res://assets/images/Loaf_Campfire.png" id="4_tfks7"]
+[ext_resource type="Texture2D" uid="uid://uumkbudhpwho" path="res://assets/characters/Loaf.png" id="5_esovl"]
+[ext_resource type="Texture2D" uid="uid://cw5ewx4wx18m8" path="res://assets/images/Loaf_Bench.png" id="6_wap21"]
+[ext_resource type="Texture2D" uid="uid://chbvgcwaxjw51" path="res://assets/images/Loaf_Pot.png" id="7_hfl3r"]
+[ext_resource type="Texture2D" uid="uid://dvbolse8858ij" path="res://assets/images/Sitting_Fe.png" id="8_wdtle"]
+[ext_resource type="Texture2D" uid="uid://77waofsopxhq" path="res://assets/images/Sitting_Tajo.png" id="9_uyxtx"]
+[ext_resource type="Texture2D" uid="uid://b8e86charkedg" path="res://assets/images/Tent.png" id="10_1s2ir"]
+[ext_resource type="Texture2D" uid="uid://d2qmxdv27dhby" path="res://assets/images/Void.png" id="10_24qho"]
+[ext_resource type="Texture2D" uid="uid://djvl622cv83y1" path="res://assets/images/Tree_3.png" id="11_cwahi"]
+[ext_resource type="Texture2D" uid="uid://t87elu83vdcr" path="res://assets/images/Void_Shop.png" id="11_q3f22"]
+[ext_resource type="Texture2D" uid="uid://bkui1i2ack2ig" path="res://assets/images/Tree_1.png" id="12_m174v"]
+[ext_resource type="Texture2D" uid="uid://bd1bas2yyyasr" path="res://assets/images/Tree_2.png" id="13_a7ra3"]
+[ext_resource type="Texture2D" uid="uid://c0ddiq46y8sav" path="res://assets/images/Bush_Bright_Big.png" id="14_6npeo"]
+[ext_resource type="Texture2D" uid="uid://djivc23r3pbiq" path="res://assets/images/Bush_Bright_Medium.png" id="15_yxyc7"]
+[ext_resource type="Texture2D" uid="uid://bphvgqdswhkqa" path="res://assets/images/Bush_Bright_Small.png" id="16_pn7hx"]
+[ext_resource type="Texture2D" uid="uid://b8tbb860n5mkk" path="res://assets/images/Bush_Dark_Big.png" id="17_k24cf"]
+[ext_resource type="Texture2D" uid="uid://c13a3mpwxsgj7" path="res://assets/images/Bush_Dark_Medium.png" id="18_cu4u4"]
+[ext_resource type="Texture2D" uid="uid://b0s2yyfca2io4" path="res://assets/images/Bush_Dark_Small.png" id="19_5ni45"]
+[ext_resource type="Texture2D" uid="uid://cqjqu7adu7p6m" path="res://assets/images/Bush_Normal_Big.png" id="20_0uhls"]
+[ext_resource type="Texture2D" uid="uid://bcn33c4y4rqfa" path="res://assets/images/Bush_Normal_Medium.png" id="21_jyq8i"]
+[ext_resource type="Texture2D" uid="uid://cm8s1rt14v8ke" path="res://assets/images/Bush_Normal_Small.png" id="22_04n15"]
+[ext_resource type="Texture2D" uid="uid://1exnjo10uan8" path="res://assets/images/StickBush_Big.png" id="22_7enfx"]
+[ext_resource type="Texture2D" uid="uid://dkhuxmul6dpbp" path="res://assets/images/Fog_1.png" id="23_586rk"]
+[ext_resource type="Texture2D" uid="uid://divktxxv27qek" path="res://assets/images/Fog_3.png" id="23_grotq"]
+[ext_resource type="Texture2D" uid="uid://moa8mdnfcdd4" path="res://assets/images/StickBush_Small.png" id="23_ptdab"]
+[ext_resource type="Texture2D" uid="uid://qtf3kkmr6fx8" path="res://assets/images/StickBush_Medium.png" id="24_d08x1"]
+[ext_resource type="Texture2D" uid="uid://btmxp5snqs6ji" path="res://assets/images/Fog_7.png" id="24_k1jal"]
+[ext_resource type="Texture2D" uid="uid://cwthy78uojvei" path="res://assets/images/Fog_8.png" id="25_0lx20"]
+[ext_resource type="Texture2D" uid="uid://dnxh6m6djm3e1" path="res://assets/images/Tree_Fallen.png" id="26_qgq12"]
+[ext_resource type="Texture2D" uid="uid://c3v6sb6228xac" path="res://assets/images/Fog_9.png" id="26_swnpn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekkut"]
+albedo_color = Color(0.504, 0.405, 0.54, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nud5j"]
+material = SubResource("StandardMaterial3D_ekkut")
+size = Vector2(100, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w6ve7"]
+size = Vector3(100, 1, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eifqy"]
+albedo_color = Color(0.192911, 0.2515, 0.339773, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_l3dha"]
+material = SubResource("StandardMaterial3D_eifqy")
+top_radius = 7.0
+bottom_radius = 7.0
+height = 0.05
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dqthw"]
+size = Vector3(15, 7, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gkkj5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u4tml"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ceigk"]
+size = Vector3(3, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5j0oy"]
+size = Vector3(15, 3, 0.5)
+
+[node name="Base" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_gd2bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87105, -1.90658)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" parent="Level" instance=ExtResource("2_8ckbu")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 0.994522, 0.104528, 0, -0.104528, 0.994522, 0, 2.5961, 0)
+directional_shadow_blend_splits = true
+
+[node name="BaseCamp" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.19052)
+
+[node name="Ground" type="MeshInstance3D" parent="Level/BaseCamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.212, 1.12, -20)
+layers = 5
+mesh = SubResource("PlaneMesh_nud5j")
+skeleton = NodePath("../Loaf/Campfire")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/BaseCamp/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/BaseCamp/Ground/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.424542, 0)
+shape = SubResource("BoxShape3D_w6ve7")
+
+[node name="CampFloor" type="MeshInstance3D" parent="Level/BaseCamp"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -2.48548, 1.1, -6.43434)
+layers = 5
+mesh = SubResource("CylinderMesh_l3dha")
+skeleton = NodePath("../Loaf/Campfire")
+
+[node name="Tent" type="Sprite3D" parent="Level/BaseCamp"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -3.65658, 3.7195, -7.71627)
+texture_filter = 0
+texture = ExtResource("10_1s2ir")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/BaseCamp/Tent"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/BaseCamp/Tent/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105774, -0.377699)
+shape = SubResource("BoxShape3D_dqthw")
+
+[node name="Loaf" type="Node3D" parent="Level/BaseCamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55305, 4.24923, 0)
+
+[node name="Campfire" type="Sprite3D" parent="Level/BaseCamp/Loaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34115, -2.41423, -3.7644)
+billboard = 2
+texture = ExtResource("4_tfks7")
+
+[node name="Loaf" type="Sprite3D" parent="Level/BaseCamp/Loaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.668855, -1.86923, -4.95288)
+flip_h = true
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("5_esovl")
+
+[node name="LoafBench" type="Sprite3D" parent="Level/BaseCamp/Loaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187743, -2.93423, -7.2802)
+billboard = 2
+texture = ExtResource("6_wap21")
+
+[node name="Pot" type="Sprite3D" parent="Level/BaseCamp/Loaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07665, -2.87423, -6.61718)
+billboard = 2
+texture = ExtResource("7_hfl3r")
+
+[node name="FeTajo" type="Node3D" parent="Level/BaseCamp"]
+
+[node name="Fe" type="Sprite3D" parent="Level/BaseCamp/FeTajo"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.25174, 1.86, -0.779192)
+alpha_cut = 2
+texture = ExtResource("8_wdtle")
+
+[node name="Tajo" type="Sprite3D" parent="Level/BaseCamp/FeTajo"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.39955, 1.88, -0.779192)
+alpha_cut = 2
+texture = ExtResource("9_uyxtx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Level/BaseCamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89675, 1.71524, -4.2579)
+light_color = Color(0.998926, 0.526998, 0.000118979, 1)
+shadow_enabled = true
+shadow_opacity = 0.9
+omni_range = 7.0
+
+[node name="WorldBounds" type="StaticBody3D" parent="Level/BaseCamp"]
+
+[node name="LeftBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(-0.0173303, 0.99985, 0, -0.99985, -0.0173303, 0, 0, 0, 1, -24.6402, 9.4379, -3.38271)
+shape = SubResource("WorldBoundaryShape3D_gkkj5")
+
+[node name="FrontBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.86755, 6.32198, 2.92883)
+shape = SubResource("WorldBoundaryShape3D_gkkj5")
+
+[node name="BackBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 9.12392, -13.4723)
+shape = SubResource("WorldBoundaryShape3D_u4tml")
+
+[node name="RightBound" type="CollisionShape3D" parent="Level/BaseCamp/WorldBounds"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 26.049, 9.12392, -7.37377)
+shape = SubResource("WorldBoundaryShape3D_u4tml")
+
+[node name="Void" type="Node3D" parent="Level/BaseCamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9647, 0)
+
+[node name="Void" type="Sprite3D" parent="Level/BaseCamp/Void"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.46691, -2.16724, 0.165552)
+texture = ExtResource("10_24qho")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/BaseCamp/Void/Void"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/BaseCamp/Void/Void/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.329562, 0)
+shape = SubResource("BoxShape3D_ceigk")
+
+[node name="VoidShop" type="Sprite3D" parent="Level/BaseCamp/Void"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.47278, -2.09374, -0.133648)
+texture = ExtResource("11_q3f22")
+
+[node name="Flora" type="Node3D" parent="Level"]
+
+[node name="Trees" type="Node3D" parent="Level/Flora"]
+
+[node name="Tree1" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 8.46304, 10.4919, -28.6681)
+texture = ExtResource("11_cwahi")
+
+[node name="Tree5" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -10.6233, 10.4919, -28.6681)
+texture = ExtResource("11_cwahi")
+
+[node name="Tree6" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -36.0604, 10.4919, -28.6681)
+texture = ExtResource("11_cwahi")
+
+[node name="Tree7" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -35.4313, 10.4919, -43.4493)
+texture = ExtResource("11_cwahi")
+
+[node name="Tree2" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 14.1937, 10.2726, -15.4125)
+texture = ExtResource("12_m174v")
+
+[node name="Tree4" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 28.004, 10.9874, -12.2209)
+texture = ExtResource("12_m174v")
+
+[node name="Tree3" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8328, 11.0898, -23.2343)
+texture = ExtResource("13_a7ra3")
+
+[node name="Tree8" type="Sprite3D" parent="Level/Flora/Trees"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 26.558, 11.0898, -17.1752)
+texture = ExtResource("13_a7ra3")
+
+[node name="Bushes" type="Node3D" parent="Level/Flora"]
+
+[node name="Foreground" type="Node3D" parent="Level/Flora/Bushes"]
+
+[node name="DarkBig" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 4.548, 2.385, 1.51136)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkBig2" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 8.27296, 2.385, 1.54043)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkBig6" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 12.6822, 2.385, 1.54043)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkBig3" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -4.43011, 2.385, 1.54724)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkBig4" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -8.1171, 2.385, 1.48915)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkBig5" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -12.8399, 2.385, 1.48915)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkSmal" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41172, 1.605, -0.40237)
+texture_filter = 0
+texture = ExtResource("19_5ni45")
+
+[node name="NormBig" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41172, 1.605, -0.40237)
+texture_filter = 0
+texture = ExtResource("20_0uhls")
+
+[node name="NormBig2" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 1, -9.50359, 1.605, -0.22573)
+texture_filter = 0
+texture = ExtResource("20_0uhls")
+
+[node name="NormMed" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -1.7137, 1.605, 1.54683)
+texture_filter = 0
+texture = ExtResource("21_jyq8i")
+
+[node name="NormMed2" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0.972852, 1.605, 1.49649)
+flip_h = true
+texture_filter = 0
+texture = ExtResource("21_jyq8i")
+
+[node name="NormMed3" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 1.58558, 1.605, 0.787475)
+flip_h = true
+texture_filter = 0
+texture = ExtResource("21_jyq8i")
+
+[node name="NormSmal" type="Sprite3D" parent="Level/Flora/Bushes/Foreground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5573, 1.605, -0.40237)
+texture_filter = 0
+texture = ExtResource("22_04n15")
+
+[node name="Background" type="Node3D" parent="Level/Flora/Bushes"]
+
+[node name="BrightBig" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1.62622, 0, 0.582109, 0, 2, 0, -1.16422, 0, 0.813111, -16.9722, 2.37, -14.1381)
+texture_filter = 0
+texture = ExtResource("14_6npeo")
+
+[node name="BrightMed" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8513, 2.04, -10.1989)
+texture_filter = 0
+texture = ExtResource("15_yxyc7")
+
+[node name="BrightMed2" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9573, 2.04, -2.5947)
+texture_filter = 0
+texture = ExtResource("15_yxyc7")
+
+[node name="BrightSmal" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7128, 1.605, -8.464)
+texture_filter = 0
+texture = ExtResource("16_pn7hx")
+
+[node name="DarkBig7" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -24.8003, 2.385, -19.8924)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkBig8" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -20.0342, 2.385, -19.8924)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkBig9" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(5, 0, 0, 0, 3, 0, 0, 0, 2, -20.0342, 2.385, -19.8924)
+texture_filter = 0
+texture = ExtResource("17_k24cf")
+
+[node name="DarkSmal2" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.1017, 2.21, -13.116)
+texture_filter = 0
+texture = ExtResource("19_5ni45")
+
+[node name="DarkMed2" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.90244, 2.05, -15.8778)
+texture_filter = 0
+texture = ExtResource("18_cu4u4")
+
+[node name="DarkMed3" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1.89002, 0, -0.654073, 0, 2, 0, 0.654073, 0, 1.89002, 10.0409, 2.05, -20.9314)
+texture_filter = 0
+texture = ExtResource("18_cu4u4")
+
+[node name="NormMed4" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 5.02048, 2.05, -11.9216)
+texture_filter = 0
+texture = ExtResource("21_jyq8i")
+
+[node name="NormMed6" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -14.2731, 2.05, -3.5698)
+texture_filter = 0
+texture = ExtResource("21_jyq8i")
+
+[node name="NormMed5" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1.95087, 0, -0.220289, 0, 1, 0, 0.440578, 0, 0.975435, 8.25964, 2.05, -18.5292)
+texture_filter = 0
+texture = ExtResource("21_jyq8i")
+
+[node name="DarkMed4" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7684, 2.05, -8.14549)
+texture_filter = 0
+texture = ExtResource("18_cu4u4")
+
+[node name="DarkMed" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85256, 2.05, -8.52859)
+texture_filter = 0
+texture = ExtResource("18_cu4u4")
+
+[node name="Bush" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.5382, 2.72546, -26.2509)
+texture_filter = 0
+texture = ExtResource("22_7enfx")
+
+[node name="Bush2" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4735, 2.72546, 2.11607)
+texture_filter = 0
+texture = ExtResource("22_7enfx")
+
+[node name="Bush3" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5791, 2.17133, -10.2916)
+texture_filter = 0
+texture = ExtResource("22_7enfx")
+
+[node name="Bush4" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36648, 2.17133, -10.5133)
+texture_filter = 0
+texture = ExtResource("23_ptdab")
+
+[node name="Bush7" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25538, 2.17133, -1.32445)
+texture_filter = 0
+texture = ExtResource("23_ptdab")
+
+[node name="Bush8" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16564, 2.17133, -13.3599)
+texture_filter = 0
+texture = ExtResource("23_ptdab")
+
+[node name="Bush5" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 6.62223, 2.17133, -2.35823)
+texture_filter = 0
+texture = ExtResource("24_d08x1")
+
+[node name="Bush9" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 8.25768, 1.71663, -7.97202)
+texture_filter = 0
+texture = ExtResource("24_d08x1")
+
+[node name="Bush6" type="Sprite3D" parent="Level/Flora/Bushes/Background"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 8.57841, 2.17133, -1.79978)
+texture_filter = 0
+texture = ExtResource("24_d08x1")
+
+[node name="Fog" type="Node3D" parent="Level/Flora"]
+
+[node name="Fog1_1" type="Sprite3D" parent="Level/Flora/Fog"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.9797, 3.33222, -29.1277)
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 0
+texture = ExtResource("23_586rk")
+
+[node name="Fog1_5" type="Sprite3D" parent="Level/Flora/Fog"]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 33.4394, 3.33222, -2.3143)
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 0
+texture = ExtResource("23_grotq")
+
+[node name="Fog1_2" type="Sprite3D" parent="Level/Flora/Fog"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 25.5582, 3.33222, -18.1516)
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 0
+texture = ExtResource("24_k1jal")
+
+[node name="Fog1_3" type="Sprite3D" parent="Level/Flora/Fog"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.4755, 3.33222, -8.03455)
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 0
+texture = ExtResource("25_0lx20")
+
+[node name="Fog1_4" type="Sprite3D" parent="Level/Flora/Fog"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.9797, 3.33222, 2.38136)
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 0
+texture = ExtResource("26_swnpn")
+
+[node name="Fog1_6" type="Sprite3D" parent="Level/Flora/Fog"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.101, 3.33222, -3.89518)
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 0
+texture = ExtResource("26_swnpn")
+
+[node name="FallenLog" type="Sprite3D" parent="Level/Flora"]
+transform = Transform3D(1.17863, 0, 0.755808, 0, 1, 0, -1.36045, 0, 0.654794, -17.5951, 2.58969, -6.90832)
+texture_filter = 0
+texture = ExtResource("26_qgq12")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Flora/FallenLog"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Flora/FallenLog/StaticBody3D"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0.10577, 0)
+shape = SubResource("BoxShape3D_5j0oy")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.961262, 0.275637, 0, -0.275637, 0.961262, 0, 6, 5)

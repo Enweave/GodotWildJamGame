@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0uimuel1ij5o"]
+
+[ext_resource type="Texture2D" uid="uid://bbemp73jnluun" path="res://scenes/Test/sky2.png" id="1_xkkfh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sv3bf"]
+panorama = ExtResource("1_xkkfh")
+
+[sub_resource type="Sky" id="Sky_2pci7"]
+sky_material = SubResource("PanoramaSkyMaterial_sv3bf")
+
+[sub_resource type="Environment" id="Environment_4fd86"]
+background_mode = 1
+background_color = Color(0.112894, 4.89249e-05, 0.151439, 1)
+background_energy_multiplier = 0.4
+sky = SubResource("Sky_2pci7")
+sky_custom_fov = 127.2
+sky_rotation = Vector3(0, 1.82736, 0)
+ambient_light_source = 2
+ambient_light_color = Color(0.282911, 0.045696, 0.331479, 1)
+ambient_light_sky_contribution = 0.9
+ambient_light_energy = 12.0
+reflected_light_source = 2
+tonemap_mode = 1
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.1
+fog_density = 0.02
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_4fd86")

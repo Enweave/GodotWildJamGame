@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://div77i8fiph3"
+path="res://.godot/imported/respawn.dialogue-6421bf25bc4961531dba5c975f5714e7.tres"
+
+[deps]
+
+source_file="res://dialogue/respawn.dialogue"
+dest_files=["res://.godot/imported/respawn.dialogue-6421bf25bc4961531dba5c975f5714e7.tres"]
+
+[params]
+
+defaults=true

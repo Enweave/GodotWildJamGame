@@ -1,10 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=18 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue/balloon_with_slide.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://bqwuru8og26y3" path="res://assets/slides/Slide 1.png" id="2_aa07n"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://bs75itd7xckvy" path="res://assets/fonts/gabriola.ttf" id="3_k1v5j"]
+[ext_resource type="AudioStream" uid="uid://ojve42kdt0kp" path="res://assets/sound/vo/s1.mp3" id="6_fwx3g"]
+[ext_resource type="AudioStream" uid="uid://b0i7o4lppro71" path="res://assets/sound/vo/s2.mp3" id="7_mdkds"]
+[ext_resource type="AudioStream" uid="uid://b600wnyl8rgjd" path="res://assets/sound/vo/s3.mp3" id="8_8jgln"]
+[ext_resource type="AudioStream" uid="uid://b3e230v3ipaid" path="res://assets/sound/vo/s4.mp3" id="9_u38ho"]
+[ext_resource type="AudioStream" uid="uid://cl7qgcm5tkdrg" path="res://assets/sound/vo/s5.mp3" id="10_6lne8"]
+[ext_resource type="AudioStream" uid="uid://m1t1mlo3k0u6" path="res://assets/sound/vo/ep1.mp3" id="11_b4t1b"]
+[ext_resource type="AudioStream" uid="uid://dsjx07qxq682g" path="res://assets/sound/vo/ep2.mp3" id="12_byhkd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -168,6 +175,34 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="AspectRatioContainer/Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
+
+[node name="VO" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="s1" type="AudioStreamPlayer" parent="VO"]
+stream = ExtResource("6_fwx3g")
+
+[node name="s2" type="AudioStreamPlayer" parent="VO"]
+stream = ExtResource("7_mdkds")
+
+[node name="s3" type="AudioStreamPlayer" parent="VO"]
+stream = ExtResource("8_8jgln")
+
+[node name="s4" type="AudioStreamPlayer" parent="VO"]
+stream = ExtResource("9_u38ho")
+
+[node name="s5" type="AudioStreamPlayer" parent="VO"]
+stream = ExtResource("10_6lne8")
+
+[node name="e1" type="AudioStreamPlayer" parent="VO"]
+stream = ExtResource("11_b4t1b")
+
+[node name="e2" type="AudioStreamPlayer" parent="VO"]
+stream = ExtResource("12_byhkd")
 
 [connection signal="gui_input" from="AspectRatioContainer/Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="AspectRatioContainer/Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

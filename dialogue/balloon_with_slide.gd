@@ -23,6 +23,7 @@ var is_waiting_for_input: bool = false
 ## See if we are running a long mutation and should hide the balloon
 var will_hide_balloon: bool = false
 
+
 func set_slide(resource_path: String) -> void:
 	if FileAccess.file_exists(resource_path):
 		var slide = load(resource_path)
@@ -36,6 +37,16 @@ func set_slide(resource_path: String) -> void:
 
 func reset_slide() -> void:
 	%slide.texture = null
+
+func play_audio(node_path: NodePath) -> void:
+	var audio_stream_player = self.get_node(node_path) as AudioStreamPlayer
+
+	ProjectMusicController.play_stream(audio_stream_player.stream)
+
+
+func stop_audio() -> void:
+	ProjectMusicController.stop()
+
 
 ## The current line
 var dialogue_line: DialogueLine:

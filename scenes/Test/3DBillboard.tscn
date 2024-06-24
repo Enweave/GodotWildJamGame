@@ -1,10 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2f7uttjd5fc0"]
+[gd_scene load_steps=20 format=3 uid="uid://d2f7uttjd5fc0"]
 
 [ext_resource type="PackedScene" uid="uid://dpxnh6xemy2dn" path="res://scenes/Test/level.tscn" id="1_ja55o"]
 [ext_resource type="Texture2D" uid="uid://bd1bas2yyyasr" path="res://assets/images/Tree_2.png" id="2_8qysm"]
 [ext_resource type="Texture2D" uid="uid://bkui1i2ack2ig" path="res://assets/images/Tree_1.png" id="2_k0wg2"]
-[ext_resource type="Texture2D" uid="uid://bbemp73jnluun" path="res://scenes/Test/sky2.png" id="2_tb0s8"]
-[ext_resource type="Texture2D" uid="uid://bfks3mqxcd745" path="res://assets/player.png" id="3_7oilu"]
 [ext_resource type="Texture2D" uid="uid://djvl622cv83y1" path="res://assets/images/Tree_3.png" id="3_m2wpq"]
 [ext_resource type="Texture2D" uid="uid://1exnjo10uan8" path="res://assets/images/StickBush_Big.png" id="5_d0nc6"]
 [ext_resource type="Texture2D" uid="uid://qtf3kkmr6fx8" path="res://assets/images/StickBush_Medium.png" id="6_x3knw"]
@@ -14,31 +12,19 @@
 [ext_resource type="Texture2D" uid="uid://divktxxv27qek" path="res://assets/images/Fog_3.png" id="9_6pwxk"]
 [ext_resource type="Texture2D" uid="uid://o4r0cexe55im" path="res://assets/images/Fog_4.png" id="10_2k0f4"]
 [ext_resource type="Texture2D" uid="uid://bciohfqkhlj0s" path="res://assets/images/Fog_5.png" id="11_wvmy3"]
+[ext_resource type="Texture2D" uid="uid://btmxp5snqs6ji" path="res://assets/images/Fog_7.png" id="12_0p1vk"]
 [ext_resource type="Texture2D" uid="uid://do2olk2a3lk1r" path="res://assets/images/Fog_6.png" id="12_trq66"]
+[ext_resource type="PackedScene" uid="uid://d0uimuel1ij5o" path="res://scenes/Test/world_environment.tscn" id="14_mcoaa"]
+[ext_resource type="PackedScene" uid="uid://c4crl7k17l4o1" path="res://framework/characters/player.tscn" id="16_c6bpe"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sv3bf"]
-panorama = ExtResource("2_tb0s8")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvbj2"]
 
-[sub_resource type="Sky" id="Sky_2pci7"]
-sky_material = SubResource("PanoramaSkyMaterial_sv3bf")
+[sub_resource type="PlaneMesh" id="PlaneMesh_6uuln"]
+material = SubResource("StandardMaterial3D_vvbj2")
+size = Vector2(100, 140)
 
-[sub_resource type="Environment" id="Environment_4fd86"]
-background_mode = 1
-background_color = Color(0.112894, 4.89249e-05, 0.151439, 1)
-background_energy_multiplier = 0.4
-sky = SubResource("Sky_2pci7")
-sky_custom_fov = 127.2
-sky_rotation = Vector3(0, 1.82736, 0)
-ambient_light_source = 3
-ambient_light_color = Color(0.282911, 0.045696, 0.331479, 1)
-ambient_light_sky_contribution = 0.9
-ambient_light_energy = 12.0
-reflected_light_source = 2
-tonemap_mode = 1
-fog_enabled = true
-fog_light_color = Color(0, 0, 0, 1)
-fog_light_energy = 0.1
-fog_density = 0.02
+[sub_resource type="BoxShape3D" id="BoxShape3D_i5e7k"]
+size = Vector3(100, 0.1, 150)
 
 [node name="3DWorld" type="Node3D"]
 
@@ -117,7 +103,7 @@ texture_filter = 0
 texture = ExtResource("2_8qysm")
 
 [node name="Sprite3D3" parent="Level/Trees/Background Trees" index="9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7442, 11.8982, 8.44915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7442, 11.5487, 8.44915)
 shaded = false
 
 [node name="CenterThickTree" type="Sprite3D" parent="Level/Trees/Background Trees" index="10"]
@@ -333,6 +319,16 @@ shaded = true
 texture_filter = 0
 texture = ExtResource("2_k0wg2")
 
+[node name="Floor" type="MeshInstance3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1361, -30)
+visible = false
+mesh = SubResource("PlaneMesh_6uuln")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_i5e7k")
+
 [node name="Fogs" type="Node3D" parent="Level"]
 
 [node name="Fog1" type="Sprite3D" parent="Level/Fogs"]
@@ -371,7 +367,7 @@ texture_filter = 0
 texture = ExtResource("7_sgl3j")
 
 [node name="Fog2" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0329, 5.60321, 4.70128)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 19.0329, 5.16767, 4.70128)
 modulate = Color(1, 1, 1, 0.215686)
 billboard = 2
 texture_filter = 0
@@ -392,13 +388,13 @@ texture_filter = 0
 texture = ExtResource("8_nqgte")
 
 [node name="Fog15" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(1.79231, 0, -0.887488, 0, 2, 0, 0.887488, 0, 1.79231, 39.6958, 5.60321, -45.7408)
+transform = Transform3D(2.24038, 0, -0.887487, 0, 2, 0, 1.10936, 0, 1.79231, 39.6958, 9.49229, -45.7408)
 modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("8_nqgte")
 
 [node name="Fog3" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9337, 2.61724, -14.6484)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 29.9337, 2.61724, -14.6484)
 modulate = Color(1, 1, 1, 0.215686)
 billboard = 2
 texture_filter = 0
@@ -412,21 +408,22 @@ texture_filter = 0
 texture = ExtResource("9_6pwxk")
 
 [node name="Fog4" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(0.997016, 0, -0.0771889, 0, 1, 0, 0.0771889, 0, 0.997016, -16.0676, 5.60321, 6.89842)
+transform = Transform3D(1.99403, 0, -0.0771889, 0, 1.5, 0, 0.154378, 0, 0.997016, -16.0676, 5.60321, 6.89842)
 flip_h = true
 modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("10_2k0f4")
 
 [node name="Fog5" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.83948, 5.43629, 20.6911)
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -2.93263, 4.04594, 20.6911)
+flip_h = true
 modulate = Color(1, 1, 1, 0.215686)
 billboard = 2
 texture_filter = 0
-texture = ExtResource("11_wvmy3")
+texture = ExtResource("12_0p1vk")
 
 [node name="Fog11" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(0.99761, 0, 0.13819, 0, 1, 0, -0.0690948, 0, 1.99522, -9.7263, 5.43629, 13.605)
+transform = Transform3D(1.49642, 0, 0.13819, 0, 1, 0, -0.103642, 0, 1.99522, -13.0214, 4.65004, 13.605)
 modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
 texture = ExtResource("11_wvmy3")
@@ -438,7 +435,7 @@ texture_filter = 0
 texture = ExtResource("12_trq66")
 
 [node name="Fog12" type="Sprite3D" parent="Level/Fogs"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 10.8172, 5.60321, 16.6356)
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 10.8172, 5.16781, 16.6356)
 flip_h = true
 modulate = Color(1, 1, 1, 0.215686)
 texture_filter = 0
@@ -468,6 +465,7 @@ omni_attenuation = 1.23115
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.994524, 0.104511, 0, -0.104511, 0.994524, 1.36633, 0.918181, 0)
+light_energy = 0.8
 shadow_opacity = 0.5
 shadow_blur = 2.0
 directional_shadow_split_1 = 0.01
@@ -477,13 +475,9 @@ directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.081
 directional_shadow_max_distance = 94.6
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4fd86")
+[node name="WorldEnvironment" parent="." instance=ExtResource("14_mcoaa")]
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.943686, 0.330844, 0, -0.330844, 0.943686, 2.90614, 3.11381, 12.3579)
-billboard = 2
-texture_filter = 0
-texture = ExtResource("3_7oilu")
+[node name="player" parent="." instance=ExtResource("16_c6bpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19487, 0.368078, 8.46837)
 
 [editable path="Level"]
