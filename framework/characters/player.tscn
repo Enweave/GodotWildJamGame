@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c2x43uqwvxtip" path="res://framework/abilities/bowAttackAbility.tscn" id="3_1rd2d"]
 [ext_resource type="Script" path="res://framework/characters/playerCameraHelper.gd" id="3_hwt8f"]
 [ext_resource type="PackedScene" uid="uid://3g0f358fp0su" path="res://framework/abilities/dashAbility.tscn" id="3_tqnnt"]
-[ext_resource type="SpriteFrames" uid="uid://cq8lrqsdcjvtu" path="res://framework/characters/PlayerSwordSpriteFrames.tres" id="5_7lt04"]
-[ext_resource type="SpriteFrames" uid="uid://nqwpqlhdqke0" path="res://framework/characters/PlayerBowSpriteFrames.tres" id="5_055v7"]
+[ext_resource type="SpriteFrames" uid="uid://140jvaha52jw" path="res://framework/characters/PlayerSwordSpriteFrames.tres" id="5_7lt04"]
+[ext_resource type="SpriteFrames" uid="uid://33npeuar6k0s" path="res://framework/characters/PlayerBowSpriteFrames.tres" id="5_055v7"]
 [ext_resource type="AudioStream" uid="uid://svjiau881pxg" path="res://assets/sound/cycles/generalRun.mp3" id="9_oatyx"]
 [ext_resource type="Script" path="res://framework/wJWalkSoundEmitter.gd" id="10_3ceq4"]
 
@@ -40,7 +40,6 @@ spot_angle = 65.85
 [node name="Sprite" parent="character_body/SpriteOrigin" index="1"]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, -0.0837815, 0)
 sprite_frames = ExtResource("5_7lt04")
-animation = &"run"
 
 [node name="WeaponHotspot" parent="character_body" index="3"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.809829)

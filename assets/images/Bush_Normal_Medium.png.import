@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcn33c4y4rqfa"
-path.s3tc="res://.godot/imported/Bush_Normal_Medium.png-9e1a4d663d3d5d28b18f94cda6574e00.s3tc.ctex"
+path="res://.godot/imported/Bush_Normal_Medium.png-9e1a4d663d3d5d28b18f94cda6574e00.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/images/Bush_Normal_Medium.png"
-dest_files=["res://.godot/imported/Bush_Normal_Medium.png-9e1a4d663d3d5d28b18f94cda6574e00.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bush_Normal_Medium.png-9e1a4d663d3d5d28b18f94cda6574e00.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

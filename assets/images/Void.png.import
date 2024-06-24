@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2qmxdv27dhby"
-path.s3tc="res://.godot/imported/Void.png-05c60c591be4a788d2be268985d6b79c.s3tc.ctex"
+path="res://.godot/imported/Void.png-05c60c591be4a788d2be268985d6b79c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/images/Void.png"
-dest_files=["res://.godot/imported/Void.png-05c60c591be4a788d2be268985d6b79c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Void.png-05c60c591be4a788d2be268985d6b79c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
