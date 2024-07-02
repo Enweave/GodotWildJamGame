@@ -1,6 +1,6 @@
 extends wjLevel
 
-@export var levelEndScene : PackedScene
+@export var levelEndScenePath : String
 
 @export var player_respawn: Node3D
 @export var player: wjPlayer
@@ -27,4 +27,4 @@ func _on_player_character_died():
 
 func _on_snow_fox_character_died():
 	await get_tree().create_timer(1).timeout
-	_emit_wj_level_next(levelEndScene)
+	_emit_wj_level_next(levelEndScenePath)

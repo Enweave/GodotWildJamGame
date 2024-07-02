@@ -23,7 +23,7 @@ func fire_callback():
     scene_root.add_child(_projectile)
     _projectile.fire()
 
-func activate(callback: Callable = Callable(), args: Array = []) -> bool:
+func activate(_callback: Callable = Callable(), _args: Array = []) -> bool:
     var success = super.activate(fire_callback)
     return success
 

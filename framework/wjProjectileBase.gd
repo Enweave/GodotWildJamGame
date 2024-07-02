@@ -30,7 +30,7 @@ func _on_body_entered(body:Node):
         disable_and_attach.call_deferred(body)
 
 
-func disable_and_attach(body: Node):
+func disable_and_attach(_body: Node):
     freeze = true
     sleeping = true
     $CollisionShape3D.disabled = true

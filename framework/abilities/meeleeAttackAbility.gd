@@ -11,7 +11,7 @@ func apply_knockback(target: wjCharacterBase):
     # TODO CLAMP VELOCITY
     target.velocity += new_velocity
 
-func activate(callback: Callable = Callable(), args: Array = []) -> bool:
+func activate(_callback: Callable = Callable(), _args: Array = []) -> bool:
     var success = super.activate()
     if success:
         for target in %Area3D.get_overlapping_bodies():

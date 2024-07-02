@@ -3,7 +3,7 @@ extends wjAbilityBase
 @onready var ray: RayCast3D = $RayCast3D
 
 
-func activate(callback: Callable = Callable(), args: Array = []):
+func activate(_callback: Callable = Callable(), _args: Array = []):
     var success = false
     if user != null:
         if user.controller_direction:

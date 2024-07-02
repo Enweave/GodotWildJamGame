@@ -55,7 +55,7 @@ func _on_vision_area_body_exited(body):
 	if body is wjPlayer:
 		isPlayerInSight = false
 	
-func _on_being_attacked_by(damage_amount:float, attacker:wjCharacterBase = null):
+func _on_being_attacked_by(_damage_amount:float, attacker:wjCharacterBase = null):
 	if attacker != null:
 		current_target = attacker
 		isPlayerInSight = true

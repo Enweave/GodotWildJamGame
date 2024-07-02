@@ -1,9 +1,9 @@
 extends wjLevel
 
-@export var level2scene : PackedScene
+@export var level2scene_path : String
 
-func _on_dialogue_end(resource: DialogueResource):
-	_emit_wj_level_next(level2scene)
+func _on_dialogue_end(_resource: DialogueResource):
+	_emit_wj_level_next(level2scene_path)
 
 func show_intro_dialogue():
 	var balloon = load("res://dialogue/balloon_with_slide.tscn").instantiate()

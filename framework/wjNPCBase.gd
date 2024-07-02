@@ -24,7 +24,7 @@ func _on_dialogue_end(resource: DialogueResource):
 		action_available = true
 		display_action(true)
 
-func _process(delta):
+func _process(_delta):
 	if action_available:
 		if Input.is_action_just_pressed('interact'):
 			action_available = false

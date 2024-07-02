@@ -12,6 +12,6 @@ func _emit_wj_level_won():
 func _emit_wj_level_lost():
     wj_level_lost.emit()
 
-func _emit_wj_level_next(level: PackedScene):
-    WjAutoloadGameState.set_level_to_load(level)
+func _emit_wj_level_next(level_path: String):
+    WjAutoloadGameState.set_level_to_load(level_path)
     wj_level_next.emit()

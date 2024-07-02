@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://t7dar6vei1qw"]
+[gd_scene load_steps=11 format=3 uid="uid://t7dar6vei1qw"]
 
 [ext_resource type="Script" path="res://scenes/GameScene/wjGameUI.gd" id="1_bbr52"]
 [ext_resource type="PackedScene" uid="uid://370aeeqr818m" path="res://scenes/WinScreen/WinScreen.tscn" id="2_glbio"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c6j1n6fc1godq" path="res://scenes/Menus/PauseMenu/PauseMenu.tscn" id="5_wd7r8"]
 [ext_resource type="Script" path="res://scenes/GameScene/wjLevelLoader.gd" id="6_ct1tc"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/MusicPlayers/BackgroundMusicPlayer.tscn" id="7_1tpko"]
-[ext_resource type="PackedScene" uid="uid://sm05cere4rje" path="res://levels/level1.tscn" id="7_otc4d"]
 [ext_resource type="Script" path="res://scenes/GameScene/ConfigurableSubViewport.gd" id="7_vs16n"]
 [ext_resource type="Script" path="res://scenes/GameScene/InputDisplayLabel.gd" id="8_mik2y"]
 [ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_game_template/base/scenes/LoadingScreen/LoadingScreen.tscn" id="8_yr4ft"]
@@ -30,7 +29,7 @@ pause_menu_packed = ExtResource("5_wd7r8")
 [node name="wjLevelLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
 script = ExtResource("6_ct1tc")
 level_container = NodePath("../ViewportContainer/ConfigurableSubViewport")
-default_level = ExtResource("7_otc4d")
+default_level_path = "res://levels/level1.tscn"
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("7_1tpko")]
 bus = &"Master"
